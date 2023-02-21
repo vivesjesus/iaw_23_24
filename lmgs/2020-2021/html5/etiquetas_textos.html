@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/main.css">
+  </head>
+  
+
+<body style="border-left-width: 0px;border-left-style: solid;padding-left: 150px;padding-top: 20px;padding-right: 150px;padding-botton: 20px;">
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <h1 id="etiquetas-de-texto">Etiquetas de texto</h1>
+
+<h2 id="encabezados">Encabezados</h2>
+
+<p>Los <strong>encabezados</strong> se representan mediante las etiquetas <code class="language-plaintext highlighter-rouge">h1, h2, ..., h6</code>. Hay por tanto 6 niveles de encabezamiento. La etiqueta <code class="language-plaintext highlighter-rouge">h1</code> representa un encabezado más general: Capítulo, Tema… Mientras que <code class="language-plaintext highlighter-rouge">h6</code> es el encabezado más profundo. Los encabezados son <strong>etiquetas de bloques</strong>.</p>
+
+<p>Ejemplo:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"es"</span> <span class="na">dir=</span><span class="s">"ltr"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Encabezado<span class="nt">&lt;/title&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;h1&gt;</span>Encabezado H1<span class="nt">&lt;/h1&gt;</span>
+    <span class="nt">&lt;h2&gt;</span>Encabezado H2<span class="nt">&lt;/h2&gt;</span>
+    <span class="nt">&lt;h3&gt;</span>Encabezado h3<span class="nt">&lt;/h3&gt;</span>
+    <span class="nt">&lt;h4&gt;</span>Encabezado h4<span class="nt">&lt;/h4&gt;</span>
+    <span class="nt">&lt;h5&gt;</span>Encabezado h5<span class="nt">&lt;/h5&gt;</span>
+    <span class="nt">&lt;h6&gt;</span>Encabezado h6<span class="nt">&lt;/h6&gt;</span>
+    <span class="nt">&lt;p&gt;</span>Párrafo...<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+<p>Al visualizarlo en un navegador, obtenemos lo siguiente:</p>
+
+<p><img src="img/html-01.png" alt="html5" /></p>
+
+<h2 id="párrafos">Párrafos</h2>
+
+<p>Se utilizan mucho. Típicamente hay varios párrafos dentro del cuerpo. Aunque en el HTML lo separemos en diferentes líneas, todo el texto que esté dentro del mismo párrafo se coloca en la misma línea. Esta etiqueta es una <strong>etiqueta de bloque</strong>.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"es"</span> <span class="na">dir=</span><span class="s">"ltr"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Párrafos<span class="nt">&lt;/title&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;p&gt;</span>Es es un párrafo. Puede ser todo lo extenso que se quiera
+    Aunque en el HTML lo coloquemos en varias
+    líneas, en el renderizado se coloca según el tamaño
+    de la pantalla del navegador<span class="nt">&lt;/p&gt;</span>
+
+    <span class="nt">&lt;p&gt;</span>Este es otro párrafo.
+      Se coloca separado del anterior<span class="nt">&lt;/p&gt;</span>
+
+    <span class="nt">&lt;p&gt;</span>Este párrafo tiene 3 líneas
+     Pero el navegador las coloca juntas
+     Otra líneas
+     Y otra<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p>Se renderizaría de la siguiente manera:</p>
+
+<p><img src="img/html-03.png" alt="html5" /></p>
+
+<h2 id="otras-etiquetas-de-texto">Otras etiquetas de texto</h2>
+
+<p>Veamos de forma resumida otras etiquetas relacionadas con el marcado de texto. En muchas ocasiones pueden parecer que estas etiquetas otorgan un formato a la información. Esta afirmación es falsa, las etiquetas clasifican la información semanticamente, pero lo que pasa es que el navegador web por defecto la muestra con un determinado formato.</p>
+
+<p>Hay multitud, todas le dan cierto estilo al texto que contienen y destacaremos las siguientes:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">&lt;strong&gt;...&lt;/strong&gt;</code> el navegador la pone en negrita, pero la usamos para indicar la importancia de una información.</li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;i&gt;...&lt;/i&gt;</code> Se pone el texto en cursiva, pero se usa para resaltar una información.</li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;b&gt;...&lt;/b&gt;</code>: Parecida a <code class="language-plaintext highlighter-rouge">strong</code>, nos sirve para resaltar una información, en el navegador se pone en negrita.</li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;del&gt;...&lt;/del&gt;</code> para mostrar un texto tachado.</li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;em&gt;...&lt;/em&gt;</code> Se pone el texto en cursiva, pero se usa para resaltar una información.</li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;sup&gt;...&lt;/sup&gt;</code> para poner un texto como superíndice de otro texto.</li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;sub&gt;...&lt;/sub&gt;</code> para poner un texto como subíndice de otro texto.</li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;mark&gt;...&lt;/mark&gt;</code> para poner un texto subrayado.</li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;q&gt;...&lt;/q&gt;</code> para mostrar una pequeña cita.</li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;cite&gt;...&lt;/cite&gt;</code> para mostrar el título de una referencia bibliográfica.</li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;time&gt;...&lt;/time&gt;</code> para mostrar horas.</li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;address&gt;...&lt;/address&gt;</code> para mostrar direcciones.</li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;blockquote&gt;...&lt;/blockquote&gt;</code> para poner citas largas.</li>
+</ul>
+
+<h2 id="otras-etiquetas-interesantes">Otras etiquetas interesantes</h2>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">&lt;br/&gt;</code> Salto de línea.</li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;hr/&gt;</code> Separación de Tema.</li>
+</ul>
+
+<h2 id="ejercicio-1">Ejercicio 1</h2>
+
+<p>Queremos crear una página web con la siguiente <a href="doc/texto.txt">información</a>. Tienes que usar las etiquetas de cabeceras para estructurar dicha información siguiendo la estrucutra que puedes ver en este documentos de texto:</p>
+
+<p><img src="img/solucion-ejercicio-encabezados-html-word.jpg" alt="html5" /></p>
+
+<p><a href="doc/solucion2.txt">Compruebe la solución</a></p>
+
+<h2 id="ejercicio-2">Ejercicio 2</h2>
+
+<p>Descárgate el siguiente <a href="doc/Berners-Lee-Wikipedia.html.zip">documento html</a>, y modifícalo que tenga un formato según la imagen:</p>
+
+<p><img src="img/biografia-tim-berners-lee.jpg" alt="html5" /></p>
+
+<p><a href="doc/solucion3.txt">Compruebe la solución</a></p>
+
+<h2 id="ejercicio-3">Ejercicio 3</h2>
+
+<p>Descárgate el siguiente <a href="doc/Enunciado-Vincton-Cerf.html.zip">documento html</a>, y modifícalo que tenga un formato según la imagen:</p>
+
+<p><img src="img/solucion-ejercicio-vinton-cerf.jpg" alt="html5" /></p>
+
+<p><a href="doc/solucion4.txt">Compruebe la solución</a></p>
+
+
+      </div>
+    </main>
+
+
+
+  </body>
+
+</html>

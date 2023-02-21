@@ -1,0 +1,509 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="es" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html -->
+
+<title>Solución Boletín 2: Ejercicios listas - IES SEVERO OCHOA</title>
+<meta name="description" content="Lee por teclado números y guardalo en una lista, el proceso finaliza cuando metamos un número negativo. Muestra el máximo de los números guardado en la lista, muestra los números pares.">
+
+
+  <meta name="author" content="Jesús Vives Céspedes">
+  
+  <meta property="article:author" content="Jesús Vives Céspedes">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="IES SEVERO OCHOA">
+<meta property="og:title" content="Solución Boletín 2: Ejercicios listas">
+<meta property="og:url" content="http://localhost:4000/lmgs/u02/resuelto2.html">
+
+
+  <meta property="og:description" content="Lee por teclado números y guardalo en una lista, el proceso finaliza cuando metamos un número negativo. Muestra el máximo de los números guardado en la lista, muestra los números pares.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2023-02-21T21:10:39+01:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/lmgs/u02/resuelto2.html">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Jesus Vives Céspedes",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="IES SEVERO OCHOA Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    
+<!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+
+
+<link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+<link rel="manifest" href="/assets/icons/site.webmanifest">
+<link rel="mask-icon" href="/assets/icons/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<!-- end custom head snippets 2 -->
+
+  </head>
+
+  <body class="layout--single2 wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Saltar a navegación principal</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Saltar a contenido</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Saltar a pie</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          IES SEVERO OCHOA
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="">Inicio</a>
+            </li><li class="masthead__menu-item">
+              <a href="https://aules.edu.gva.es/fp/login/index.php">Plataforma</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Alternar búsqueda</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Alternar menú</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Alternar menú</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">Lenguajes de marcas (antiguo)</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/lmgs/">Inicio</a></li>
+          
+            <li><a href="/lmgs/u01">Pseudocódigo</a></li>
+          
+            <li><a href="/lmgs/u02">Python3</a></li>
+          
+            <li><a href="/lmgs/u03">Introducción a los LM</a></li>
+          
+            <li><a href="/lmgs/u04">XML</a></li>
+          
+            <li><a href="/lmgs/u05">JSON</a></li>
+          
+            <li><a href="/lmgs/u06">HTML/CSS</a></li>
+          
+            <li><a href="/lmgs/u07">YAML</a></li>
+          
+            <li><a href="/lmgs/u08">Flask</a></li>
+          
+            <li><a href="/lmgs/u09">Servicios Web</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+  
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Solución Boletín 2: Ejercicios listas">
+    <meta itemprop="description" content="  Lee por teclado números y guardalo en una lista, el proceso finaliza cuando metamos un número negativo. Muestra el máximo de los números guardado en la lista, muestra los números pares.">
+    <meta itemprop="datePublished" content="February 21, 2023">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Solución Boletín 2: Ejercicios listas
+</h1>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <ol>
+  <li>
+    <p>Lee por teclado números y guardalo en una lista, el proceso finaliza cuando metamos un número negativo. Muestra el máximo de los números guardado en la lista, muestra los números pares.</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> num=int(input("Número:"))
+ lista=[]
+ while num&gt;0:
+     lista.append(num)
+     num=int(input("Número:"))		
+
+ print(max(lista))
+ for n in lista:
+     if n % 2 ==0:
+         print(n)
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Escribe un programa que permita crear una lista de palabras. Para ello, el programa tiene que pedir un número y luego solicitar ese número de palabras para crear la lista. Por último, el programa tiene que escribir la lista.</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> num=int(input("Número de palabras:"))
+ lista=[]
+ for i in range(1,num+1):
+     lista.append(input("Palabra:"))
+		
+ print(lista)
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Dada una lista de números enteros (guarda la lista en una variable) y un entero <em>k</em>, escribir un programa que:</p>
+
+    <ul>
+      <li>Cree tres listas listas, una con los menores, otra con los mayores y otra con los iguales a <em>k</em>.</li>
+      <li>
+        <p>Crea otra lista lista con aquellos que son múltiplos de <em>k</em>.</p>
+
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  lista=[2,4,6,1,3,4,5,7,8]
+  k=4
+  lmenor=[]
+  ligual=[]
+  lmayor=[]
+  lmultiplo=[]
+  for num in lista:
+      if num&lt;k:
+          lmenor.append(num)
+      if num&gt;k:
+          lmayor.append(num)
+      if num==k:
+          ligual.append(num)
+      if num%k==0:
+          lmultiplo.append(num)
+  print(lmayor)
+  print(lmenor)
+  print(ligual)
+  print(lmultiplo)
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Realizar un programa que, dada una lista, devuelva una nueva lista cuyo contenido sea igual a la original pero invertida. Así, dada la lista [‘Di’, ‘buen’, ‘día’, ‘a’, ‘papa’], deberá devolver [‘papa’, ‘a’, ‘día’, ‘buen’, ‘Di’].</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> lista=['Di', 'buen', 'dia', 'a', 'papa']
+ print(lista[::-1])
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Escribe un programa que permita crear una lista de palabras y que, a continuación, pida una palabra y diga cuántas veces aparece esa palabra en la lista.</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> palabra=input("Palabra:")
+ lista=[]
+ while palabra != " ":
+     lista.append(palabra)
+     palabra=input("Palabra:")		
+
+ buscar=input("Palabra a buscar:")
+ print("La he encontrado %d veces"% lista.count(buscar))
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Escriba un programa que permita crear una lista de palabras y que, a continuación, pida dos palabras y sustituya la primera por la segunda en la lista.</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> palabra=input("Palabra:")
+ lista=[]
+ while palabra != " ":
+     lista.append(palabra)
+     palabra=input("Palabra:")		
+
+ buscar=input("Palabra a buscar:")
+ sustituir=input("Palabra a sustituir:")		
+
+ cont=0
+ for cad in lista:
+     if cad==buscar:
+         lista[cont]=sustituir
+     cont=cont+1		
+
+ print(lista)
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Escriba un programa que permita crear una lista de palabras y que, a continuación, pida una palabra y elimine esa palabra de la lista.</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> palabra=input("Palabra:")
+ lista=[]
+ while palabra != " ":
+     lista.append(palabra)
+     palabra=input("Palabra:")		
+
+ eliminar=input("Palabra a eliminar:")		
+
+ while eliminar in lista:
+     lista.remove(eliminar)		
+
+ print(lista)
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Escriba un programa que permita crear dos listas de palabras y que, a continuación, elimine de la primera lista los nombres de la segunda lista.</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> palabra=input("Palabra lista 1:")
+ lista1=[]
+ while palabra != " ":
+     lista1.append(palabra)
+     palabra=input("Palabra lista 1:")		
+
+ palabra=input("Palabra lista 2:")
+ lista2=[]
+ while palabra != " ":
+     lista2.append(palabra)
+     palabra=input("Palabra lista 2:")		
+
+ for cad in lista2:
+     while cad in lista1:
+         lista1.remove(cad)		
+
+ print(lista1)
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Escriba un programa que permita crear una lista de palabras y que, a continuación, elimine los elementos repetidos (dejando únicamente el primero de los elementos repetidos).</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> palabra=input("Palabra lista 1:")
+ lista1=[]
+ while palabra != " ":
+     lista1.append(palabra)
+     palabra=input("Palabra lista 1:")		
+
+ lista2=[]
+ for cad in lista1:
+     if not cad in lista2:
+         lista2.append(cad)
+ lista1=lista2[:]
+ print(lista1)
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Escribir una función que reciba una lista de elementos e indique si se encuentran ordenados de menor a mayor o no.</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>num=int(input("Número:"))
+lista=[]
+while num&gt;0:
+    lista.append(num)
+    num=int(input("Número:"))
+lista2=lista[:]
+lista.sort()
+if lista==lista2:
+    print("Ordenada")
+else:
+    print("No ordenada")
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Actualizado:</strong> <time datetime="2023-02-21T21:10:39+01:00">February 21, 2023</time></p>
+        
+      </footer>
+
+      
+
+    
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Términos de búsqueda...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Términos de búsqueda..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Seguir:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 Jesus Vives Céspedes. Funciona con <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+
+
+  </body>
+</html>

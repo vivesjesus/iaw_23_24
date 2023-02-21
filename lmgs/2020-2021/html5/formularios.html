@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/main.css">
+  </head>
+  
+
+<body style="border-left-width: 0px;border-left-style: solid;padding-left: 150px;padding-top: 20px;padding-right: 150px;padding-botton: 20px;">
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <h1 id="formularios">Formularios</h1>
+
+<p>Los formularios son un elemento presente en muchas páginas web que nos permiten introducir información que se envía al servidor para su procesamiento.</p>
+
+<p>El procesamiento de la información en el servidor necesita que nuestra página web este programada con un <strong>lenguaje de programación web: PHP, Java, Python,</strong> …. Ya que como hemos dicho <strong>HTML5 no es un lenguaje de programación</strong>.</p>
+
+<h2 id="estructura-del-formulario">Estructura del formulario</h2>
+
+<p>Todos los elementos que nos vamos a encontrar en un formulario están dentro de la etiquete <strong>&lt;form&gt;</strong>. Esta etiqueta puede tener varios atributos de entre los que destacamos:</p>
+
+<ul>
+  <li><strong>method</strong> que indica cómo se va a pasar la información al destino. Puede ser por GET (se ve la información en la barra del navegador) y por POST ( no se ve y es la opción por defecto).</li>
+  <li><strong>action</strong> que indica el destino de nuestros datos. Normalmente será una URL que indica el programa que va a procesar dicha información.</li>
+</ul>
+
+<p>A continuación vamos a ver algunos de los elementos más frecuentes y a describir su estructura y funcionamiento.</p>
+
+<h3 id="labels-e-input">Labels e Input</h3>
+
+<p>Normalmente para la recogida de información los formularios usando etiquetas <strong>input</strong>. Pero, para poder saber qué campos estamos rellenando una buena práctica (se puede de otras maneras menos elegantes) es poner una etiqueta <strong>label</strong> (etiqueta) delante de cada input para dar nombre y asociar ambas.</p>
+
+<p>Un ejemplo sería:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"nombre"</span><span class="nt">&gt;</span>Nombre:<span class="nt">&lt;/label&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"nombre"</span> <span class="na">name=</span><span class="s">"..."</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<p>Aquí estamos asociando la etiqueta al campo usando los atributos <strong><em>for</em></strong> e <strong><em>id</em></strong>.</p>
+
+<p>El campo que hemos usado para la recogida de información es un input. Existen muchos tipos que veremos con más detalle en el próximo apartado.</p>
+
+<h4 id="tipos-de-input-en-los-formularios">Tipos de Input en los formularios</h4>
+
+<p>La lista de tipos (type) de Inputs que podemos tener es muy larga. La podemos ver en la siguiente imagen:</p>
+
+<p><img src="img/input.png" alt="tipos inputs" /></p>
+
+<p>El que más usado el <strong>text</strong> que nos proporciona la manera más secilla de introducir texto.</p>
+
+<p>Veamos algunos otros:</p>
+
+<ul>
+  <li><strong>Radio Group</strong></li>
+</ul>
+
+<p>Es una agrupación de inputs que presenta opciones que queremos que sean excluyentes:</p>
+
+<p>Un ejemplo sería:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"genero"</span><span class="nt">&gt;</span>Sexo<span class="nt">&lt;/label&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"genero"</span> <span class="na">value=</span><span class="s">"masculino"</span> <span class="nt">/&gt;</span>Hombre<span class="nt">&lt;br</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"genero"</span> <span class="na">value=</span><span class="s">"fememino"</span> <span class="na">checked</span> <span class="nt">/&gt;</span>Mujer<span class="nt">&lt;br</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<p>Para que sean excluyentes deben de tener el mismo valor para el atributo <strong><em>name</em></strong> y el <strong><em>type=”radio”</em></strong></p>
+
+<ul>
+  <li><strong>CheckBoxes</strong></li>
+</ul>
+
+<p>Es una agrupación de opciones que presenta opciones de las cuáles podemos elegir una o varias.</p>
+
+<p>Un ejemplo sería:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"dispositivos"</span><span class="nt">&gt;</span>Dispositivos electrónicos<span class="nt">&lt;/label&gt;&lt;br</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">name=</span><span class="s">"dispositivos"</span> <span class="na">value=</span><span class="s">"pc"</span> <span class="nt">/&gt;</span>PC<span class="nt">&lt;br</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">name=</span><span class="s">"dispositivos"</span> <span class="na">value=</span><span class="s">"table"</span> <span class="nt">/&gt;</span>Tableta<span class="nt">&lt;br</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">name=</span><span class="s">"dispositivos"</span> <span class="na">value=</span><span class="s">"movil"</span> <span class="nt">/&gt;</span>Móvil
+</code></pre></div></div>
+
+<p>Fijaros que para agruparlos deben de tener el mismo valor para <strong>name</strong> y el <strong><em>type=”checkbox”</em></strong></p>
+
+<ul>
+  <li><strong>Data Lista</strong></li>
+</ul>
+
+<p>Es una nueva forma en HTML5 de hacer una lista de valores posibles para un input.</p>
+
+<p>Un ejemplo sería:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nt">&lt;input</span> <span class="na">list=</span><span class="s">"editor"</span><span class="nt">&gt;</span>
+
+    <span class="nt">&lt;datalist</span> <span class="na">id=</span><span class="s">"editor"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"Atom"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"NotePad++"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"VsCode"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"Sublime"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"Brackets"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;/datalist&gt;</span>
+</code></pre></div></div>
+
+<p>Con el atributo <strong>list</strong> indicamos la lista de opciones que vamos a tener y en la etiqueta **<datalist>** metemos las **<option>** que queramos.</option></datalist></p>
+
+<p>Es importante destacar que podríamos meter otras opciones en el Input pero al usar esta estructura se nos ayuda a rellenarlo y a elegir la opción correcta.</p>
+
+<h3 id="listas-desplegables">Listas desplegables</h3>
+
+<p>Son elementos que también hemos visto muchas veces. Al hacer click sobre ellos nos muestran varias opciones de las que podremos escoger una o varias.</p>
+
+<p>Para crear listas desplegables usaremos las etiquetas <strong>select</strong> como etiqueta padre y una etiqueta <strong>option</strong> para cada una de las opciones que tengamos en la lista desplegable. Si queremos agrupar esas opciones las meteremos a su vez dentro de una etiqueta <strong>optgroup</strong>.</p>
+
+<p>Un ejemplo sería:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nt">&lt;select</span> <span class="na">name=</span><span class="s">"provincia"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;optgroup</span> <span class="na">label=</span><span class="s">"Aragon"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"Z"</span><span class="nt">&gt;</span>Zaragoza<span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;option&gt;</span>Huesca<span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;option</span> <span class="na">selected</span><span class="nt">&gt;</span>Teruel<span class="nt">&lt;/option&gt;</span>
+    <span class="nt">&lt;/optgroup&gt;</span>
+
+<span class="nt">&lt;/select&gt;</span>
+
+</code></pre></div></div>
+
+<h3 id="áreas-de-texto">Áreas de Texto</h3>
+
+<p>Son campos de formulario para meter texto largos. Tienen dos atributos interesantes.</p>
+
+<ul>
+  <li><strong>rows:</strong> para indicar el número de filas que tiene el campo.</li>
+  <li><strong>cols:</strong> para indicar el número de columnas que tiene el campo.</li>
+</ul>
+
+<p>Un ejemplo sería:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;textarea</span> <span class="na">cols=</span><span class="s">"10"</span> <span class="na">rows=</span><span class="s">"10"</span><span class="nt">&gt;</span>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque voluptate corrupti ut earum, aliquam sint amet repellendus, vitae placeat repellat quis, ipsa qui. Velit placeat reiciendis tempore autem nostrum eaque?
+<span class="nt">&lt;/textarea&gt;</span>
+</code></pre></div></div>
+
+<h3 id="botones">Botones</h3>
+
+<p>La etiqueta <strong>button</strong> no creo que se necesario explicar para que sirve…Haz click!!!</p>
+
+<p>El atributo más importante que tienen es type que puede tomar tres valores:</p>
+
+<ul>
+  <li><strong>button:</strong> se comporta como un botón que puede estar presionado o no. Nada especial.</li>
+  <li><strong>reset:</strong> al hacer click borra todos los datos introducidos previamente en el formulario y pone los valores por defecto.</li>
+  <li><strong>submit:</strong> al hacer click envía los datos introducidos al destino que hemos puesto en el action del formulario.</li>
+</ul>
+
+<h3 id="agrupando-atributos">Agrupando atributos</h3>
+
+<p>Hay situaciones en las que los campos de los formularios por significado, por importancia o por cualquier razón, queremos que se muestren agrupados. Para estos casos tenemos la etiqueta <strong>fieldset</strong>, que tendrá anidada la etiqueta <strong>legend</strong> (una etiqueta que contiene el nombre del grupo y que se mostrará en la parte de arriba) y los controles que queremos agrupar.</p>
+
+<p>Un ejemplo sería:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;fieldset&gt;</span>
+    <span class="nt">&lt;legend&gt;</span>Datos Personales<span class="nt">&lt;/legend&gt;</span>
+    <span class="nt">&lt;p&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"nombre"</span><span class="nt">&gt;</span>Nombre:<span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"nombre"</span> <span class="na">placeholder=</span><span class="s">"Inserta Nombre"</span> <span class="na">required</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;p&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"apellidos"</span><span class="nt">&gt;</span>Apellidos:<span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"apellidos"</span> <span class="na">value=</span><span class="s">"Pérez"</span> <span class="na">readonly</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/p&gt;</span>
+
+    <span class="nt">&lt;p&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"provincia"</span><span class="nt">&gt;</span>Provincia<span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;select</span> <span class="na">name=</span><span class="s">"provincia"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;optgroup</span> <span class="na">label=</span><span class="s">"Aragon"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"Z"</span><span class="nt">&gt;</span>Zaragoza<span class="nt">&lt;/option&gt;</span>
+                <span class="nt">&lt;option&gt;</span>Huesca<span class="nt">&lt;/option&gt;</span>
+                <span class="nt">&lt;option</span> <span class="na">selected</span><span class="nt">&gt;</span>Teruel<span class="nt">&lt;/option&gt;</span>
+            <span class="nt">&lt;/optgroup&gt;</span>
+
+        <span class="nt">&lt;/select&gt;</span>
+    <span class="nt">&lt;/p&gt;</span>
+
+    <span class="nt">&lt;p&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">value=</span><span class="s">"Enviar"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/fieldset&gt;</span>
+</code></pre></div></div>
+
+<h3 id="atributos-interesantes-de-los-elementos-de-los-formularios">Atributos interesantes de los elementos de los formularios</h3>
+
+<p>Además existen una serie de atributos interesantes que podemos añadir a los controles o elementos de los formularios:</p>
+
+<ul>
+  <li><strong>required</strong> que indica que un control es obligatorio de rellenar.</li>
+  <li><strong>disabled</strong> que mostrará el elemento como deshabilitado.</li>
+  <li><strong>readonly</strong> que nos dice que el campo es de sólo lectura.</li>
+  <li><strong>placeholder</strong> que muestra un mensaje en los input dando pistas de lo que debemos poner. Al empezar a rellenarlo desaparece.</li>
+  <li><strong>selected</strong> indica la opción seleccionada.</li>
+  <li><strong>value</strong> el valor que tiene el elemento..</li>
+  <li><strong>tabindex</strong> para asegurarnos que podemos navegar por los elementos usando el tabulador podemos establecer un orden para cada uno.</li>
+  <li><strong>multiple</strong> para seleccionar varias opciones en una lista desplegable.</li>
+  <li>Y muchos más…</li>
+</ul>
+
+<h2 id="envío-de-información-al-servidor-usando-formularios">Envío de información al servidor usando formularios</h2>
+
+<p>Cada componete de un formulario HTML posee un nombre (etiqueta <strong>name</strong> al cual se le asigna un valor (etiqueta <strong>value</strong> que no siempre se pone), el cual se corresponde con lo que el usuario introduce en el componente.</p>
+
+<p>Cuando se envían los datos del formulario (normalmente a través de un botón), se envían todos los nombres y valores de los controles del formulario. En el caso típico, un servicio de Internet recoge esta información y hace algo con ella.</p>
+
+<p><img src="img/envio.png" alt="html5" /></p>
+
+<p>Veamos un ejemplo de formulario:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">"servicio.php"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"nombre"</span><span class="nt">&gt;</span>Escriba su nombre<span class="nt">&lt;/label&gt;&lt;br&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"nombre"</span> <span class="na">name=</span><span class="s">"nombre"</span><span class="nt">&gt;&lt;br&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"apellidos"</span><span class="nt">&gt;</span>Escriba sus apellidos<span class="nt">&lt;/label&gt;&lt;br&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"apellidos"</span> <span class="na">name=</span><span class="s">"apellidos"</span><span class="nt">&gt;&lt;br&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"sexo"</span><span class="nt">&gt;</span>Escriba su sexo: <span class="nt">&lt;/label&gt;&lt;br&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">id=</span><span class="s">"hombre"</span> <span class="na">name=</span><span class="s">"sexo"</span> <span class="na">value=</span><span class="s">"hombre"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"hombre"</span><span class="nt">&gt;</span>Hombre<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">id=</span><span class="s">"mujer"</span> <span class="na">name=</span><span class="s">"sexo"</span> <span class="na">value=</span><span class="s">"mujer"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"mujer"</span><span class="nt">&gt;</span>Mujer<span class="nt">&lt;/label&gt;&lt;br&gt;&lt;br&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">value=</span><span class="s">"Enviar"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+</code></pre></div></div>
+
+<h3 id="envío-de-datos-usando-el-método-get">Envío de datos usando el método GET</h3>
+
+<p>Una petición HTTP usando el método GET, nos permite solicitar la respuesta de una URL determinada. En este método los datos se pasan en la propia URL. Para enviar el formulario usando el método GET, la etiqueta <strong>form</strong> sería:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">"servicio.php"</span> <span class="na">method=</span><span class="s">"get"</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+
+<p>Al enviar el formulario usando el método GET cada par de nombre y valor de cada componente del formulario se envía usando la URL, por ejemplo con el formulario de ejemplo, la URL sería:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://nombredominio/servicio.php??nombre=Jose&amp;apellidos=Perez&amp;sexo=hombre&amp;...
+</code></pre></div></div>
+
+<h3 id="envío-de-datos-usando-el-método-post">Envío de datos usando el método POST</h3>
+
+<p>En muchas ocasiones es preferible mandar la información usando el método POST, para ello:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">"servicio.php"</span> <span class="na">method=</span><span class="s">"post"</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+
+<p>Al enviar la información del formulario usando el método POST, la información que envíamos (nombre y valor de cada componente) se manda en el cuerpo de la petición HTTP por lo tanto no es visible en la URL.</p>
+
+      </div>
+    </main>
+
+
+
+  </body>
+
+</html>

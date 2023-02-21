@@ -1,0 +1,426 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="es" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html -->
+
+<title>Git y GitHub - IES SEVERO OCHOA</title>
+<meta name="description" content="Utilizaremos git para realizar el control de versiones de los proyectos que realicemos en la asignatura. Deberás ir realizando los proyectos de forma incremental, y registrar los cambios (commits) realizados.">
+
+
+  <meta name="author" content="Jesús Vives Céspedes">
+  
+  <meta property="article:author" content="Jesús Vives Céspedes">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="IES SEVERO OCHOA">
+<meta property="og:title" content="Git y GitHub">
+<meta property="og:url" content="http://localhost:4000/lmgs/u03/github.html">
+
+
+  <meta property="og:description" content="Utilizaremos git para realizar el control de versiones de los proyectos que realicemos en la asignatura. Deberás ir realizando los proyectos de forma incremental, y registrar los cambios (commits) realizados.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2023-02-21T21:10:39+01:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/lmgs/u03/github.html">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Jesus Vives Céspedes",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="IES SEVERO OCHOA Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    
+<!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+
+
+<link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+<link rel="manifest" href="/assets/icons/site.webmanifest">
+<link rel="mask-icon" href="/assets/icons/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<!-- end custom head snippets 2 -->
+
+  </head>
+
+  <body class="layout--single2 wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Saltar a navegación principal</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Saltar a contenido</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Saltar a pie</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          IES SEVERO OCHOA
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="">Inicio</a>
+            </li><li class="masthead__menu-item">
+              <a href="https://aules.edu.gva.es/fp/login/index.php">Plataforma</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Alternar búsqueda</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Alternar menú</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Alternar menú</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">Lenguajes de marcas (antiguo)</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/lmgs/">Inicio</a></li>
+          
+            <li><a href="/lmgs/u01">Pseudocódigo</a></li>
+          
+            <li><a href="/lmgs/u02">Python3</a></li>
+          
+            <li><a href="/lmgs/u03">Introducción a los LM</a></li>
+          
+            <li><a href="/lmgs/u04">XML</a></li>
+          
+            <li><a href="/lmgs/u05">JSON</a></li>
+          
+            <li><a href="/lmgs/u06">HTML/CSS</a></li>
+          
+            <li><a href="/lmgs/u07">YAML</a></li>
+          
+            <li><a href="/lmgs/u08">Flask</a></li>
+          
+            <li><a href="/lmgs/u09">Servicios Web</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+  
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Git y GitHub">
+    <meta itemprop="description" content="Utilizaremos git para realizar el control de versiones de los proyectos que realicemos en la asignatura. Deberás ir realizando los proyectos de forma incremental, y registrar los cambios (commits) realizados.">
+    <meta itemprop="datePublished" content="February 21, 2023">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Git y GitHub
+</h1>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <p>Utilizaremos git para realizar el control de versiones de los proyectos que realicemos en la asignatura. Deberás ir realizando los proyectos de forma incremental, y registrar los cambios (commits) realizados.</p>
+
+<p>Los cambios realizados en el código fuente del proyecto se guardan en el repositorio local y después se publicarán en GitHub, en un repositorio remoto propio. Allí se podrán consultar todos los cambios realizados, sus fechas, sus descripciones, y se podrán compartir con otros compañeros y el profesor.</p>
+
+<p>Los repositorios subidos a la versión gratuita de GitHub son públicos y convierten la cuenta personal de GitHub en un perfecto escaparate y portafolio de proyectos desarrollados. Cada vez son más las empresas que piden un buen expediente en GitHub. La visibilidad y transparencia de GitHub lo convierten también en una herramienta fundamental para aprender.</p>
+
+<p>Un objetivo de la asignatura es participar en este movimiento de código abierto y colaborar con nuestros proyectos para que otros puedan aprender de ellos (y, al mismo tiempo, mejorar el portafolio y el curriculum personal de cara a futuros trabajos).</p>
+
+<h2 id="empecemos">Empecemos</h2>
+
+<ol>
+  <li>Crea una cuenta en GitHub. La forma de acceder a los repositorios remotos de GitHub va a ser por SSH, por lo tanto debes copiar tu clave pública a GitHub, para ello:
+    <ul>
+      <li>Copia el contenido de tu fichero <code class="language-plaintext highlighter-rouge">~/.ssh/id_rsa.pub</code>, para ello: añade una nueva clave SSH en el apartado “SSH keys” de tu perfil en GitHub y pega el contenido de tu clave pública.</li>
+      <li>Si no tienes ese fichero, puedes generar una nueva clave ssh pública: <a href="http://librosweb.es/pro_git/capitulo_4/generando_tu_clave_publica_ssh.html">http://librosweb.es/pro_git/capitulo_4/generando_tu_clave_publica_ssh.html</a>.</li>
+    </ul>
+  </li>
+  <li>Crea en GitHub un repositorio con el nombre <strong>prueba</strong> (inicializa el repositorio con un fichero README) y la descripción <strong>Repositorio de prueba</strong>.</li>
+  <li>
+    <p>Instala git en tu ordenador.</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> apt-get install git
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Configuración de git. Lo primero que deberías hacer cuando instalas Git es establecer tu nombre de usuario y dirección de correo electrónico. Esto es importante porque las confirmaciones de cambios (commits) en Git usan esta información, y es introducida de manera inmutable en los commits que envías:</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> git config --global user.name "John Doe"
+ git config --global user.email johndoe@example.com
+</code></pre></div>    </div>
+
+    <p>De nuevo, sólo necesitas hacer esto una vez si especificas la opción <code class="language-plaintext highlighter-rouge">--global</code>, ya que Git siempre usará esta información para todo lo que hagas en ese sistema.</p>
+  </li>
+  <li>
+    <p>Clonar el repositorio remoto. Copia la url SSH del repositorio (no copies la URL https) y vamos a clonar el repositorio en nuestro ordenador.</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> git clone git@github.com:josedom24/prueba.git
+</code></pre></div>    </div>
+
+    <p>Comprueba que dentro del repositorio que hemos creado se encuentra el fichero README.md, en este fichero podemos poner la descripción del proyecto.</p>
+  </li>
+  <li>
+    <p>Vamos a crear un nuevo fichero, lo vamos a añadir a nuestro repositorio local y luego lo vamos a sincronizar con nuestro repositorio remoto de GitHub. Cada vez que hagamos una modificación en un fichero lo podemos señalar creando un commit. Los mensajes de los commits son fundamentales para explicar la evolución de un proyecto. Un commit debe ser un conjunto pequeño de cambios de los ficheros del proyecto con una cierta coherencia.</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> echo "Esto es una prueba"&gt;ejemplo.txt
+ git add ejemplo.txt
+ git commit -m "He creado el fichero ejemplo.txt"
+ git push
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Si modificas un fichero en tu repositorio local, no tienes que volver a añadirlo a tu repositorio (<code class="language-plaintext highlighter-rouge">git add</code>). Pero tienes que usar la opción -a al hacer el commit.</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> git commit -am "He modificado el fichero ejemplo.txt"
+ git push
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Si quieres cambiar el nombre de un fichero o directorio de tu repositorio:</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> git mv ejemplo.txt ejemplo2.txt
+ git commit -am "He cambiado el nombre del fichero"
+ git push
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Si quieres borrar un fichero de tu repositorio:</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> git rm ejemplo2.txt
+ git commit -am "He borrado el fichero ejemplo2"
+ git push
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Puedes clonar tu repositorio de GitHub en varios ordenadores (por ejemplo, si quieres trabajar en tu casa y en el instituto), por lo tanto antes de trabajar en un repositorio local tienes que sincronizar los posibles cambios que se hayan producido en el repositorio remoto, para ello:</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git pull
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Para comprobar el estado de mi repositorio local:</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git status
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<p>Si te quieres hacerte un experto de Git:<a href="http://librosweb.es/pro_git/">Pro Git, el libro oficial de Git</a></p>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Actualizado:</strong> <time datetime="2023-02-21T21:10:39+01:00">February 21, 2023</time></p>
+        
+      </footer>
+
+      
+
+    
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Términos de búsqueda...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Términos de búsqueda..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Seguir:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 Jesus Vives Céspedes. Funciona con <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+
+
+  </body>
+</html>

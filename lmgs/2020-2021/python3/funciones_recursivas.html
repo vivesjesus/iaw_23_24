@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/main.css">
+  </head>
+  
+
+<body style="border-left-width: 0px;border-left-style: solid;padding-left: 150px;padding-top: 20px;padding-right: 150px;padding-botton: 20px;">
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <h1 id="funciones-recursivas">Funciones recursivas</h1>
+
+<p>En la unidad anterior hemos visto como crear una función para calcular el factorial de un número:</p>
+
+<p>Veamos un ejemplo de definición de función:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; def factorial(n):
+...   """Calcula el factorial de un número"""
+...   resultado = 1
+...   for i in range(1,n+1):
+...     resultado*=i
+...   return resultado
+</code></pre></div></div>
+
+<p>El factorial de un número también puede ser calculado de forma recursiva: el factorial del 0 o del 1 es 1, y el factorial de un número es igual al número multiplicado por el factorial del número menos 1.</p>
+
+<p>Una función recursiva es aquella que al ejecutarse hace llamadas a ella misma. Por lo tanto tenemos que tener “un caso base” que hace terminar el bucle de llamadas. Veamos un ejemplo:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def factorial(num):
+    if num==0 or num==1:
+        return 1
+    else:
+        return num * factorial(num-1)
+</code></pre></div></div>
+
+<p>Y para utilizar la función:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; factorial(5)
+120
+</code></pre></div></div>
+
+<h2 id="otro-ejemplo-mostrar-los-elementos-de-una-lista">Otro ejemplo: Mostrar los elementos de una lista</h2>
+
+<p>Podemos tener una función que reciba una lista y muestre sus elementos:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def mostrar_lista(lista):
+    for elem in lista:
+        print(elem)
+</code></pre></div></div>
+
+<p>La versión recursiva de esta función sería:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def mostrar_lista(lista):
+    if len(lista)!=0:
+        print(lista[0])
+        mostrar_lista(lista[1:])
+</code></pre></div></div>
+
+
+      </div>
+    </main>
+
+
+
+  </body>
+
+</html>

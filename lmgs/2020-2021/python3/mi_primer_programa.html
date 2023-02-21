@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/main.css">
+  </head>
+  
+
+<body style="border-left-width: 0px;border-left-style: solid;padding-left: 150px;padding-top: 20px;padding-right: 150px;padding-botton: 20px;">
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <h1 id="mi-primer-programa-en-python3">Mi primer programa en Python3</h1>
+
+<p>Podemos ejecutar código python de varia maneras:</p>
+
+<h3 id="uso-del-interprete">Uso del interprete</h3>
+
+<p>Al instalar python3 el ejecutable del interprete lo podemos encontrar en <code class="language-plaintext highlighter-rouge">/usr/bin/python3</code>. Este directorio por defecto está en el PATH, por lo tanto lo podemos ejecutar directamente en el terminal, para ello ejecutamos:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ python3
+Python 3.5.3 (default, Jan 19 2017, 14:11:04) 
+[GCC 6.3.0 20170118] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+&gt;&gt;&gt; 
+</code></pre></div></div>
+
+<p>Usando el interprete de comandos podemos escribir instrucciones que iremos ejecutando una a una.</p>
+
+<div class="notice--info">
+<p><strong>Ejercicios</strong></p>
+
+<ul>
+  <li>Abre el interprete de python3 y ejecuta la instrucción <code class="language-plaintext highlighter-rouge">print("Hola Mundo!!!")</code>.</li>
+</ul>
+</div>
+
+<h3 id="a-partir-de-un-fichero-con-el-código-fuente">A partir de un fichero con el código fuente</h3>
+
+<p>Si tenemos nuestro programa en un fichero fuente (suele tener extensión <code class="language-plaintext highlighter-rouge">py</code>), por ejemplo <code class="language-plaintext highlighter-rouge">programa.py</code>,lo ejecutaríamos de la siguiente manera.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ python3 programa.py
+</code></pre></div></div>
+
+<p>Para escribir un fichero con el código fuente de nuestro programa tenemos varias opciones:</p>
+
+<ul>
+  <li>Podemos usar un IDE (entorno de desarrollo integrado), que además de la posibilidad  de editar el código, nos ofrezca otras herramientas: depuración de código, generación automático de código, ayuda integrada, manejo del proyecto, gestión de los sistemas de control de versiones,..). Existen muchos IDE a nuestra disposición: <a href="https://wiki.python.org/moin/IntegratedDevelopmentEnvironments">Entornos de desarrollo para python</a>.</li>
+  <li>En este curso vamos usar un editor de texto: Nos permiten escribir nuestro código fuente de manera eficiente, además los nuevos editores de texto permiten añadir funcionalidades a través de plugin, algunos ejemplos: Sublime Text, Atom, Visual Studio Code, vim, emacs,… aunque hay muchos más:  <a href="https://wiki.python.org/moin/PythonEditors">Editores de texto para python</a>.</li>
+</ul>
+
+<div class="notice--info">
+<p><strong>Ejercicios</strong></p>
+
+<ul>
+  <li>Elige un editor de texto (si no tienes criterio para elegir uno, pregunta a los compañeros o al profesor). Instalalo para escribir nuestro primer programa python.</li>
+</ul>
+</div>
+
+<h2 id="escribimos-nuestro-primer-programa">Escribimos nuestro primer programa</h2>
+
+<p>Vamos a escribir nuestro primer programa para estudiar la estructura de un programa en python3.</p>
+
+<p><strong>Calcular el área y el perímetro de una circunferencia a partir del radio.</strong></p>
+
+<p>A partir del análisis y diseño del problema, podemos realizar un programa en python3 que sería similar a este:</p>
+
+<p><img src="img/primer_programa.png" alt="python3" /></p>
+
+<h2 id="estructura-del-programa">Estructura del programa</h2>
+
+<ul>
+  <li>Un programa python está formado por instrucciones que acaban en un carácter de “salto de línea”.</li>
+  <li>Una línea empieza en la primera posición, si tenemos instrucciones dentro de un bloque de una estructura de control de flujo habrá que hacer una identación.</li>
+  <li>La identación se puede hacer con espacios y tabulaciones pero ambos tipos no se pueden mezclar. Se recomienda usar 4 espacios.</li>
+  <li>La barra invertida “\” al final de línea se emplea para dividir una línea muy larga en dos o más líneas.</li>
+  <li>Se utiliza el carácter # para indicar los comentarios.</li>
+</ul>
+
+<div class="notice--info">
+<p><strong>Ejercicios</strong></p>
+
+<ul>
+  <li>Copia el programa en el editor de texto que has elegido.</li>
+  <li>Guarda el fichero con el nombre <code class="language-plaintext highlighter-rouge">circunferencia.py</code>.</li>
+  <li>Ejecuta desde la línea de comando el rpograma.</li>
+  <li>Si tienes algún error al ejecutar, corrige los errores y vuelve a ejecutar.</li>
+</ul>
+</div>
+
+      </div>
+    </main>
+
+
+
+  </body>
+
+</html>

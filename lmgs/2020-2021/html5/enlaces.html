@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/main.css">
+  </head>
+  
+
+<body style="border-left-width: 0px;border-left-style: solid;padding-left: 150px;padding-top: 20px;padding-right: 150px;padding-botton: 20px;">
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <h1 id="enlaces">Enlaces</h1>
+
+<p>Los enlaces se establecen con la etiqueta <code class="language-plaintext highlighter-rouge">a</code> y el atributo <code class="language-plaintext highlighter-rouge">href</code>, que indica la URL del enlace:</p>
+
+<p><img src="img/html-10.png" alt="html5" /></p>
+
+<p>Los enlaces, que se representan mediante el uso de la etiqueta es una de las contrucciones más importantes en HTML. Esta etiqueta puede tener varios atributos, de lo cuáles los más importante son:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">href</code>: que es la dirección de Internet de destino (ya sea otra página web, un imágen, un fichero o lo que sea).</li>
+  <li><code class="language-plaintext highlighter-rouge">target</code>: que indica dónde voy a abrir ese enlace. Si no pongo nada se abrirá en la misma pantalla y si le doy el valor <code class="language-plaintext highlighter-rouge">target="_blank"</code> se abrirá en una nueva ventana de mi navegador.</li>
+</ul>
+
+<p>Varios ejemplos de enlaces:</p>
+
+<p><code class="language-plaintext highlighter-rouge">&lt;p&gt;&lt;a href="http://www.openwebinars.net"&gt;Esto en un enlace en la propia página&lt;/a&gt;&lt;/p&gt;</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">&lt;p&gt;&lt;a href="http://www.openwebinars.net" target="_blank"&gt;Esto en un enlace en la propia página&lt;/a&gt;&lt;/p&gt;</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">&lt;!-- Haciendo que una imagen sea enlace. Anidando etiquetas --&gt;
+&lt;a href="http://www.openwebinars.net"&gt;&lt;img width="100px" alt="Logo de OpenWebinars" src="img/openwebinars-logo.jpg"&gt;&lt;/a&gt;</code></p>
+
+<p>La etiqueta <code class="language-plaintext highlighter-rouge">a</code> es una etiqueta de tipo línea.</p>
+
+<p>El concepto de ruta es un concepto muy importante ya que se utiliza es muchos temas relacionados con la informática y en concreto, en la creación de páginas WEB, se utiliza para referenciar archivos, recursos y/o partes de alguna web. De manera general podemos distinguir:</p>
+
+<ul>
+  <li>
+    <p><strong>Relativas</strong>: Toman como base el directorio en el que se encuentra nuestro fichero. Son las recomendadas.</p>
+
+    <p><code class="language-plaintext highlighter-rouge">&lt;img alt="Logo de OpenWebinars" src="img/openwebinars-logo.jpg"&gt;</code></p>
+  </li>
+  <li>
+    <p><strong>Absolutas</strong>: Toman como base el directorio raíz de mi equipo. Cuidado, sólo funcionarán en tu mismo equipo.</p>
+
+    <p><code class="language-plaintext highlighter-rouge">&lt;img alt="Logo de OpenWebinars" src="/home/jose/public_html/img/openwebinars-logo.jpg"&gt;</code></p>
+
+    <p>También pueden ser URL dentro del mismo dominio o en otro nombre de dominio.</p>
+  </li>
+</ul>
+
+<p>La recomendación es el <strong>uso de las rutas relativas</strong>, veamos algunas consideraciones para trabajar con ellas:</p>
+
+<ul>
+  <li>La navegación entre archivos toma como punto de referencia el documento concreto en el que estemos escribiendo en un momento determinado.</li>
+  <li>Si escribimos / indicamos que debemos situarnos justo en el inicio de la raíz del árbol. Esta es una estrategia que no recomiendo porqué suele dar problemas.</li>
+  <li>Si escribimos ../ subimos al nivel inmediatamente superior.</li>
+  <li>Si escribimos <code class="language-plaintext highlighter-rouge">nombrearchivo.html</code> es porqué este archivo esta directamente en el mismo nivel que el punto de referencia.</li>
+  <li>Si escribimos <code class="language-plaintext highlighter-rouge">nombreCarpeta/archivo.html</code> es porqué en el mismo nivel que nuestra referencia hay una carpeta. Entramos dentro de esta carpeta y dentro de la carpeta se debe encontrar el <code class="language-plaintext highlighter-rouge">archivo.html</code>.</li>
+</ul>
+
+<h2 id="ejercicio-1">Ejercicio 1</h2>
+
+<p>A partir de la estructura de directorios y archivos indicada en la siguiente imagen:</p>
+
+<p><img src="img/enl1.gif" alt="html5" /></p>
+
+<p>Crear la siguiente página llamada <code class="language-plaintext highlighter-rouge">indice.html</code> que sirva como página principal del sitio:</p>
+
+<p><img src="img/e0602.gif" alt="html5" /></p>
+
+<p>Crear la página de índice del portfolio:</p>
+
+<p><img src="img/e0603.gif" alt="html5" /></p>
+
+<p><a href="doc/imagenes.zip">Descargar ZIP con las imágenes</a></p>
+
+<p><a href="doc/solucion6.txt">Compruebe la solución</a></p>
+
+      </div>
+    </main>
+
+
+
+  </body>
+
+</html>

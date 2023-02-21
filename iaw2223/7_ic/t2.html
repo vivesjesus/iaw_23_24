@@ -1,0 +1,429 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="es" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html -->
+
+<title>Taller 2: Comprobación de HTML5 válido y despliegue en surge.sh (test y deploy) - IES SEVERO OCHOA</title>
+<meta name="description" content="En este ejercicio queremos desplegar una página HTML5 en el servicio surge.sh, además queremos comprobar si el código HTML5 es válido. Estas dos operaciones: comprobar si el HTML5 es válido (test) y el despliegue en surge.sh (deploy) lo vamos a hacer con Jenkins de forma automática (IC y DC). Recuerda que el repositorio es https://github.com/josedom24/ic-html5.">
+
+
+  <meta name="author" content="Jesús Vives Céspedes">
+  
+  <meta property="article:author" content="Jesús Vives Céspedes">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="IES SEVERO OCHOA">
+<meta property="og:title" content="Taller 2: Comprobación de HTML5 válido y despliegue en surge.sh (test y deploy)">
+<meta property="og:url" content="http://localhost:4000/iaw2223/7_ic/t2">
+
+
+  <meta property="og:description" content="En este ejercicio queremos desplegar una página HTML5 en el servicio surge.sh, además queremos comprobar si el código HTML5 es válido. Estas dos operaciones: comprobar si el HTML5 es válido (test) y el despliegue en surge.sh (deploy) lo vamos a hacer con Jenkins de forma automática (IC y DC). Recuerda que el repositorio es https://github.com/josedom24/ic-html5.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2023-02-21T21:10:39+01:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/iaw2223/7_ic/t2">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Jesus Vives Céspedes",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="IES SEVERO OCHOA Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    
+<!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+
+
+<link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+<link rel="manifest" href="/assets/icons/site.webmanifest">
+<link rel="mask-icon" href="/assets/icons/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<!-- end custom head snippets 2 -->
+
+  </head>
+
+  <body class="layout--single2 wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Saltar a navegación principal</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Saltar a contenido</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Saltar a pie</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          IES SEVERO OCHOA
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="">Inicio</a>
+            </li><li class="masthead__menu-item">
+              <a href="https://aules.edu.gva.es/fp/login/index.php">Plataforma</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Alternar búsqueda</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Alternar menú</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Alternar menú</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">Implantación de aplicaciones web (2022-2023)</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/iaw2223/">Inicio</a></li>
+          
+            <li><a href="/iaw2223/#unidad-1-introducci%C3%B3n-a-la-implantaci%C3%B3n-de-aplicaciones-web">Introducción</a></li>
+          
+            <li><a href="/iaw2223/#unidad-2-implantaci%C3%B3n-de-aplicaciones-web-php">PHP</a></li>
+          
+            <li><a href="/iaw2223/#unidad-3-seguridad-de-aplicaciones-web-con-https">HTTPS</a></li>
+          
+            <li><a href="/iaw2223/#unidad-4-implantaci%C3%B3n-de-aplicaciones-web-python">Python</a></li>
+          
+            <li><a href="/iaw2223/#unidad-5-implantaci%C3%B3n-de-aplicaciones-web-java">Java</a></li>
+          
+            <li><a href="/iaw2223/#unidad-6-docker">Docker</a></li>
+          
+            <li><a href="/iaw2223/#unidad-7-introducci%C3%B3n-a-la-integraci%C3%B3n-contin%C3%BAa-y-despliegue-continuo">IC/DC</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Módulos</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/iaw2223/">Implantación de Aplicaciones Web</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+  
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Taller 2: Comprobación de HTML5 válido y despliegue en surge.sh (test y deploy)">
+    <meta itemprop="description" content="En este ejercicio queremos desplegar una página HTML5 en el servicio surge.sh, además queremos comprobar si el código HTML5 es válido. Estas dos operaciones: comprobar si el HTML5 es válido (test) y el despliegue en surge.sh (deploy) lo vamos a hacer con Jenkins de forma automática (IC y DC). Recuerda que el repositorio es https://github.com/josedom24/ic-html5.">
+    <meta itemprop="datePublished" content="February 21, 2023">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Taller 2: Comprobación de HTML5 válido y despliegue en surge.sh (test y deploy)
+</h1>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <p>En este ejercicio queremos desplegar una página HTML5 en el servicio <em>surge.sh</em>, además queremos comprobar si el código HTML5 es válido. Estas dos operaciones: comprobar si el HTML5 es válido (test) y el despliegue en surge.sh (deploy) lo vamos a hacer con Jenkins de forma automática (IC y DC). Recuerda que el repositorio es <a href="https://github.com/josedom24/ic-html5">https://github.com/josedom24/ic-html5</a>.</p>
+
+<p>Como vimos en el ejemplo 2, para hacer el despliegue necesitamos guardar el token que hemos obtenido de surge para que nos autentifiquemos. veamos como trabajar con credenciales en Jenkins.</p>
+
+<h2 id="crear-credenciales">Crear credenciales</h2>
+
+<p>Podemos crear varios tipos de credenciales: usuario y contraseña, credenciales ssh,… Nosotros vamos a crear un <em>Secret text</em> para guardar el token de surge.</p>
+
+<p>Para crear la credencial:</p>
+
+<p><img src="img/cred1.png" alt="cred" /></p>
+
+<p><img src="img/cred2.png" alt="cred" /></p>
+
+<p><img src="img/cred3.png" alt="cred" /></p>
+
+<p><img src="img/cred4.png" alt="cred" /></p>
+
+<h2 id="creación-del-pipeline">Creación del pipeline</h2>
+
+<p>En el repositorio puedes encontrar el fichero <code class="language-plaintext highlighter-rouge">Jenkinsfile</code> con el siguiente contenido:</p>
+
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pipeline</span> <span class="o">{</span>
+    <span class="n">environment</span> <span class="o">{</span>
+        <span class="n">TOKEN</span> <span class="o">=</span> <span class="n">credentials</span><span class="o">(</span><span class="s1">'SURGE_TOKEN'</span><span class="o">)</span>
+      <span class="o">}</span>
+    <span class="n">agent</span> <span class="o">{</span>
+        <span class="n">docker</span> <span class="o">{</span> <span class="n">image</span> <span class="s1">'josedom24/debian-npm'</span>
+        <span class="n">args</span> <span class="s1">'-u root:root'</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+    <span class="n">stages</span> <span class="o">{</span>
+        <span class="n">stage</span><span class="o">(</span><span class="s1">'Clone'</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">steps</span> <span class="o">{</span>
+                <span class="n">git</span> <span class="nl">branch:</span><span class="s1">'master'</span><span class="o">,</span><span class="nl">url:</span><span class="s1">'https://github.com/josedom24/ic-travis-html5.git'</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        
+        <span class="n">stage</span><span class="o">(</span><span class="s1">'Install surge'</span><span class="o">)</span>
+        <span class="o">{</span>
+            <span class="n">steps</span> <span class="o">{</span>
+                <span class="n">sh</span> <span class="s1">'npm install -g surge'</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="n">stage</span><span class="o">(</span><span class="s1">'Deploy'</span><span class="o">)</span>
+        <span class="o">{</span>
+            <span class="n">steps</span><span class="o">{</span>
+                <span class="n">sh</span> <span class="s1">'surge ./_build/ josedom24.surge.sh --token $TOKEN'</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<ol>
+  <li>En el apartado <code class="language-plaintext highlighter-rouge">environment</code> leo una variable de entorno a a partir de la credencial que habíamos creado.</li>
+  <li>Uso la imagen <code class="language-plaintext highlighter-rouge">josedom24/debian-npm</code>, imagen que yo he generado de una <code class="language-plaintext highlighter-rouge">debian</code> con <code class="language-plaintext highlighter-rouge">npm</code> instalado. De esta manera no necesito instalar <code class="language-plaintext highlighter-rouge">npm</code> que es un proceso lento.</li>
+  <li>Clono el repositorio.</li>
+  <li>Instalo <code class="language-plaintext highlighter-rouge">surge</code>. En realidad podría haberlo instalado en la imagen que he generado.</li>
+  <li>En el stage <code class="language-plaintext highlighter-rouge">Deploy</code> hago el despliegue.</li>
+</ol>
+
+<h2 id="disparador-del-pipeline">Disparador del pipeline</h2>
+
+<p>¿Podríamos activar el pipeline cuando hagamos un push al repositorio? La respuesta es sí, tendríamos que escoger como <strong>Build Trigger</strong> la opción <strong>GitHub hook trigger for GITScm polling</strong>.</p>
+
+<p>A continuación tendríamos que crear un Webhook en tu repositorio de gitHub. Los <strong>webhooks</strong> ofrecen una manera de enviar las notificaciones a un servidor web externo siempre que ciertas acciones ocurran en un repositorio o una organización.</p>
+
+<p>Para más información: <a href="https://faun.pub/triggering-jenkins-build-on-push-using-github-webhooks-52d4361542d4">Triggering a Jenkins build on push using GitHub webhooks</a>.</p>
+
+<p>Tenemos un problema: al crear el webhook debemos indicar la dirección de nuestro jenkins, que tiene que ser accesible desde internet, pero nuestra instalación es local. Para hacer una prueba en nuestro servidor de jenkins local podríamos hacer uso de <a href="https://ngrok.com/">ngrok</a>.</p>
+
+<div class="notice--info">
+<ol>
+  <li>La URL del tu repositorio GitHub.</li>
+  <li>El contenido de la tu fichero <code class="language-plaintext highlighter-rouge">Jenkinfile</code>.</li>
+  <li>Captura de pantalla donde se vea donde has creado las credenciales necesarias.</li>
+  <li>Explica la configuración necesaria y una prueba de funcionamiento para que se dispare el pipeline cuando hagamos un push al repositorio.</li>
+</ol>
+</div>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Actualizado:</strong> <time datetime="2023-02-21T21:10:39+01:00">February 21, 2023</time></p>
+        
+      </footer>
+
+      
+
+    
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Términos de búsqueda...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Términos de búsqueda..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Seguir:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 Jesus Vives Céspedes. Funciona con <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+
+
+  </body>
+</html>

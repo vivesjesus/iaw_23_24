@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/main.css">
+  </head>
+  
+
+<body style="border-left-width: 0px;border-left-style: solid;padding-left: 150px;padding-top: 20px;padding-right: 150px;padding-botton: 20px;">
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <h1 id="ejercicios-repetitivas-y-alternativas">Ejercicios repetitivas y alternativas</h1>
+
+<h2 id="ejercicio-1">Ejercicio 1</h2>
+
+<p>Escriba un programa que pida el año actual y un año cualquiera y que escriba cuántos años han pasado desde ese año o cuántos años faltan para llegar a ese año. Se puede mejorar el programa haciendo que cuando la diferencia sea exactamente un año y escriba la frase en singular.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>COMPARADOR DE AÑOS
+¿En qué año estamos?: 2015
+Escriba un año cualquiera: 2020
+Para llegar al año 2020 faltan 5 años.
+
+COMPARADOR DE AÑOS
+¿En qué año estamos?: 2015
+Escriba un año cualquiera: 1997
+Desde el año 1997 han pasado 18 años.
+
+COMPARADOR DE AÑOS
+¿En qué año estamos?: 2015
+Escriba un año cualquiera: 2015
+¡Son el mismo año!
+</code></pre></div></div>
+
+<h2 id="ejercicio-2">Ejercicio 2</h2>
+
+<p>Juego de las multiplicaciones</p>
+
+<p><strong>Apartado 1</strong></p>
+
+<p>Escriba un programa que genere una multiplicación de dos números del 2 al 10 al azar, pregunte por el resultado y diga si se ha dado la respuesta correcta.</p>
+
+<p>Para generar números al azar puedes utilizar el siguiente código:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>from random import randint
+a = randint(2, 10)
+</code></pre></div></div>
+
+<p>Ejemplos:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>¿Cuánto es 7 x 8? 56
+¡Respuesta correcta!
+
+¿Cuánto es 4 x 9? 35
+¡Respuesta incorrecta!
+</code></pre></div></div>
+
+<p><strong>Apartado 2</strong></p>
+
+<p>Amplie el programa anterior haciendo que el programa pida primero al usuario cuántas multiplicaciones se van a plantear.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Número de preguntas: 0
+El número de preguntas debe ser al menos 1	
+
+Número de preguntas: 2	
+¿Cuánto es 7 x 8? 56
+¡Respuesta correcta!	
+¿Cuánto es 4 x 9? 35
+¡Respuesta incorrecta!
+</code></pre></div></div>
+
+<p><strong>Apartado 3</strong></p>
+
+<p>Amplíe el programa anterior haciendo que el programa lleve la cuenta de las respuestas correctas e incorrectas e indique la nota correspondiente. Si la nota es igual o mayor que 9, el programa felicitará al usuario por el resultado.
+Ayuda: La nota se calcula con la fórmula Nota=Correctas / Total * 10.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Número de preguntas: 2	
+
+¿Cuánto es 7 x 8? 56
+¡Respuesta correcta!	
+¿Cuánto es 4 x 9? 35
+¡Respuesta incorrecta!	
+
+Ha contestado correctamente 1 pregunta
+Le corresponde una nota de 5.0	
+
+
+Número de preguntas: 3	
+
+¿Cuánto es 7 x 8? 56
+¡Respuesta correcta!	
+¿Cuánto es 4 x 9? 35
+¡Respuesta incorrecta!	
+¿Cuánto es 2 x 3? 6
+¡Respuesta correcta!	
+
+Ha contestado correctamente 2 preguntas
+Le corresponde una nota de 6.7	
+
+Número de preguntas: 1	
+¿Cuánto es 7 x 8? 56
+¡Respuesta correcta!	
+
+Ha contestado correctamente 1 pregunta
+Le corresponde una nota de 10.0
+¡Enhorabuena!
+</code></pre></div></div>
+
+<p>NOTA: <strong>Tienes que entregar sólo el código del apartado 3.</strong></p>
+
+<h1 id="ejercicios-cadenas">Ejercicios cadenas</h1>
+
+<h2 id="ejercicio-3">Ejercicio 3</h2>
+
+<p>Para calcular la letra del DNI se calcula el número del DNI módulo 23 y el resultado es la posición en la siguiente cadena:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>'TRWAGMYFPDXBNJZSQVHLCKE'
+</code></pre></div></div>
+
+<p>Crear un programa que pida un DNI (valide que tiene 9 caracteres) y diga si es válido.</p>
+
+<h2 id="ejercicio-4">Ejercicio 4</h2>
+
+<p>Realiza un programa que pida un cadena. A continuación debe pedir otra cadena. El programa debe buscar la segunda cadena en la primera (ignorando mayúsculas o minúsculas) y podrá responder una de las siguientes opciones:</p>
+
+<ul>
+  <li>La segunda cadena es una subcadena de la primera</li>
+  <li>La segunda cadena no es una subcadena de la primera</li>
+</ul>
+
+<p>Ejemplo:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Cadena 1: Java es un lenguaje de programación
+Cadena 2: LENGUAJE
+Respuesta:
+La segunda cadena es una subcadena de la primera
+</code></pre></div></div>
+
+<h2 id="ejercicio-5">Ejercicio 5</h2>
+
+<p>Escribe una programa que pida una cadena de caracteres y diga si <em>no</em> tiene caracteres repetidos.</p>
+
+      </div>
+    </main>
+
+
+
+  </body>
+
+</html>

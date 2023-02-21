@@ -1,0 +1,448 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="es" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html -->
+
+<title>Implantación de aplicaciones web (2022-2023) - IES SEVERO OCHOA</title>
+<meta name="description" content="Unidad 7: Introducción a la integración continúa y despliegue continuo">
+
+
+  <meta name="author" content="Jesús Vives Céspedes">
+  
+  <meta property="article:author" content="Jesús Vives Céspedes">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="IES SEVERO OCHOA">
+<meta property="og:title" content="Implantación de aplicaciones web (2022-2023)">
+<meta property="og:url" content="http://localhost:4000/iaw2223/index">
+
+
+  <meta property="og:description" content="Unidad 7: Introducción a la integración continúa y despliegue continuo">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2023-02-21T21:10:39+01:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/iaw2223/index">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Jesus Vives Céspedes",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="IES SEVERO OCHOA Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    
+<!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+
+
+<link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+<link rel="manifest" href="/assets/icons/site.webmanifest">
+<link rel="mask-icon" href="/assets/icons/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<!-- end custom head snippets 2 -->
+
+  </head>
+
+  <body class="layout--single2 wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Saltar a navegación principal</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Saltar a contenido</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Saltar a pie</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          IES SEVERO OCHOA
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="">Inicio</a>
+            </li><li class="masthead__menu-item">
+              <a href="https://aules.edu.gva.es/fp/login/index.php">Plataforma</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Alternar búsqueda</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Alternar menú</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Alternar menú</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">Implantación de aplicaciones web (2022-2023)</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/iaw2223/">Inicio</a></li>
+          
+            <li><a href="/iaw2223/#unidad-1-introducci%C3%B3n-a-la-implantaci%C3%B3n-de-aplicaciones-web">Introducción</a></li>
+          
+            <li><a href="/iaw2223/#unidad-2-implantaci%C3%B3n-de-aplicaciones-web-php">PHP</a></li>
+          
+            <li><a href="/iaw2223/#unidad-3-seguridad-de-aplicaciones-web-con-https">HTTPS</a></li>
+          
+            <li><a href="/iaw2223/#unidad-4-implantaci%C3%B3n-de-aplicaciones-web-python">Python</a></li>
+          
+            <li><a href="/iaw2223/#unidad-5-implantaci%C3%B3n-de-aplicaciones-web-java">Java</a></li>
+          
+            <li><a href="/iaw2223/#unidad-6-docker">Docker</a></li>
+          
+            <li><a href="/iaw2223/#unidad-7-introducci%C3%B3n-a-la-integraci%C3%B3n-contin%C3%BAa-y-despliegue-continuo">IC/DC</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Módulos</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/iaw2223/">Implantación de Aplicaciones Web</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+  
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Implantación de aplicaciones web (2022-2023)">
+    <meta itemprop="description" content="Unidad 7: Introducción a la integración continúa y despliegue continuo">
+    <meta itemprop="datePublished" content="February 21, 2023">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Implantación de aplicaciones web (2022-2023)
+</h1>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <h2 id="unidad-7-introducción-a-la-integración-continúa-y-despliegue-continuo">Unidad 7: Introducción a la integración continúa y despliegue continuo</h2>
+
+<ul>
+  <li><a href="https://raw.githubusercontent.com/josedom24/presentaciones/main/iaw/ic.pdf">Teoría</a></li>
+  <li><a href="7_ic/jenkins">Introducción a Jenkins</a>
+    <ul>
+      <li><a href="7_ic/ejercicio1.html">Ejercicio 1: GitHub Actions - Corrector ortográfico de documentos markdown (test)</a></li>
+      <li><a href="7_ic/ejercicio2.html">Ejercicio 2: GitHub Actions - Comprobación de HTML5 válido y despliegue en surge.sh (test y deploy)</a></li>
+      <li><a href="7_ic/t1.html">Taller 1: Corrector ortográfico de documentos markdown con Jenkins (test)</a></li>
+      <li><a href="7_ic/t2.html">Taller 2: Comprobación de HTML5 válido y despliegue en surge.sh con Jenkins (test y deploy)</a></li>
+      <li><a href="7_ic/t3.html">Taller 3: Integración continua de aplicación django con Jenkins (Test)</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="unidad-6-docker">Unidad 6: Docker</h2>
+
+<ul>
+  <li><a href="https://raw.githubusercontent.com/josedom24/presentaciones/main/iaw/introduccion_docker_ies.pdf">Teoría</a></li>
+  <li><a href="https://github.com/josedom24/curso_docker_ies">Curso Docker</a></li>
+  <li><a href="https://www.josedomingo.org/pledin/2022/12/contenedores-instancias-openstack/">Artículo: Contenedores en instancias de OpenStack</a>
+    <ul>
+      <li><a href="6_docker/ejercicio1.html">Ejercicio 1: Introducción a los contenedores Docker</a></li>
+      <li><a href="6_docker/ejercicio2.html">Ejercicio 2: Imágenes Docker</a></li>
+      <li><a href="6_docker/t1.html">Taller 1: Almacenamiento y redes en Docker</a></li>
+      <li><a href="6_docker/t2.html">Taller 2: Escenarios multicontenedor en Docker</a></li>
+      <li><a href="6_docker/t3.html">Taller 3: Creación de imágenes Docker</a></li>
+    </ul>
+  </li>
+  <li><a href="6_docker/practica1.html">Práctica 1: Implantación de aplicaciones web PHP en docker</a></li>
+  <li><a href="6_docker/practica2.html">Práctica 2: Implantación de aplicaciones web Python en docker</a></li>
+</ul>
+
+<h2 id="unidad-5-implantación-de-aplicaciones-web-java">Unidad 5: Implantación de aplicaciones web Java</h2>
+
+<ul>
+  <li><a href="https://raw.githubusercontent.com/josedom24/presentaciones/main/iaw/java.pdf">Teoría</a></li>
+  <li><a href="5_java/tomcat.html">Introducción a Java</a>
+    <ul>
+      <li><a href="5_java/t1.html">Taller 1: Desarrollo y despliegue de una aplicación Java simple</a></li>
+    </ul>
+  </li>
+  <li><a href="5_java/practica.html">Práctica: Despliegue de aplicaciones Java</a></li>
+</ul>
+
+<h2 id="unidad-4-implantación-de-aplicaciones-web-python">Unidad 4: Implantación de aplicaciones web Python</h2>
+
+<ul>
+  <li><a href="https://raw.githubusercontent.com/josedom24/presentaciones/main/iaw/python.pdf">Teoría</a>
+    <ul>
+      <li><a href="4_python/ejercicio1.html">Ejercicio 1: Ejecución de aplicaciones python flask</a></li>
+      <li><a href="4_python/t1.html">Taller 1: Desplegando aplicaciones flask con apache2 + mod_wsgi</a></li>
+      <li><a href="4_python/t2.html">Taller 2: Desplegando aplicaciones flask con apache2/nginx + uwsgi</a></li>
+      <li><a href="4_python/ejercicio2.html">Ejercicio 2: Introducción a django</a></li>
+    </ul>
+  </li>
+  <li><a href="4_python/practica.html">Práctica: Instalación/migración de aplicaciones web Python</a></li>
+</ul>
+
+<h2 id="unidad-3-seguridad-de-aplicaciones-web-con-https">Unidad 3: Seguridad de aplicaciones web con HTTPS</h2>
+
+<ul>
+  <li><a href="https://raw.githubusercontent.com/josedom24/presentaciones/main/iaw/https.pdf">Teoría</a>
+    <ul>
+      <li><a href="3_https/apache2_https.html">Configuración de HTTPS en Apache2</a></li>
+    </ul>
+  </li>
+  <li><a href="3_https/practica.html">Práctica: Configuración de HTTPS en la VPS</a></li>
+</ul>
+
+<h2 id="unidad-2-implantación-de-aplicaciones-web-php">Unidad 2: Implantación de aplicaciones web PHP</h2>
+
+<ul>
+  <li><a href="https://raw.githubusercontent.com/josedom24/presentaciones/main/iaw/php.pdf">Teoría</a>
+    <ul>
+      <li><a href="2_php/t1.html">Taller 1: Instalación de un servidor LAMP</a></li>
+      <li><a href="2_php/t2.html">Taller 2: VirtualHosting con Apache</a></li>
+      <li><a href="2_php/t3.html">Taller 3: Instalación de la aplicación BookMedik</a></li>
+      <li><a href="2_php/t4.html">Taller 4: Configuración Apache2 + fpm + php</a></li>
+      <li><a href="2_php/t5.html">Taller 5: Instalación de un servidor LEMP</a></li>
+      <li><a href="2_php/t6.html">Taller 6: Instalación de WordPress</a></li>
+      <li><a href="2_php/t7.html">Taller 7: Contratación y configuración de un VPS</a></li>
+    </ul>
+  </li>
+  <li><a href="2_php/practica.html">Práctica: Instalación/migración de aplicaciones web PHP</a></li>
+</ul>
+
+<h2 id="unidad-1-introducción-a-la-implantación-de-aplicaciones-web">Unidad 1: Introducción a la implantación de aplicaciones web</h2>
+
+<ul>
+  <li><a href="https://raw.githubusercontent.com/josedom24/presentaciones/main/iaw/introduccion.pdf">Teoría</a>
+    <ul>
+      <li><a href="1_introduccion/t1.html">Taller 1: Introducción a git y GitHub</a></li>
+      <li><a href="1_introduccion/t2.html">Taller 2: Introducción a Markdown</a></li>
+      <li><a href="1_introduccion/t3.html">Taller 3: Git. Trabajando con ramas y uniones</a></li>
+      <li><a href="1_introduccion/t4.html">Taller 4: ¿Cómo colaborar en un proyecto de software libre? ¿Qué es un Pull Request (PR)?</a></li>
+    </ul>
+  </li>
+  <li><a href="1_introduccion/practica.html">Práctica: Implantación y despliegue de una aplicación web estática</a></li>
+</ul>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Actualizado:</strong> <time datetime="2023-02-21T21:10:39+01:00">February 21, 2023</time></p>
+        
+      </footer>
+
+      
+
+    
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Términos de búsqueda...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Términos de búsqueda..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Seguir:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 Jesus Vives Céspedes. Funciona con <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+
+
+  </body>
+</html>

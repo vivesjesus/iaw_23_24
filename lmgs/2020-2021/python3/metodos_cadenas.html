@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/main.css">
+  </head>
+  
+
+<body style="border-left-width: 0px;border-left-style: solid;padding-left: 150px;padding-top: 20px;padding-right: 150px;padding-botton: 20px;">
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/pv3JXaiVB20" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<h1 id="métodos-principales-de-cadenas">Métodos principales de cadenas</h1>
+
+<p>Aunque las cadenas de caracteres tiene muchos métodos definidos, vamos a estudiar los más importantes:</p>
+
+<h2 id="métodos-de-formato">Métodos de formato</h2>
+
+<p><code class="language-plaintext highlighter-rouge">capitalize()</code> nos permite devolver la cadena con el primer carácter en mayúsculas.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; cad = "hola, como estás?"
+&gt;&gt;&gt; print(cad.capitalize())
+Hola, como estás?
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">lower()</code> y <code class="language-plaintext highlighter-rouge">upper()</code> convierte la cadena de caracteres en minúsculas y mayúsculas  respectivamente.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; cad = "Hola Mundo" 
+&gt;&gt;&gt; print(cad.lower())
+hola mundo
+
+&gt;&gt;&gt; cad = "hola mundo"
+&gt;&gt;&gt; print(cad.upper())
+HOLA MUNDO
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">title()</code>: Devuelve una cadena con los primeros caracteres en mayúsculas de cada palabra.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; cad = "hola mundo"
+&gt;&gt;&gt; print(cad.title())
+Hola Mundo
+</code></pre></div></div>
+
+<h2 id="métodos-de-búsqueda">Métodos de búsqueda</h2>
+
+<p><code class="language-plaintext highlighter-rouge">count()</code>: Es un método al que indicamos como parámetro una subcadena y cuenta cuantas apariciones hay de esa subcadena en la cadena.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; cad = "bienvenido a mi aplicación"
+&gt;&gt;&gt; cad.count("a")
+3
+</code></pre></div></div>
+
+<p>Además podemos indicar otro parámetro para indicar la posición desde la que queremos iniciar la búsqueda. Y otro parámetro optativo para indicar la posición final de búsqueda.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; cad.count("a",16)
+2
+&gt;&gt;&gt; cad.count("a",10,16)
+1
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">find()</code> nos devuelve la posición de la subcadena que hemos indicado como parámetro. Sino se encuentra se devuelve -1.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; cad.find("mi")
+13
+&gt;&gt;&gt; cad.find("hola")
+-1
+</code></pre></div></div>
+
+<h2 id="métodos-de-validación">Métodos de validación</h2>
+
+<p><code class="language-plaintext highlighter-rouge">startswith()</code> nos indica con un valor lógico si la cadena empieza por la subcadena que hemos indicado como parámetro. Podemos indicar también con otro parámetro la posición donde tiene que buscar.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; cad.startswith("b")
+True
+&gt;&gt;&gt; cad.startswith("m")
+False
+&gt;&gt;&gt; cad.startswith("m",13)
+True
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">endswith()</code> igual que la anterior pero indica si la cadena termina con la subcadena indicada. En este caso, se puede indicar la posición de inicio y final de búsqueda.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; cad.endswith("ción")
+True
+&gt;&gt;&gt; cad.endswith("ción",0,10)
+False
+&gt;&gt;&gt; cad.endswith("nido",0,10)
+True
+</code></pre></div></div>
+
+<p>Otras funciones de validación: <code class="language-plaintext highlighter-rouge">isdigit()</code>, <code class="language-plaintext highlighter-rouge">islower()</code>, <code class="language-plaintext highlighter-rouge">isupper()</code>, <code class="language-plaintext highlighter-rouge">isspace()</code>, <code class="language-plaintext highlighter-rouge">istitle()</code>,…</p>
+
+<h2 id="métodos-de-sustitución">Métodos de sustitución</h2>
+
+<p><code class="language-plaintext highlighter-rouge">replace()</code>: Devuelve una cadena donde se ha sustituido las apariciones de la primera subcadena indicada por la segunda subcadena indicada como parámetro.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; buscar = "nombre apellido"
+&gt;&gt;&gt; reemplazar_por = "Juan Pérez" 
+&gt;&gt;&gt; print ("Estimado Sr. nombre apellido:".replace(buscar, reemplazar_por)) 
+Estimado Sr. Juan Pérez:
+</code></pre></div></div>
+
+<h2 id="métodos-de-unión-y-división">Métodos de unión y división</h2>
+
+<p>Aunque todavía no lo hemos estudiado, el método <code class="language-plaintext highlighter-rouge">split()</code> nos permite convertir una cadena en una lista. Lo usaremos más adelante.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; hora = "12:23:12"
+&gt;&gt;&gt; print(hora.split(":"))
+['12', '23', '12']
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">splitlines()</code>: Nos permite separar las líneas que hay en una cadena (indicada con el carácter <code class="language-plaintext highlighter-rouge">\n</code>) en una lista.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; texto = "Linea 1\nLinea 2\nLinea 3" 
+&gt;&gt;&gt; print(texto.splitlines())
+['Linea 1', 'Linea 2', 'Linea 3']
+</code></pre></div></div>
+
+      </div>
+    </main>
+
+
+
+  </body>
+
+</html>

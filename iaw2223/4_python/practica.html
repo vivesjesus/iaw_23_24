@@ -1,0 +1,465 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="es" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html -->
+
+<title>Despliegue de aplicaciones python - IES SEVERO OCHOA</title>
+<meta name="description" content="Tarea 1: Entorno de desarrollo">
+
+
+  <meta name="author" content="Jesús Vives Céspedes">
+  
+  <meta property="article:author" content="Jesús Vives Céspedes">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="IES SEVERO OCHOA">
+<meta property="og:title" content="Despliegue de aplicaciones python">
+<meta property="og:url" content="http://localhost:4000/iaw2223/4_python/practica">
+
+
+  <meta property="og:description" content="Tarea 1: Entorno de desarrollo">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2023-02-21T21:10:39+01:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/iaw2223/4_python/practica">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Jesus Vives Céspedes",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="IES SEVERO OCHOA Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    
+<!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+
+
+<link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+<link rel="manifest" href="/assets/icons/site.webmanifest">
+<link rel="mask-icon" href="/assets/icons/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<!-- end custom head snippets 2 -->
+
+  </head>
+
+  <body class="layout--single2 wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Saltar a navegación principal</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Saltar a contenido</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Saltar a pie</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          IES SEVERO OCHOA
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="">Inicio</a>
+            </li><li class="masthead__menu-item">
+              <a href="https://aules.edu.gva.es/fp/login/index.php">Plataforma</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Alternar búsqueda</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Alternar menú</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Alternar menú</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">Implantación de aplicaciones web (2022-2023)</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/iaw2223/">Inicio</a></li>
+          
+            <li><a href="/iaw2223/#unidad-1-introducci%C3%B3n-a-la-implantaci%C3%B3n-de-aplicaciones-web">Introducción</a></li>
+          
+            <li><a href="/iaw2223/#unidad-2-implantaci%C3%B3n-de-aplicaciones-web-php">PHP</a></li>
+          
+            <li><a href="/iaw2223/#unidad-3-seguridad-de-aplicaciones-web-con-https">HTTPS</a></li>
+          
+            <li><a href="/iaw2223/#unidad-4-implantaci%C3%B3n-de-aplicaciones-web-python">Python</a></li>
+          
+            <li><a href="/iaw2223/#unidad-5-implantaci%C3%B3n-de-aplicaciones-web-java">Java</a></li>
+          
+            <li><a href="/iaw2223/#unidad-6-docker">Docker</a></li>
+          
+            <li><a href="/iaw2223/#unidad-7-introducci%C3%B3n-a-la-integraci%C3%B3n-contin%C3%BAa-y-despliegue-continuo">IC/DC</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Módulos</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/iaw2223/">Implantación de Aplicaciones Web</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+  
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Despliegue de aplicaciones python">
+    <meta itemprop="description" content="Tarea 1: Entorno de desarrollo">
+    <meta itemprop="datePublished" content="February 21, 2023">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Despliegue de aplicaciones python
+</h1>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <h2 id="tarea-1-entorno-de-desarrollo">Tarea 1: Entorno de desarrollo</h2>
+
+<p>Vamos a desplegar la aplicación del tutorial de django. 
+Como entorno de desarrollo tienes dos opciones:</p>
+
+<ol>
+  <li>Que tu entorno de desarrollo se la máquina <code class="language-plaintext highlighter-rouge">bravo</code> de tu infraestructura de OpenStack. Opción que dará más puntos.</li>
+  <li>Que tu entorno de desarrollo sea una máquina de openstack con el sistema operativo que quieras. Opción que dará menos puntos.</li>
+</ol>
+
+<p>Vamos a configurar tu equipo como entorno de desarrollo para trabajar con la aplicación, para ello:</p>
+
+<ul>
+  <li>Realiza un fork del repositorio de GitHub: <a href="https://github.com/josedom24/django_tutorial">https://github.com/josedom24/django_tutorial</a>.</li>
+  <li>Crea un entorno virtual de python3 e instala las dependencias necesarias para que funcione el proyecto.</li>
+  <li>Comprueba que vamos a trabajar con una base de datos sqlite. ¿Qué fichero tienes que consultar? ¿Cómo se llama la base de datos que vamos a crear?</li>
+  <li>Crea la base de datos. A partir del modelo de datos se crean las tablas de la base de datos.</li>
+  <li>Crea un usuario administrador.</li>
+  <li>Ejecuta el servidor web de desarrollo y entra en la zona de administración (<code class="language-plaintext highlighter-rouge">/admin</code>) para comprobar que los datos se han añadido correctamente.</li>
+  <li>Crea dos preguntas, con posibles respuestas.</li>
+  <li>Comprueba en el navegador que la aplicación está funcionando, accede a la url <code class="language-plaintext highlighter-rouge">/polls</code>.</li>
+  <li>Configura el servidor web apache2 con el módulo wsgi para servir la página web. Si utilizas como entorno de desarrollo la máquina <code class="language-plaintext highlighter-rouge">bravo</code>, se accederá con el nombre <code class="language-plaintext highlighter-rouge">python.tunombre.gonzalonazareno.org</code>. Si tu entorno de desarrollo es una máquina de openstack, elige el nombre con el que acceder y entrega la dirección IP de la máquina.</li>
+</ul>
+<div class="notice--info">
+<p>En este momento, muestra al profesor la aplicación funcionando. Entrega una documentación resumida donde expliques los pasos fundamentales para realizar esta tarea. Y pantallazos que demuestren que la aplicación está funcionando. (3 puntos si eliges como entorno de desarrollo a <code class="language-plaintext highlighter-rouge">bravo</code> y 1 punto si eliges como entorno de desarrollo una máquina de openstack).</p>
+</div>
+
+<h2 id="tarea-2-entorno-de-producción">Tarea 2: Entorno de producción</h2>
+
+<p>Vamos a realizar el despliegue de nuestra aplicación en un entorno de producción, para ello vamos a utilizar nuestro VPS, sigue los siguientes pasos:</p>
+
+<ul>
+  <li>Clona el repositorio en el VPS.</li>
+  <li>Crea un entorno virtual e instala las dependencias de tu aplicación.</li>
+  <li>
+    <p>Instala el módulo que permite que python trabaje con mysql:</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  (env)$ pip install mysqlclient
+</code></pre></div>    </div>
+  </li>
+  <li>Crea una base de datos y un usuario en mysql.</li>
+  <li>
+    <p>Configura la aplicación para trabajar con mysql, para ello modifica la configuración de la base de datos en el archivo <code class="language-plaintext highlighter-rouge">settings.py</code>:</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  DATABASES = {
+      'default': {
+          'ENGINE': 'django.db.backends.mysql',
+          'NAME': 'myproject',
+          'USER': 'myprojectuser',
+          'PASSWORD': 'password',
+          'HOST': 'localhost',
+          'PORT': '',
+      }
+  }
+</code></pre></div>    </div>
+  </li>
+  <li>Crea una copia de seguridad de la base de datos. Ten en cuenta que en el entorno de desarrollo vas a tener una base de datos sqlite, y en el entorno de producción una mariadb, por lo tanto es recomendable para hacer la copia de seguridad y recuperarla con los comandos: <code class="language-plaintext highlighter-rouge">python manage.py dumpdata</code> y <code class="language-plaintext highlighter-rouge">python manage.py loaddata</code>, para <a href="https://coderwall.com/p/mvsoyg/django-dumpdata-and-loaddata">más información</a>.</li>
+  <li>Configura el servidor de aplicaciones uwsgi, creando una unidad de systemd como hicimos en el taller 2 y configura nginx como proxy inverso para servir la aplicación.</li>
+  <li>Debes asegurarte que el contenido estático se está sirviendo: ¿Se muestra la imagen de fondo de la aplicación? ¿Se ve de forma adecuada la hoja de estilo de la zona de administración?</li>
+  <li>Desactiva en la configuración el modo debug a False. Para que los errores de ejecución no den información sensible de la aplicación.</li>
+  <li>La página web debe ser accesible usando https, en la URL: <code class="language-plaintext highlighter-rouge">https://python.tudominio.algo</code>.</li>
+  <li>Muestra la página funcionando. En la zona de administración se debe ver de forma adecuada la hoja de estilo.</li>
+</ul>
+
+<div class="notice--info">
+<p>En este momento, muestra al profesor la aplicación funcionando. Entrega una documentación resumida donde expliques los pasos fundamentales para realizar esta tarea y pantallazos donde se vea que todo está funcionando. (3,5 puntos)</p>
+</div>
+
+<h2 id="tarea-3-modificación-de-nuestra-aplicación">Tarea 3: Modificación de nuestra aplicación</h2>
+
+<p>Vamos a realizar cambios en el entorno de desarrollo y posteriormente vamos a subirlas a producción. Vamos a realizar tres modificaciones, pero recuerda que primero lo haces en el entorno de desarrollo, y luego tendrás que llevar los cambios a producción:</p>
+
+<ol>
+  <li>Modifica la página inicial donde se ven las encuestas para que aparezca tu nombre: Para ello modifica el archivo <code class="language-plaintext highlighter-rouge">django_tutorial/polls/templates/polls/index.html</code>.</li>
+  <li>Modifica la imagen de fondo que se ve la aplicación.</li>
+  <li>
+    <p>Vamos a crear una nueva tabla en la base de datos, para ello sigue los siguientes pasos:</p>
+
+    <ul>
+      <li>
+        <p>Añade un nuevo modelo al fichero <code class="language-plaintext highlighter-rouge">polls/models.py</code>:</p>
+
+        <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">class</span> <span class="nc">Categoria</span><span class="p">(</span><span class="n">models</span><span class="p">.</span><span class="n">Model</span><span class="p">):</span>	
+  	<span class="n">Abr</span> <span class="o">=</span> <span class="n">models</span><span class="p">.</span><span class="nc">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+  	<span class="n">Nombre</span> <span class="o">=</span> <span class="n">models</span><span class="p">.</span><span class="nc">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+
+  	<span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+  		<span class="k">return</span> <span class="n">self</span><span class="p">.</span><span class="n">Abr</span><span class="o">+</span><span class="s">" - "</span><span class="o">+</span><span class="n">self</span><span class="p">.</span><span class="n">Nombre</span> 		
+</code></pre></div>        </div>
+      </li>
+      <li>Crea una nueva migración.</li>
+      <li>Y realiza la migración.</li>
+      <li>
+        <p>Añade el nuevo modelo al sitio de administración de django:</p>
+
+        <p>Para ello cambia la siguiente línea en el fichero <code class="language-plaintext highlighter-rouge">polls/admin.py</code>:</p>
+
+        <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kn">from</span> <span class="n">.models</span> <span class="kn">import</span> <span class="n">Choice</span><span class="p">,</span> <span class="n">Question</span>
+</code></pre></div>        </div>
+
+        <p>Por esta otra:</p>
+
+        <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kn">from</span> <span class="n">.models</span> <span class="kn">import</span> <span class="n">Choice</span><span class="p">,</span> <span class="n">Question</span><span class="p">,</span> <span class="n">Categoria</span>
+</code></pre></div>        </div>
+
+        <p>Y añade al final la siguiente línea:</p>
+
+        <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">admin</span><span class="p">.</span><span class="n">site</span><span class="p">.</span><span class="nf">register</span><span class="p">(</span><span class="n">Categoria</span><span class="p">)</span>
+</code></pre></div>        </div>
+      </li>
+      <li>Despliega el cambio producido al crear la nueva tabla en el entorno de producción.</li>
+    </ul>
+  </li>
+</ol>
+
+<div class="notice--info">
+<p>Explica los cambios que has realizado en el entorno de desarrollo y cómo lo has desplegado en producción para cada una de las modificaciones. Entrega pantallazos donde se vean las distintas modificaciones y que todo está funcionando. (3,5 puntos)</p>
+</div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Actualizado:</strong> <time datetime="2023-02-21T21:10:39+01:00">February 21, 2023</time></p>
+        
+      </footer>
+
+      
+
+    
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Términos de búsqueda...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Términos de búsqueda..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Seguir:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 Jesus Vives Céspedes. Funciona con <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+
+
+  </body>
+</html>

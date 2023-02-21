@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/main.css">
+  </head>
+  
+
+<body style="border-left-width: 0px;border-left-style: solid;padding-left: 150px;padding-top: 20px;padding-right: 150px;padding-botton: 20px;">
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/ddWSzn5aKco" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<h1 id="tipo-de-datos-cadenas-de-caracteres">Tipo de datos cadenas de caracteres</h1>
+
+<p>Como vimos en una unidad anterior, las cadenas de caracteres (<code class="language-plaintext highlighter-rouge">str</code>): Me permiten guardar secuencias de caracteres.</p>
+
+<p>Además de las operaciones que ya hemos estudiado:</p>
+
+<ul>
+  <li>Concatenación: <code class="language-plaintext highlighter-rouge">+</code>:  El operador <code class="language-plaintext highlighter-rouge">+</code> me permite unir datos de tipos secuenciales, en este caso dos cadenas de caracteres.</li>
+  <li>Repetición: <code class="language-plaintext highlighter-rouge">*</code>:  El operador <code class="language-plaintext highlighter-rouge">*</code> me permite repetir un dato de un tipo secuencial, en este caso de cadenas de caracteres.</li>
+  <li>Indexación: Puedo obtener el dato de una secuencia indicando la posición en la secuencia. En este caso puedo obtener el carácter de la cadena indicando la posición (<strong>empezando por la posición 0</strong>).</li>
+  <li>Para obtener la longitud de una cadena (número de caracteres que tiene), utilizamos la función <code class="language-plaintext highlighter-rouge">len</code>.</li>
+</ul>
+
+<p>Tenemos más operaciones que podemos realizar:</p>
+
+<h2 id="otras-operaciones-con-cadenas-de-caracteres">Otras operaciones con cadenas de caracteres</h2>
+
+<ul>
+  <li>
+    <p>Las cadenas de caracteres se pueden recorrer:</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  &gt;&gt;&gt; cadena = "informática"
+  &gt;&gt;&gt; for caracter in cadena:
+  ...    print(caracter,end="")
+  ...
+  informática
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Operadores de pertenencia: Se puede comprobar si un elemento (subcadena) pertenece o no a una cadena de caracteres con los operadores <code class="language-plaintext highlighter-rouge">in</code> y <code class="language-plaintext highlighter-rouge">not in</code>.</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  &gt;&gt;&gt; "a" in cadena
+  True
+  &gt;&gt;&gt; "b" in cadena
+  False
+  &gt;&gt;&gt; "a" not in cadena
+  False
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Slice (rebanada): Puedo obtener una subcadena de la cadena de caracteres. Se indica el carácter inicial, y el carácter final, además podemos indicar opcionalmente un salto. Si no se indica el carácter inicial se supone que es desde el primero, sino se indica el carácter final se supone que es hasta el final. Por último podemos usar salto negativo para empezar a contar desde el final.</p>
+  </li>
+</ul>
+
+<p>Como resumen de las distintas posibilidades podemos indicar:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">cadena[start:end]</code> 	  # Elementos desde la posición start hasta end-1</li>
+  <li><code class="language-plaintext highlighter-rouge">cadena[start:]</code>    	  # Elementos desde la posición start hasta el final</li>
+  <li><code class="language-plaintext highlighter-rouge">cadena[:end]</code>      	  # Elementos desde el principio hasta la posición end-1</li>
+  <li><code class="language-plaintext highlighter-rouge">cadena[:]</code> 	 	  # Todos Los elementos</li>
+  <li><code class="language-plaintext highlighter-rouge">cadena[start:end:step]</code> # Igual que el anterior pero dando step saltos.</li>
+</ul>
+
+<p>Veamos algunos ejemplos:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    &gt;&gt;&gt; cadena[2:5]
+    'for'
+    &gt;&gt;&gt; cadena[2:7:2]
+    'frá'
+    &gt;&gt;&gt; cadena[:5]
+    'infor'
+    &gt;&gt;&gt; cadena[5:]
+    'mática'
+    &gt;&gt;&gt; cadena[-1:-3]
+    ''
+    &gt;&gt;&gt; cadena[::-1]
+    'acitámrofni'
+</code></pre></div></div>
+
+<h2 id="conversión-de-tipos">Conversión de tipos</h2>
+
+<p>Podemos convertir cualquier número en una cadena de caracteres utilizando la función <code class="language-plaintext highlighter-rouge">str</code>:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    &gt;&gt;&gt; cad = str(7.8)
+    &gt;&gt;&gt; type(cad)
+    &lt;class 'str'&gt;
+    &gt;&gt;&gt; print(cad)
+    7.8
+</code></pre></div></div>
+
+      </div>
+    </main>
+
+
+
+  </body>
+
+</html>

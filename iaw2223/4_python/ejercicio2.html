@@ -1,0 +1,640 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="es" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html -->
+
+<title>Introducción a django - IES SEVERO OCHOA</title>
+<meta name="description" content="Django es un framework de desarrollo web de código abierto, escrito en Python, que respeta el patrón de diseño conocido como modelo–vista–controlador (MVC).">
+
+
+  <meta name="author" content="Jesús Vives Céspedes">
+  
+  <meta property="article:author" content="Jesús Vives Céspedes">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="IES SEVERO OCHOA">
+<meta property="og:title" content="Introducción a django">
+<meta property="og:url" content="http://localhost:4000/iaw2223/4_python/ejercicio2">
+
+
+  <meta property="og:description" content="Django es un framework de desarrollo web de código abierto, escrito en Python, que respeta el patrón de diseño conocido como modelo–vista–controlador (MVC).">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2023-02-21T21:10:39+01:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/iaw2223/4_python/ejercicio2">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Jesus Vives Céspedes",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="IES SEVERO OCHOA Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    
+<!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+
+
+<link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+<link rel="manifest" href="/assets/icons/site.webmanifest">
+<link rel="mask-icon" href="/assets/icons/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<!-- end custom head snippets 2 -->
+
+  </head>
+
+  <body class="layout--single2 wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Saltar a navegación principal</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Saltar a contenido</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Saltar a pie</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          IES SEVERO OCHOA
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="">Inicio</a>
+            </li><li class="masthead__menu-item">
+              <a href="https://aules.edu.gva.es/fp/login/index.php">Plataforma</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Alternar búsqueda</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Alternar menú</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Alternar menú</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">Implantación de aplicaciones web (2022-2023)</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/iaw2223/">Inicio</a></li>
+          
+            <li><a href="/iaw2223/#unidad-1-introducci%C3%B3n-a-la-implantaci%C3%B3n-de-aplicaciones-web">Introducción</a></li>
+          
+            <li><a href="/iaw2223/#unidad-2-implantaci%C3%B3n-de-aplicaciones-web-php">PHP</a></li>
+          
+            <li><a href="/iaw2223/#unidad-3-seguridad-de-aplicaciones-web-con-https">HTTPS</a></li>
+          
+            <li><a href="/iaw2223/#unidad-4-implantaci%C3%B3n-de-aplicaciones-web-python">Python</a></li>
+          
+            <li><a href="/iaw2223/#unidad-5-implantaci%C3%B3n-de-aplicaciones-web-java">Java</a></li>
+          
+            <li><a href="/iaw2223/#unidad-6-docker">Docker</a></li>
+          
+            <li><a href="/iaw2223/#unidad-7-introducci%C3%B3n-a-la-integraci%C3%B3n-contin%C3%BAa-y-despliegue-continuo">IC/DC</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Módulos</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/iaw2223/">Implantación de Aplicaciones Web</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+  
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Introducción a django">
+    <meta itemprop="description" content="Django es un framework de desarrollo web de código abierto, escrito en Python, que respeta el patrón de diseño conocido como modelo–vista–controlador (MVC).">
+    <meta itemprop="datePublished" content="February 21, 2023">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Introducción a django
+</h1>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <p><a href="https://www.djangoproject.com/">Django</a> es un framework de desarrollo web de código abierto, escrito en Python, que respeta el patrón de diseño conocido como modelo–vista–controlador (MVC).</p>
+
+<p>El modelo MVC es un patrón de diseño software que separa los datos de la aplicación, la lógica del programa y la representación de la información:</p>
+
+<ul>
+  <li>El <strong>Modelo</strong>: Es la representación de la información con la cual el sistema opera, por lo tanto gestiona todos los accesos a dicha información.</li>
+  <li>El <strong>Controlador</strong>: Es la parte del programa donde se implementa la lógica y las funciones de la aplicación.</li>
+  <li>La <strong>Vista</strong>: Representa la información ofrecida por la aplicación en un formato adecuada.</li>
+</ul>
+
+<h2 id="instalación-de-django">Instalación de django</h2>
+
+<p>Como siempre cuando trabajamos en Python vamos a usar un entorno virtual:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>python3 <span class="nt">-m</span> venv django
+<span class="nv">$ </span><span class="nb">source </span>django/bin/activate
+<span class="o">(</span>django<span class="o">)</span><span class="nv">$ </span>pip <span class="nb">install </span>django
+<span class="o">(</span>django<span class="o">)</span><span class="nv">$ </span>python <span class="nt">-m</span> django <span class="nt">--version</span>
+4.1.3
+</code></pre></div></div>
+
+<h2 id="creando-un-proyecto-django">Creando un proyecto django</h2>
+
+<p>En un primer paso, vamos a ver cómo sería la creación de una aplicación django, posteriormente trabajaremos con una aplicación ya desarrollada. Si vamos a crear una aplicación django lo primero sería la creación de un proyecto:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">(</span>django<span class="o">)</span><span class="nv">$ </span>django-admin startproject mysite
+</code></pre></div></div>
+
+<p>Esto crearía el directorio del proyecto <code class="language-plaintext highlighter-rouge">mysite</code> que tendría los siguientes ficheros:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysite/
+    manage.py
+    mysite/
+        __init__.py
+        settings.py
+        urls.py
+        asgi.py
+        wsgi.py
+</code></pre></div></div>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">manage.py</code>: La utilidad de terminal que vamos a usar para manejar nuestra aplicación.</li>
+  <li>El directorio <code class="language-plaintext highlighter-rouge">mysite</code> es un paquete python (agrupa distintos módulos (ficheros python)). Esto se indica con un fichero vacio que se de be llamar <code class="language-plaintext highlighter-rouge">__init__.py</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">settings.py</code>: La configuración de la aplicación.</li>
+  <li><code class="language-plaintext highlighter-rouge">urls.py</code>: Donde se declaran las rutas que va tener la aplicación.</li>
+  <li><code class="language-plaintext highlighter-rouge">wsgi.py</code>: Fichero wsgi para el despliegue de la aplicación utilizando el protocolo wsgi.</li>
+  <li><code class="language-plaintext highlighter-rouge">asgi.py</code>: Fichero asgi para el despliegue de la aplicación utilizando el protocolo asgi.</li>
+</ul>
+
+<h2 id="ejecución-del-servidor-web-de-desarrollo">Ejecución del servidor web de desarrollo</h2>
+
+<p>Si queremos iniciar el servidor web de desarrollo para ver cómo va quedando la aplicación, ejecutamos:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">(</span>django<span class="o">)</span><span class="nv">$ </span>python3 manage.py runserver
+</code></pre></div></div>
+
+<p>Si queremos que el servidor escuche en todas las direcciones y en un puerto determinado:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">(</span>django<span class="o">)</span><span class="nv">$ </span>python3 manage.py runserver 0.0.0.0:8000
+</code></pre></div></div>
+
+<h2 id="creando-una-aplicación">Creando una aplicación</h2>
+
+<p>Hasta ahora tenemos un proyecto django, pero no tiene ninguna funcionalidad. En un proyecto django podemos ir añadiendo distintas aplicaciones donde vamos implementando las distintas funcionalidades del programa. Siguiendo el tutorial de django, vamos a crear la aplicación polls (encuestas), para ello:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">(</span>django<span class="o">)</span><span class="nv">$ </span>python3 manage.py startapp polls
+</code></pre></div></div>
+
+<p>Esto creará un directorio <code class="language-plaintext highlighter-rouge">polls</code> en el proyecto con los siguientes ficheros:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>polls/
+    __init__.py
+    admin.py
+    apps.py
+    migrations/
+        __init__.py
+    models.py
+    tests.py
+    views.py
+</code></pre></div></div>
+
+<p>Ahora iremos estudiando cada uno de estos ficheros. Es muy recomendable que hagáis el <a href="https://docs.djangoproject.com/en/4.1/intro/tutorial01/">tutorial de django</a> que os da una visión general del desarrollo de aplicaciones web en django.</p>
+
+<p>En el siguiente apartado seguiremos estudiando las aplicaciones django pero utilizando la aplicación desarrollada en el tutorial, que podéis encontrar en: <a href="https://github.com/josedom24/django_tutorial">https://github.com/josedom24/django_tutorial</a>.</p>
+
+<h2 id="la-configuración-del-proyecto">La configuración del proyecto</h2>
+
+<p>Veamos el ficheros <code class="language-plaintext highlighter-rouge">settings.py</code> que encontramos dentro del directorio <code class="language-plaintext highlighter-rouge">django_tutorial</code>:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">DEBUG = True</code>: Si está activo los errores que se produzcan en la aplicación se verán con todo lujo de detalles en el navegador. Si tenemos la aplicación en producción debería ser <code class="language-plaintext highlighter-rouge">False</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">ALLOWED_HOSTS = []</code>: Una lista con los nombres con los que se va a permitir el acceso a la aplicación.</li>
+  <li><code class="language-plaintext highlighter-rouge">INSTALLED_APPS = [...</code>: La lista de las aplicaciones que tiene instalada el proyecto, por ejemplo vemos que se ha incluido la aplicación polls (<code class="language-plaintext highlighter-rouge">polls.apps.PollsConfig</code>). También tenemos una aplicación que nos permite tener un panel de control de la aplicación (<code class="language-plaintext highlighter-rouge">django.contrib.admin</code>). Y otras cuantas aplicaciones…</li>
+  <li><code class="language-plaintext highlighter-rouge">DATABASES</code>: Configuración de la base de datos que se va a utilizar en el proyecto. Por defecto se utiliza una base de datos sqlite llamada <code class="language-plaintext highlighter-rouge">db.sqlite3</code>.</li>
+</ul>
+
+<h2 id="el-modelo-de-la-aplicación">El modelo de la aplicación</h2>
+
+<p>El modelo nos permite diseñar las tablas y las relaciones con la que vamos a trabajar en nuestra aplicación. El modelo de django nos independiza del motos de base de datos, es decir, vamos a trabajar con clases y objetos que representan los datos y nos da igual que los datos se guarden en cualquier tipo de base de datos.</p>
+
+<p>El modelo de la aplicación <code class="language-plaintext highlighter-rouge">polls</code> se define en el fichero <code class="language-plaintext highlighter-rouge">polls/models.py</code>:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">datetime</span>
+
+<span class="kn">from</span> <span class="n">django.db</span> <span class="kn">import</span> <span class="n">models</span>
+<span class="kn">from</span> <span class="n">django.utils</span> <span class="kn">import</span> <span class="n">timezone</span>
+
+
+<span class="k">class</span> <span class="nc">Question</span><span class="p">(</span><span class="n">models</span><span class="p">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">question_text</span> <span class="o">=</span> <span class="n">models</span><span class="p">.</span><span class="nc">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+    <span class="n">pub_date</span> <span class="o">=</span> <span class="n">models</span><span class="p">.</span><span class="nc">DateTimeField</span><span class="p">(</span><span class="s">'date published'</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">self</span><span class="p">.</span><span class="n">question_text</span>
+
+    <span class="k">def</span> <span class="nf">was_published_recently</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="n">now</span> <span class="o">=</span> <span class="n">timezone</span><span class="p">.</span><span class="nf">now</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">now</span> <span class="o">-</span> <span class="n">datetime</span><span class="p">.</span><span class="nf">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">self</span><span class="p">.</span><span class="n">pub_date</span> <span class="o">&lt;=</span> <span class="n">now</span>
+    <span class="n">was_published_recently</span><span class="p">.</span><span class="n">admin_order_field</span> <span class="o">=</span> <span class="s">'pub_date'</span>
+    <span class="n">was_published_recently</span><span class="p">.</span><span class="n">boolean</span> <span class="o">=</span> <span class="bp">True</span>
+    <span class="n">was_published_recently</span><span class="p">.</span><span class="n">short_description</span> <span class="o">=</span> <span class="s">'Published recently?'</span>
+
+
+<span class="k">class</span> <span class="nc">Choice</span><span class="p">(</span><span class="n">models</span><span class="p">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">question</span> <span class="o">=</span> <span class="n">models</span><span class="p">.</span><span class="nc">ForeignKey</span><span class="p">(</span><span class="n">Question</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="p">.</span><span class="n">CASCADE</span><span class="p">)</span>
+    <span class="n">choice_text</span> <span class="o">=</span> <span class="n">models</span><span class="p">.</span><span class="nc">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+    <span class="n">votes</span> <span class="o">=</span> <span class="n">models</span><span class="p">.</span><span class="nc">IntegerField</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">self</span><span class="p">.</span><span class="n">choice_text</span>
+</code></pre></div></div>
+
+<p>Como vemos creamos dos clases:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Question</code> que va a representar la tabla donde guardamos las preguntas de las encuestas. Una <code class="language-plaintext highlighter-rouge">Question</code> va a tener dos atributos el texto (<code class="language-plaintext highlighter-rouge">question_text</code>) y la fecha de publicación (<code class="language-plaintext highlighter-rouge">pub_date</code>). Además se creará un atributo autoincremental que será la clave primaria.</li>
+  <li><code class="language-plaintext highlighter-rouge">Choice</code>: representa las posibles respuestas de una encuesta. Tiene los siguientes atributos: <code class="language-plaintext highlighter-rouge">question</code> que es una clave ajena para relacionarlo con la tabla anterior, <code class="language-plaintext highlighter-rouge">choice_text</code>: texto de la respuesta y <code class="language-plaintext highlighter-rouge">votes</code>: votos de dicha respuesta. También se crea una clave única para esta tabla.</li>
+</ul>
+
+<p>Cada <strong>clase</strong> representa una <strong>tabla</strong> y la definición de sus <strong>atributos</strong>.</p>
+
+<p><strong>¿Qué relación tiene el modelo con la base de datos que hemos configurado en el fichero <code class="language-plaintext highlighter-rouge">settings.py</code>?</strong>
+El programa va a trabajar para gestionar los datos con estas dos clases, pero cada vez que se haga una operación en los datos se traducirá internamente a SQL para que se guarde en la base de datos configurada.</p>
+
+<h3 id="creación-de-las-tablas">Creación de las tablas</h3>
+
+<p>Lo primero que vamos a hacer es crear las tablas definidas en el modelo de la aplicación en la base de datos configurada, para ello ejecutamos:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">(</span>django<span class="o">)</span><span class="nv">$ </span>python3 manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, polls, sessions
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying auth.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying polls.0001_initial... OK
+  Applying sessions.0001_initial... OK
+</code></pre></div></div>
+
+<p>Podemos comprobar que cada una de las aplicaciones que forman el proyecto han creado sus tablas:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>sqlite3 db.sqlite3
+...
+sqlite&gt; .tables
+auth_group                  django_admin_log
+auth_group_permissions      django_content_type
+auth_permission             django_migrations
+auth_user                   django_session
+auth_user_groups            polls_choice
+auth_user_user_permissions  polls_question
+</code></pre></div></div>
+
+<h3 id="jugando-con-el-modelo">Jugando con el modelo</h3>
+
+<p>Vamos a poner un ejemplo de como podemos crear una encuesta utilizando las clases, para ello vamos a acceder a una shell de django:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">(</span>django<span class="o">)</span><span class="nv">$ </span>python3 manage.py shell
+...
+<span class="o">&gt;&gt;&gt;</span> from polls.models import Choice, Question
+<span class="o">&gt;&gt;&gt;</span> Question.objects.all<span class="o">()</span>
+&lt;QuerySet <span class="o">[]&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> from django.utils import timezone
+<span class="o">&gt;&gt;&gt;</span> q <span class="o">=</span> Question<span class="o">(</span><span class="nv">question_text</span><span class="o">=</span><span class="s2">"What's new?"</span>, <span class="nv">pub_date</span><span class="o">=</span>timezone.now<span class="o">())</span>
+<span class="o">&gt;&gt;&gt;</span> q.save<span class="o">()</span>
+<span class="o">&gt;&gt;&gt;</span> q.id
+1
+<span class="o">&gt;&gt;&gt;</span> q.question_text
+<span class="s2">"What's new?"</span>
+<span class="o">&gt;&gt;&gt;</span> q.pub_date
+datetime.datetime<span class="o">(</span>2021, 11, 7, 17, 45, 36, 939817, <span class="nv">tzinfo</span><span class="o">=</span>&lt;UTC&gt;<span class="o">)</span>
+<span class="o">&gt;&gt;&gt;</span> q.question_text <span class="o">=</span> <span class="s2">"What's up?"</span>
+<span class="o">&gt;&gt;&gt;</span> q.save<span class="o">()</span>
+<span class="o">&gt;&gt;&gt;</span> Question.objects.all<span class="o">()</span>
+&lt;QuerySet <span class="o">[</span>&lt;Question: What<span class="s1">'s up?&gt;]&gt;
+</span></code></pre></div></div>
+
+<ul>
+  <li>El primer <code class="language-plaintext highlighter-rouge">q.save()</code> ha hecho un <em>insert</em> sobre la tabla <em>Question</em>.</li>
+  <li>El segundo <code class="language-plaintext highlighter-rouge">q.save()</code> ha hecho un <em>update</em> sobre la tabla <em>Question</em>.</li>
+  <li>La instrucción <code class="language-plaintext highlighter-rouge">Question.objects.all()</code> ha ejecutado un <code class="language-plaintext highlighter-rouge">select * from Question</code>.</li>
+</ul>
+
+<p>Pero lo importante: <strong>Es que da igual la base de datos que tengamos configurada: una sqlite, mariadb, posgresSQL, oracle, …</strong>.</p>
+
+<p>Podemos comprobar que se ha añadido un registro en la tabla Question:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sqlite&gt; <span class="k">select</span> <span class="k">*</span> from polls_question<span class="p">;</span>
+1|What<span class="s1">'s up?|2021-11-07 17:45:36.939817
+</span></code></pre></div></div>
+
+<h3 id="modificación-del-modelo">Modificación del modelo</h3>
+
+<p>Si modificamos el modelo, es porque estamos cambiando la estructura de la base de datos. Para que siga funcionando bien la aplicación tendremos que crear una migración:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">(</span>django<span class="o">)</span><span class="nv">$ </span>python3 manage.py makemigrations
+</code></pre></div></div>
+
+<p>Esto creara un fichero de migración en el directorio <code class="language-plaintext highlighter-rouge">polls/migrations</code>. Una migración es un script que al ejecutarlo se cambia la estructura de la base de datos según el cambio del modelo. Para ejecutar la migración:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">(</span>django<span class="o">)</span><span class="nv">$ </span>python3 manage.py migrate
+</code></pre></div></div>
+
+<h2 id="la-aplicación-de-administración-de-la-aplicación">La aplicación de administración de la aplicación</h2>
+
+<p>Como hemos visto anteriormente nuestro proyecto tiene una aplicación de administración y una aplicación de autentificación para guardar los usuarios. Para acceder a la zona de administración antes hay que crear al usuario administrador de la aplicación, para ello:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">(</span>django<span class="o">)</span><span class="nv">$ </span>python3 manage.py createsuperuser
+</code></pre></div></div>
+
+<p>Podemos comprobar que efectivamente se ha creado un usuario en la tabla correspondiente:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sqlite&gt; <span class="k">select</span> <span class="k">*</span> from auth_user<span class="p">;</span>
+1|pbkdf2_sha256<span class="nv">$260000$U6iFl8rdYciSxgBRwSlDIT$Mp1pIcSQTurHNW82F3gQ7UgH8G2</span>+goJE0V5EeASg2xE<span class="o">=||</span>1|admin||admin@admin.es|1|1|2021-11-07 18:03:45.427069|
+</code></pre></div></div>
+
+<p>Para acceder a la zona de administración, arrancamos el servidor web de desarrollo, accedemos a la ruta <code class="language-plaintext highlighter-rouge">/admin</code> y podemos comprobar que tenemos creado una pregunta:</p>
+
+<p><img src="img/admin.png" alt="admin" /></p>
+
+<h2 id="las-rutas-y-el-controlador-de-la-aplicación">Las rutas y el controlador de la aplicación</h2>
+
+<p>Las rutas virtuales que vamos a usar para acceder a las distintas funciones de la aplicación se definen a nivel de proyecto y a nivel de aplicación:</p>
+
+<ul>
+  <li>A nivel de proyecto estudiamos el fichero <code class="language-plaintext highlighter-rouge">django_tutorial/urls.py</code>:
+    <ul>
+      <li>Donde se ha definido que cuando se acceda a la ruta <code class="language-plaintext highlighter-rouge">polls/</code> se utilizaran las rutas definidas en la aplicación <code class="language-plaintext highlighter-rouge">polls</code>.</li>
+      <li>Y cuando se acceda a la ruta <code class="language-plaintext highlighter-rouge">admin/</code> se utilizarán las rutas definidas en la aplicación <code class="language-plaintext highlighter-rouge">admin</code> (panel de administración).</li>
+    </ul>
+  </li>
+  <li>A nivel de aplicación, vemos el fichero <code class="language-plaintext highlighter-rouge">polls/urls.py</code> y comprobamos que se han definido 4 rutas:
+    <ul>
+      <li>La ruta principal ‘’: Donde se va a ejecutar la función <code class="language-plaintext highlighter-rouge">index</code>, que muestra la lista de encuestas. Ejemplo: <code class="language-plaintext highlighter-rouge">http://localhost:8000/polls</code>.</li>
+      <li>La ruta <code class="language-plaintext highlighter-rouge">&lt;int:pk&gt;/</code>: Cuando se ponga un entero se mostrará información de esa encuesta. Esto se hace en la función <code class="language-plaintext highlighter-rouge">detail</code>. Ejemplo: <code class="language-plaintext highlighter-rouge">http://localhost:8000/polls/1/</code>.</li>
+      <li>La ruta <code class="language-plaintext highlighter-rouge">'&lt;int:pk&gt;/results/</code>: Donde se nos mostrará los resultados de la encuesta identificada por su código. Esto se realiza con la función <code class="language-plaintext highlighter-rouge">results</code>. Ejemplo: <code class="language-plaintext highlighter-rouge">http://localhost:8000/polls/1/results/</code>.</li>
+      <li>La ruta <code class="language-plaintext highlighter-rouge">&lt;int:question_id&gt;/vote/</code>: Nos permite votar una opción de una encuesta. Esto lo realiza la función <code class="language-plaintext highlighter-rouge">vote</code>. Por ejemplo: <code class="language-plaintext highlighter-rouge">http://localhost:8000/polls/100/vote/</code>.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Después lo estudiaremos con más detenimiento, pero las funciones que se realizan en cada una de las rutas forman parte del <strong>controlador</strong> de la aplicación que están implementadas en el fichero <code class="language-plaintext highlighter-rouge">polls/views.py</code>.</p>
+
+<h2 id="las-vistas-de-la-aplicación">Las vistas de la aplicación</h2>
+
+<p>Las vistas en djando se implementan usando plantillas (<code class="language-plaintext highlighter-rouge">templates</code>). django tiene un motor de plantillas propio. Podemos encontrar las vistas de la aplicación <code class="language-plaintext highlighter-rouge">polls</code> en el directorio <code class="language-plaintext highlighter-rouge">polls\templates\polls</code>.</p>
+
+<p>Por ejemplo al entrar a la ruta principal de la aplicación <code class="language-plaintext highlighter-rouge">polls</code> se nos muestra la siguiente página web:</p>
+
+<p><img src="img/polls.png" alt="polls" /></p>
+
+<h2 id="desplegando-una-aplicación-django">Desplegando una aplicación django</h2>
+
+<p>Hemos visto distintas formas de desplegar aplicaciones flask en los ejercicios de esta unidad. El despliegue de una aplicación django se hace de forma similar, teniendo en cuenta los siguientes aspectos:</p>
+
+<ul>
+  <li>El fichero wsgi, que será el punto de acceso a la aplicación se encuentra en <code class="language-plaintext highlighter-rouge">django_tutorial/django_tutorial/wsgi.py</code>.</li>
+  <li>Cuando usamos apache2 + mod_wsgi, Django no sirve el contenido estático, por lo que tendremos que configurar el servidor web para que lo haga. Tendremos que usar <code class="language-plaintext highlighter-rouge">alias</code> para que el contenido estático sea accesible. Por ejemplo, ¿dónde se encuentra la hoja de estilo de la zona de administración de nuestra aplicación?</li>
+  <li>Tienes una guia de despliegue de aplicaciones django en: <a href="https://docs.djangoproject.com/en/4.1/howto/deployment/wsgi/">How to deploy with WSGI</a>.</li>
+</ul>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Actualizado:</strong> <time datetime="2023-02-21T21:10:39+01:00">February 21, 2023</time></p>
+        
+      </footer>
+
+      
+
+    
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Términos de búsqueda...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Términos de búsqueda..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Seguir:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 Jesus Vives Céspedes. Funciona con <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+
+
+  </body>
+</html>

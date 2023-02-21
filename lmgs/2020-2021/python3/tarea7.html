@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/main.css">
+  </head>
+  
+
+<body style="border-left-width: 0px;border-left-style: solid;padding-left: 150px;padding-top: 20px;padding-right: 150px;padding-botton: 20px;">
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <h1 id="ejercicios">Ejercicios</h1>
+
+<h2 id="ejercicio-1">Ejercicio 1</h2>
+
+<p>Queremos guardar el nombre de los artículos de un almacén y sus precios. Como estructura de datos vamos a usar dos listas: artículos, donde vamos a guardar el nombre de los artículos y precios donde vamos a guardar los precios. De tal forma que el artículo en la posición n de la lista artículos tendrá el precio correspondiente a la misma posición en la lista precios.</p>
+
+<p>Realiza un programa que pida por teclado artículos y sus precios (el programa pedirá cuantos artículos se van a introducir), al finalizar dará la siguiente información:</p>
+
+<ul>
+  <li>El precio medio de los artículos.</li>
+  <li>El nombre de los artículos que valen más de 100 euros.</li>
+  <li>Nos pedirá un nombre de un artículo y si existe nos dará su precio, sino nos dará un error.</li>
+</ul>
+
+<h2 id="ejercicio-2">Ejercicio 2</h2>
+
+<p>Repite el ejercicio 1 con la siguiente estructura de datos: vamos a usar una lista artículos donde vamos a guardar listas con dos elementos: el nombre del artículo y su precio. Ejemplo:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>articulos=[["fregona",12],["cepillo",14],["recogerdor",23]]
+</code></pre></div></div>
+
+<h2 id="ejercicio-3">Ejercicio 3</h2>
+
+<p>Queremos hacer un programa que trabaje con las notas de los alumnos de una clase:</p>
+
+<ul>
+  <li>El programa pedirá cuantos alumnos tiene la clase.</li>
+  <li>A continuación, pedirá el nombre del alumno, y cuantas notas tiene ese alumno.</li>
+  <li>Se pedirán las notas del alumno introducido (cada alumno puede tener una cantidad de notas distintas). Las notas se validarán para que sea un número del 1 al 10).</li>
+</ul>
+
+<p>Piensa en el estructura de datos donde vas a guardar la información.
+Al finalizar el programa nos mostrará el siguiente menu:</p>
+
+<ol>
+  <li>Notas medias: Nos muestra una lista de alumnos y su nota media. Si su nota media es aprobado aparecerá la palabra “APROBADO” en la línea del alumno.</li>
+  <li>Buscar por nombre: Nos pide una cadena y nos muestra todos los alumnos que **comienzan por dicha cadena y la lista de sus notas.</li>
+  <li>Añadir alumno: No pide el nombre de un alumno, cuántas notas tienes y pide las notas.</li>
+  <li>Eliminar alumno: Nos pide un nombre y elimina el primer alumno que encuentre con ese nombre.</li>
+  <li>Salir</li>
+</ol>
+
+<h2 id="ejercicio-4">Ejercicio 4</h2>
+
+<p>Crear un programa de ordenador para gestionar los resultados de la quiniela de fútbol. Para ello vamos a utilizar dos listas:</p>
+
+<ul>
+  <li>Equipos: Que es una lista cuyos elementos son una lista con el nombre de los equipos que juegan el partido. En la quiniela se indican 15 partidos. Ejemplo: equipos = [[“Sevilla”,”Betis”],[“Madrid”,”Barcelona”],…]</li>
+  <li>Resultados: Es una lista de enteros donde se indica el resultado. También tiene dos columnas (cada elemento es una lista), en la primera se guarda el número de goles del equipo que está guardado en la primera columna de la tabla anterior, y en la segunda los goles del otro equipo. Ejemplo: resultados=[[3,0],[0,0],…]</li>
+</ul>
+
+<p>El programa ira pidiendo los nombres de los equipos de cada partido y el resultado del partido, a continuación se imprimirá la quiniela de esa jornada.</p>
+
+<h2 id="ejercicio-5">Ejercicio 5</h2>
+
+<p>Implementa un sistema completo de validación de usuarios en una máquina con Debian, que tiene las siguientes características:</p>
+
+<ul>
+  <li>El nombre de usuario y las contraseñas se almacenan en el fichero <code class="language-plaintext highlighter-rouge">/etc/shadow</code>, al que tiene acceso sólo el usuario root.</li>
+  <li>Las contraseñas se almacenan como un hash AES512 con sal</li>
+</ul>
+
+<p>Ayuda:</p>
+
+<p>Supongamos que tenemos en nuestro sistema el usuario <code class="language-plaintext highlighter-rouge">prueba</code> con contraseña <code class="language-plaintext highlighter-rouge">asdasd</code>, una línea correspondiente a este usuario en el fichero <code class="language-plaintext highlighter-rouge">/etc/shadow</code> sería:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>prueba:$y$j9T$bU9gdaTeFdFmE.H6YFABA/$a6tYG9jDZRNbkVaLW48AGbPw9ryIuHsG7PnaiWQmZb5:18977:0:99999:7:::
+</code></pre></div></div>
+
+<ul>
+  <li>La sal de una contraseña cifrada (en debian 11) se indica en linux por los <strong>30</strong> primeros caracteres del hash de la contraseña, en el caso anterior la sal sería <strong><code class="language-plaintext highlighter-rouge">$y$j9T$bU9gdaTeFdFmE.H6YFABA/$</code></strong>.</li>
+  <li>
+    <p>La función <code class="language-plaintext highlighter-rouge">crypt</code> del módulo <code class="language-plaintext highlighter-rouge">crypt</code> permite formar los hashes con sal utilizados por linux, de la siguiente manera:</p>
+
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="n">crypt</span> <span class="kn">import</span> <span class="n">crypt</span>
+  <span class="o">&gt;&gt;&gt;</span> <span class="nf">crypt</span><span class="p">(</span><span class="s">"asdasd"</span><span class="p">,</span><span class="s">"$y$j9T$bU9gdaTeFdFmE.H6YFABA/$"</span><span class="p">)</span>
+  <span class="s">'$y$j9T$bU9gdaTeFdFmE.H6YFABA/$a6tYG9jDZRNbkVaLW48AGbPw9ryIuHsG7PnaiWQmZb5'</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>donde <code class="language-plaintext highlighter-rouge">asdasd</code> es la contraseña en claro.</p>
+
+<p>Escribe un programa que lea un usuario y una contraseña, y te informe si el usuario es válido o no.</p>
+
+<h2 id="ejercicio-6">Ejercicio 6</h2>
+
+<p>Utilizando el ejercicio anterior, crea una aplicación simple de craqueo de contraseñas utilizando los ficheros que puedes encontrar en el <a href="https://github.com/danielmiessler/SecLists/tree/master/Passwords">repositorio</a>.</p>
+
+<h2 id="ejercicio-7">Ejercicio 7</h2>
+
+<p>Realizar una aplicación que recoja por teclado la cantidad total a pagar y la cantidad que se ha entregado. La aplicación debe calcular el cambio correspondiente con el menor número de monedas y/o billetes posibles.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Por ejemplo:
+
+	Cantidad total: 7,17 €
+	Cantidad entregada: 100 €
+	Cantidad a devolver: 92,83 €
+
+	1  billete de 50 €
+	2 billete de 20 €
+	1 monedas de 2 €
+	1 monda de 50 c
+	1 moneda de 20 c
+	1 moneda de 10 c
+	1 moneda de 2 c
+	1 moneda 1 c
+</code></pre></div></div>
+
+      </div>
+    </main>
+
+
+
+  </body>
+
+</html>

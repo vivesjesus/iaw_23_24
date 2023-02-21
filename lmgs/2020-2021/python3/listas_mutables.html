@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/main.css">
+  </head>
+  
+
+<body style="border-left-width: 0px;border-left-style: solid;padding-left: 150px;padding-top: 20px;padding-right: 150px;padding-botton: 20px;">
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/kUaDK9wuvmo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<h1 id="las-listas-son-mutables">Las listas son mutables</h1>
+
+<p>Al igual que las cadenas el tipo de datos lista es una <strong>clase</strong>, cada vez que creamos una variable de la clase lista estamos creando un <strong>objeto</strong> que además de guardar un conjunto de datos, posee un conjunto de <strong>métodos</strong> que nos permiten trabajar con la lista.</p>
+
+<h2 id="qué-significa-que-las-listas-son-mutables">¿Qué significa que las listas son mutables?</h2>
+
+<p>Los elementos de las listas se pueden modificar:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; lista1 = [1,2,3]
+&gt;&gt;&gt; lista1[2]=4
+&gt;&gt;&gt; lista1
+[1, 2, 4]
+&gt;&gt;&gt; del lista1[2]
+&gt;&gt;&gt; lista1
+[1, 2]
+</code></pre></div></div>
+
+<p>Esto también ocurre cuando usamos los métodos, es decir, los métodos de las listas modifican el contenido de la lista, por ejemplo si usamos el método <code class="language-plaintext highlighter-rouge">append()</code> para añadir un elemento a la lista:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; lista1.append(3)
+&gt;&gt;&gt; lista1
+[1, 2, 3]
+</code></pre></div></div>
+
+<p>Como vemos la lista <code class="language-plaintext highlighter-rouge">lista1</code> se ha modificado.</p>
+
+<h3 id="cómo-se-copian-las-listas">¿Cómo se copian las listas?</h3>
+
+<p>Para copiar una lista en otra no podemos utilizar el operador de asignación:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; lista1 = [1,2,3]
+&gt;&gt;&gt; lista2 = lista1
+&gt;&gt;&gt; lista1[1] = 10
+&gt;&gt;&gt; lista2
+[1, 10, 3]
+</code></pre></div></div>
+
+<p>El operador de asignación no crea una nueva lista, sino que nombra con dos nombres distintos a la misma lista, por lo tanto la forma más fácil de copiar una lista en otra es:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; lista1 = [1,2,3]
+&gt;&gt;&gt; lista2=lista1[:]
+&gt;&gt;&gt; lista1[1] = 10
+&gt;&gt;&gt; lista2
+[1, 2, 3]
+</code></pre></div></div>
+
+
+      </div>
+    </main>
+
+
+
+  </body>
+
+</html>

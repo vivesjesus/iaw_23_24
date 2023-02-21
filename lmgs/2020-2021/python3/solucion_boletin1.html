@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/main.css">
+  </head>
+  
+
+<body style="border-left-width: 0px;border-left-style: solid;padding-left: 150px;padding-top: 20px;padding-right: 150px;padding-botton: 20px;">
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <h1 id="análisis-y-diseño-de-problemas-ejercicios-resueltos">Análisis y diseño de problemas. Ejercicios resueltos</h1>
+
+<h2 id="ejercicio-1">Ejercicio 1</h2>
+
+<p>Escribir un programa que pregunte al usuario su nombre, y luego lo salude.</p>
+
+<h3 id="análisis">Análisis</h3>
+
+<ul>
+  <li>Definición del problema: Tenemos que pedir un nombre por teclado y luego escribir un mensaje de saludo.</li>
+  <li>Datos/Variables de entrada: nombre (Cadena)</li>
+  <li>Datos/Variables de salida: saludo (Cadena)</li>
+</ul>
+
+<h3 id="diseño">Diseño</h3>
+<ol>
+  <li>Leer nombre</li>
+  <li>saludo = “Hola “ y el nombre</li>
+  <li>Escribir saludo</li>
+</ol>
+
+<hr />
+
+<h2 id="ejercicio-2">Ejercicio 2</h2>
+
+<p>Calcular el perímetro y área de un rectángulo dada su base y su altura.</p>
+
+<h3 id="análisis-1">Análisis</h3>
+
+<ul>
+  <li>Definición del problema: Tenemos que leer la base y la altura del triangulo y calcular el perí­metro y el área. 
+<code class="language-plaintext highlighter-rouge">perimetro = 2*pi*radio</code>
+<code class="language-plaintext highlighter-rouge">area=pi*radio al cuadrado</code></li>
+  <li>Datos/Variables de entrada: radio (real)</li>
+  <li>Datos/Variables de salida:  perímetro(real) y área(real)</li>
+</ul>
+
+<h3 id="diseño-1">Diseño</h3>
+
+<ol>
+  <li>Leer base y altura</li>
+  <li>Calcular perí­metro. perí­metro=2<em>pi</em>radio</li>
+  <li>Calcular área. área= pi*radio al cuadrado</li>
+  <li>Mostrar perí­metro y área</li>
+</ol>
+
+<hr />
+
+<h2 id="ejercicio-3">Ejercicio 3</h2>
+
+<p>Dados los catetos de un triángulo rectángulo, calcular su hipotenusa.</p>
+
+<h3 id="análisis-2">Análisis</h3>
+
+<ul>
+  <li>Definición del problema: Dados los catetos de un triángulo rectángulo, calcular su hipotenusa. En un triángulo rectángulo el cuadrado de la hipotenusa es igual a la suma de los cuadrados de los catetos.</li>
+  <li>Datos/Variables de entrada: cateto1(real), cateto2(real)</li>
+  <li>Datos/Variables de salida:  hipotenusa(real)</li>
+</ul>
+
+<h3 id="diseño-2">Diseño</h3>
+
+<ol>
+  <li>Leer la longitud de los catetos</li>
+  <li>Calcular hipotenusa (igual a la raí­z cuadrada de la suma de los cuadrados de los catetos).</li>
+  <li>Mostrar la hipotenusa</li>
+</ol>
+
+<hr />
+
+<h2 id="ejercicio-4">Ejercicio 4</h2>
+
+<p>Dados dos números, mostrar la suma, resta, división y multiplicación de ambos.</p>
+
+<h3 id="análisis-3">Análisis</h3>
+
+<ul>
+  <li>Definición del problema: Tenemos que leer dos números, calcular la suma, resta, multiplicación y división.</li>
+  <li>Datos/Variables de entrada: numero1(entero), numero2(entero)</li>
+  <li>Datos/Variables de salida:  suma(entero), resta(entero), multiplicación(entero), división(real)</li>
+</ul>
+
+<h3 id="diseño-3">Diseño</h3>
+
+<ol>
+  <li>Leer numero1,numero2</li>
+  <li>Calcular suma, resta, multiplicación y división</li>
+  <li>Mostrar suma,resta, multiplicación y división</li>
+</ol>
+
+<hr />
+
+<h2 id="ejercicio-5">Ejercicio 5</h2>
+
+<p>Escribir un programa que convierta un valor dado en grados Fahrenheit a grados Celsius.</p>
+
+<h3 id="análisis-4">Análisis</h3>
+
+<ul>
+  <li>Definición del problema: Tenemos que leer una temperatura en grados Fahrenheit y devolverla en grados celsius.
+<code class="language-plaintext highlighter-rouge">C = (F-32)*5/9)</code></li>
+  <li>Datos/Variables de entrada: Grados Fahrenheit (real)</li>
+  <li>Datos/Variables de salida:  Frado Celsius (real)</li>
+</ul>
+
+<h3 id="diseño-4">Diseño</h3>
+
+<ol>
+  <li>Leer la temperatura en grados Fahrenheit</li>
+  <li>Calcular los grados celsius (C = (F-32)*5/9)</li>
+  <li>Mostrar grados celsius</li>
+</ol>
+
+<hr />
+
+<h2 id="ejercicio-6">Ejercicio 6</h2>
+
+<p>Calcular la media de tres números pedidos por teclado</p>
+
+<h3 id="análisis-5">Análisis</h3>
+
+<ul>
+  <li>Definición del problema: Tenemos que leer tres números y calcular la media. Suma de los tres números partido 3.</li>
+  <li>Datos/Variables de entrada: numero1 (real),numero2 (real),numero3 (real)</li>
+  <li>Datos/Variables de salida:  media (real)</li>
+</ul>
+
+<h3 id="diseño-5">Diseño</h3>
+
+<ol>
+  <li>Leer numero1,numero2,numero3</li>
+  <li>Calcular la media. media = (numero1+numero2+numero3)/3</li>
+  <li>Mostrar media</li>
+</ol>
+
+<hr />
+
+<h2 id="ejercicio-7">Ejercicio 7</h2>
+
+<p>Realiza un programa que reciba una cantidad de minutos y muestre por pantalla a cuantas horas y minutos corresponde. Por ejemplo: 1000 minutos son 16 horas y 40 minutos.</p>
+
+<h3 id="análisis-6">Análisis</h3>
+
+<ul>
+  <li>Definición del problema: Tenemos que leer una cantidad de minutos, y calcular cuantas horas y minutos son. Si divido los minutos totales entre 60, la división entera será las horas y el módulo (el resto de la división) serán los minutos restantes.</li>
+  <li>Datos/Variables de entrada: minutos_totales (entero)</li>
+  <li>Datos/Variables de salida:  horas (entero), minutos (entero)</li>
+</ul>
+
+<h3 id="diseño-6">Diseño</h3>
+
+<ol>
+  <li>Leer los minutos totales</li>
+  <li>Calcular a cuantas horas corresponde, división entera entre 60.</li>
+  <li>calcular los minutos restantes: resto de la división entre 60.</li>
+  <li>Mostrar horas y minutos</li>
+</ol>
+
+<hr />
+
+<h2 id="ejercicio-8">Ejercicio 8</h2>
+
+<p>Un vendedor recibe un sueldo base mas un 10% extra por comisión de sus ventas, el vendedor desea saber cuanto dinero obtendrá por concepto de comisiones por las tres ventas que realiza en el mes y el total que recibirá en el mes tomando en cuenta su sueldo base y comisiones.</p>
+
+<h3 id="análisis-7">Análisis</h3>
+
+<ul>
+  <li>Definición del problema: El vendedor tiene un sueldo base mas una comisión del 10% por cada venta. Hace tres ventas.</li>
+  <li>Datos/Variables de entrada: sueldo base (real), venta1 (real), venta2 (real), venta3 (real).</li>
+  <li>Datos/Variables de salida:  comisiones (real),) sueldo total (real)</li>
+</ul>
+
+<h3 id="diseño-7">Diseño</h3>
+
+<ol>
+  <li>Leer sueldo base</li>
+  <li>Leer venta1, venta2 y venta3</li>
+  <li>Calcular las comisiones. Ir sumando el 10 % de cada venta. comision = 0,1 * venta1 + 0,1 * venta2 + 0,1 * venta3</li>
+  <li>Mostrar comisión</li>
+  <li>Mostrar sueldo total: sueldo_base+comisión</li>
+</ol>
+
+<hr />
+
+<h2 id="ejercicio-9">Ejercicio 9</h2>
+
+<p>Una tienda ofrece un descuento del 15% sobre el total de la compra y un cliente desea saber cuanto deberá pagar finalmente por su compra.</p>
+
+<h3 id="análisis-8">Análisis</h3>
+
+<ul>
+  <li>Definición del problema: Debemos preguntar cuanto dinero es la compra, calcular el 15% y restarlo al total.</li>
+  <li>Datos/Variables de entrada: precio (real).</li>
+  <li>Datos/Variables de salida:  precio final (real).</li>
+</ul>
+
+<h3 id="diseño-8">Diseño</h3>
+
+<ol>
+  <li>Leer el precio</li>
+  <li>Calcular precio final = precio - 15% del precio</li>
+  <li>Mostrar precio final</li>
+</ol>
+
+<hr />
+
+<h2 id="ejercicio-10">Ejercicio 10</h2>
+
+<p>Un alumno desea saber cual será su calificación final en la materia de Algoritmos. Dicha calificación se compone de los siguientes porcentajes:</p>
+<ul>
+  <li>55% del promedio de sus tres calificaciones parciales.</li>
+  <li>30% de la calificación del examen final.</li>
+  <li>15% de la calificación de un trabajo final.</li>
+</ul>
+
+<h3 id="análisis-9">Análisis</h3>
+
+<ul>
+  <li>Definición del problema: Hay que leer las notas parciales, la nota del examen final y la nota del trabajo final. Posteriormente se calculan los porcentajes y se suman.</li>
+  <li>Datos/Variables de entrada:  parcial1 (real), parcial2 (real), parcial3 (real), nota_examen (real), nota_trabajo (real)</li>
+  <li>Datos/Variables de salida:  nota_final (real)</li>
+</ul>
+
+<h3 id="diseño-9">Diseño</h3>
+
+<ol>
+  <li>Leer parcial1, parcial2, parcial3, nota_examen, nota_trabajo</li>
+  <li>Calculamos la nota final. 55% de la media de las notas parciales más el 30% de la nota del examen mas 15% de la nota del trabajo.
+<code class="language-plaintext highlighter-rouge">nota_final = 0,55 * ((parcial1 + parcial2 + parcial3)/3) + 0,3 * nota_examen + 0,15 * nota_trabajo</code></li>
+  <li>Mostrar nota_final</li>
+</ol>
+
+<hr />
+
+<h2 id="ejercicio-11">Ejercicio 11</h2>
+
+<p>Pide al usuario dos números y muestra la “distancia” entre ellos (el valor absoluto de su diferencia, de modo que el resultado sea siempre positivo).</p>
+
+<h3 id="análisis-10">Análisis</h3>
+
+<ul>
+  <li>Definición del problema: Se piden dos números y se calcula el valor absoluto de la diferencia.</li>
+  <li>Datos/Variables de entrada:  numero1 (entero), numero2 (entero).</li>
+  <li>Datos/Variables de salida:  distancia (entero)</li>
+</ul>
+
+<h3 id="diseño-10">Diseño</h3>
+
+<ol>
+  <li>Leer los dos números.</li>
+  <li>Calcular distancia (valor absoluto de la diferencia).</li>
+  <li>Mostrar distancia.</li>
+</ol>
+
+<hr />
+
+<h2 id="ejercicio-12">Ejercicio 12</h2>
+
+<p>Pide al usuario dos pares de números x1,y2 y x2,y2, que representen dos puntos en el plano. Calcula y muestra la distancia entre ellos.</p>
+
+<h3 id="análisis-11">Análisis</h3>
+
+<ul>
+  <li>Definición del problema: Se piden dos puntos (cada punto está representado por dos coordenadas) y se calcula la distancia entre ellos. Para calcular la distancia se utiliza la formula que hemos mostrado.</li>
+  <li>Datos/Variables de entrada: cuatro coordenadas (x1,y1) (x2,y2) (entero).</li>
+  <li>Datos/variables de salida: distancia (real).</li>
+</ul>
+
+<h2 id="diseño-11">Diseño</h2>
+
+<ol>
+  <li>Leer las cuatro coordenadas.</li>
+  <li>Calcular distancia: raíz cuadrada de (x2-x1)^2 + (y2-y1)^2</li>
+  <li>Mostrar distancia</li>
+</ol>
+
+<hr />
+
+<h2 id="ejercicio-13">Ejercicio 13</h2>
+
+<p>Realizar un algoritmos que lea un número y que muestre su raíz cuadrada y su raíz cúbica.</p>
+
+<h3 id="análisis-12">Análisis</h3>
+
+<ul>
+  <li>Definición del problema: Se piden número y se muestra la raíz cuadrada y la cúbica.</li>
+  <li>Datos/Variables de entrada: numero (entero)</li>
+  <li>Datos/variables de salida: raíz_cuadrada (real), raíz_cúbica(real).</li>
+</ul>
+
+<h2 id="diseño-12">Diseño</h2>
+
+<ol>
+  <li>Leer el número.</li>
+  <li>Calcular raíz cuadrada</li>
+  <li>Calcular raíz cúbica</li>
+  <li>Mostrar la raíz_cuadrada, raíz_cúbica</li>
+</ol>
+
+<hr />
+
+<h2 id="ejercicio-14">Ejercicio 14</h2>
+
+<p>Dado un número de dos cifras, diseñe un algoritmo que permita obtener el número invertido.</p>
+
+<h3 id="análisis-13">Análisis</h3>
+
+<ul>
+  <li>Definición del problema: Se pide un número de dos cifras y se debe mostrar el número de unidades y de decenas</li>
+  <li>Datos/Variables de entrada: numero (entero).</li>
+  <li>Datos/variables de salida: decenas (real), unidades (entero).</li>
+</ul>
+
+<h2 id="diseño-13">Diseño</h2>
+
+<ol>
+  <li>Leer el número de dos cifras</li>
+  <li>Calcular decenas: división entera del número entre 10.</li>
+  <li>Calcular unidades: resto de dividir el número entre 10.</li>
+  <li>Mostrar decenas y unidades</li>
+</ol>
+
+<hr />
+
+<h2 id="ejercicio-15">Ejercicio 15</h2>
+
+<p>Dadas dos variables numéricas A y B, que el usuario debe teclear, se pide realizar un algoritmo que intercambie los valores de ambas variables y muestre cuanto valen al final las dos variables.</p>
+
+<h3 id="análisis-14">Análisis</h3>
+
+<ul>
+  <li>Definición del problema: Se piden el valor de dos variables (el tipo puede ser el que queramos). Hay que intercambiar los valores de las variables.</li>
+  <li>Datos/Variables de entrada: numero1 (entero), numero2 (entero).</li>
+  <li>Necesito una variable auxiliar (aux).</li>
+  <li>Datos/variables de salida:  Las dos variables pero con los datos cambiados (entero)</li>
+</ul>
+
+<h2 id="diseño-14">Diseño</h2>
+
+<ol>
+  <li>Leer los dos números</li>
+  <li>Intercambio los valores. Asigno “numero1” en “aux”, “numero2” en “numero1” y “aux” en “numero2”</li>
+  <li>Mostrar “numero1” y “numero2”</li>
+</ol>
+
+<hr />
+
+<h2 id="ejercicio-16">Ejercicio 16</h2>
+
+<p>Dos vehículos viajan a diferentes velocidades (v1 y v2) y están distanciados por una distancia d. El que está detrás viaja a una velocidad mayor. Se pide hacer un algoritmo para ingresar la distancia entre los dos vehículos (km) y sus respectivas velocidades (km/h) y con esto determinar y mostrar en que tiempo (minutos) alcanzará el vehículo más rápido al otro.</p>
+
+<h3 id="análisis-15">Análisis</h3>
+
+<ul>
+  <li>Definición del problema: Hay que saber la velocidad de cada vehículo, y la distancia entre ambos, sabemos que v=s/t, por lo tanto t=s/v, con esta formula calcularemos el tiempo que tardará el que está detrás (y va más rápido) en alcanzar al primero, siendo la velocidad la diferencia de velocidad.</li>
+  <li>Datos/Variables de entrada: velocidad1, velocidad2 (real) y distancia (real).</li>
+  <li>Datos/variables de salida: Tiempo en minutos (real)</li>
+</ul>
+
+<h3 id="diseño-15">Diseño</h3>
+
+<ol>
+  <li>Leer las dos velocidades y la distancia (no puedo controlar que v1 &gt; v2).</li>
+  <li>Calcular tiempo: (v=s/t), por lo tanto t=s/v. Tiempo = distancia / (v1-v2)</li>
+  <li>El tiempo hay que pasarlo a minútos tiempo*60</li>
+  <li>Mostrar tiempo</li>
+</ol>
+
+<hr />
+
+<h2 id="ejercicio-17">Ejercicio 17</h2>
+
+<p>Un ciclista parte de una ciudad A a las HH horas, MM minutos y SS segundos. El tiempo de viaje hasta llegar a otra ciudad B es de T segundos. Escribir un algoritmo que determine la hora de llegada a la ciudad B.</p>
+
+<h3 id="análisis-16">Análisis</h3>
+
+<ul>
+  <li>Definición del problema: Tenemos que pedir la hora de salida (hora, minutos y segundos). Tengo que saber también el tiempo en segundo que ha tardado en llegar. Tenemos que calcular la hora de llegada.</li>
+  <li>Datos/Variables de entrada: hora_salida (entero), minutos_salida (entero), segundos_salida (entero), segundos_viaje (entero).</li>
+  <li>Datos/variables de salida: hora_llegada (entero), minutos_llegada (entero), segundos_llegada (entero)</li>
+</ul>
+
+<h3 id="diseño-16">Diseño</h3>
+
+<ol>
+  <li>Leer hora_salida,minutos_salida, segundos_salida</li>
+  <li>Leer segundos_viaje</li>
+  <li>Convierto la hora de salida a segundos (necesito una variable seginicial) 
+<code class="language-plaintext highlighter-rouge">seginicial=hora_salida * 3600 + minuto_salida * 60 + segundos_salida</code></li>
+  <li>Le sumo los segundos que he tardado(necesito una variable segfinal)
+`segfinal=seginial+segundos_viaje</li>
+  <li>Convierto los segundos totales a hora, minuto y segundos
+<code class="language-plaintext highlighter-rouge">horallegada = (segfinal / 3600)</code> División entera
+<code class="language-plaintext highlighter-rouge">minllegada = ((segfinal % 3600) / 60)</code> División entera
+<code class="language-plaintext highlighter-rouge">segllegada &lt;- (segfinal % 3600) % 60</code></li>
+  <li>Muestro hora_llegada,minutos_llegada, segundos_llegada</li>
+</ol>
+
+<hr />
+
+<h2 id="ejercicio-18">Ejercicio 18</h2>
+
+<p>Pedir el nombre y los dos apellidos de una persona y mostrar las iniciales.</p>
+
+<h3 id="análisis-17">Análisis</h3>
+
+<ul>
+  <li>Definición del problema: Hay que pedir el nombre y los apellidos, y mostrar las iniciales. Las iniciales son la primera letra del nombre, primer apellido y segundo apellido.</li>
+  <li>Datos/Variables de entrada: nombre (cadena), apellido1 (cadena), apellido2 (cadena)</li>
+  <li>Datos/variables de salida: iniciales (cadena)</li>
+</ul>
+
+<h3 id="diseño-17">Diseño</h3>
+
+<ol>
+  <li>Leer nombre, apellido1, apellido2</li>
+  <li>Obtener primer carácter de cada cadena</li>
+  <li>Concatenar los caracteres en iniciales</li>
+  <li>Mostrar iniciales</li>
+</ol>
+
+<hr />
+
+<h2 id="ejercicio-19">Ejercicio 19</h2>
+
+<p>Escribir un algoritmo para calcular la nota final de un estudiante, considerando que: por cada respuesta correcta 5 puntos, por una incorrecta -1 y por respuestas en blanco 0. Imprime el resultado obtenido por el estudiante.</p>
+
+<h3 id="análisis-18">Análisis</h3>
+
+<ul>
+  <li>Definición del problema: Se piden la cantidad de respuestas correctas, las respuestas incorrectas y las en blanco. Calculamos la nota: 5 puntos por respuesta correcta, -1 por incorrecta. `nota=5 * correctas - incorrectas</li>
+  <li>Datos/Variables de entrada: correctas (entero), incorrectas (entero), en_blanco(entero).</li>
+  <li>Datos/variables de salida: nota (entero)</li>
+</ul>
+
+<h3 id="diseño-18">Diseño</h3>
+
+<p>Diseño</p>
+<ol>
+  <li>Leer correctas, incorrectas, en_blanco</li>
+  <li>Calcular nota: número de correctas * 5 + número de incorrectas * -1</li>
+  <li>Mostrar nota</li>
+</ol>
+
+<hr />
+
+<h2 id="ejercicio-20">Ejercicio 20</h2>
+
+<p>Diseñar un algoritmo que nos diga el dinero que tenemos (en euros y céntimos) después de pedirnos cuantas monedas tenemos de 2e, 1e, 50 céntimos, 20 céntimos o 10 céntimos).</p>
+
+<h3 id="análisis-19">Análisis</h3>
+
+<ul>
+  <li>Definición del problema: Se piden la cantidad de monedas que tenemos (de 2e, 1e, 50 céntimos, 20 céntimos o 10 céntimos) y calculamos el dinero que tenemos (euros y céntimos).</li>
+  <li>Datos/Variables de entrada: 2euros (entero), 1euro (entero), 50céntimos (entero), 20céntimos (entero), 10céntimos (entero)</li>
+  <li>Datos/variables de salida: total_euros (entero), total_centimos (entero)</li>
+</ul>
+
+<h3 id="diseño-19">Diseño</h3>
+
+<ol>
+  <li>Leer el monedas de 2euros, 1euro, 50céntimos, 20céntimos o 10céntimos.</li>
+  <li>Calcular Euros (<code class="language-plaintext highlighter-rouge">sumar monedas de 2 euros * 2 + monedas de 1 euro</code>)</li>
+  <li>Calcular céntimos 
+<code class="language-plaintext highlighter-rouge">monedas de 50c * 50 + monedas de 30c * 30 + moneda de 20c * 20 + moneda de 10c * 10</code></li>
+  <li>Convertir céntimos a euros (división entera entre 100)</li>
+  <li>Mostrar total_euros, total_centimos</li>
+</ol>
+
+
+      </div>
+    </main>
+
+
+
+  </body>
+
+</html>

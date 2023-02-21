@@ -1,0 +1,460 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="es" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html -->
+
+<title>Taller 3: Integración continua de aplicación django (Test) - IES SEVERO OCHOA</title>
+<meta name="description" content="Vamos a trabajar con el repositorio de la aplicación django_tutorial. Esta aplicación tiene definidas una serie de test, que podemos estudiar en el fichero tests.py del directorio polls.">
+
+
+  <meta name="author" content="Jesús Vives Céspedes">
+  
+  <meta property="article:author" content="Jesús Vives Céspedes">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="IES SEVERO OCHOA">
+<meta property="og:title" content="Taller 3: Integración continua de aplicación django (Test)">
+<meta property="og:url" content="http://localhost:4000/iaw2223/7_ic/t3">
+
+
+  <meta property="og:description" content="Vamos a trabajar con el repositorio de la aplicación django_tutorial. Esta aplicación tiene definidas una serie de test, que podemos estudiar en el fichero tests.py del directorio polls.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2023-02-21T21:10:39+01:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/iaw2223/7_ic/t3">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Jesus Vives Céspedes",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="IES SEVERO OCHOA Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    
+<!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+
+
+<link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+<link rel="manifest" href="/assets/icons/site.webmanifest">
+<link rel="mask-icon" href="/assets/icons/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<!-- end custom head snippets 2 -->
+
+  </head>
+
+  <body class="layout--single2 wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Saltar a navegación principal</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Saltar a contenido</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Saltar a pie</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          IES SEVERO OCHOA
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="">Inicio</a>
+            </li><li class="masthead__menu-item">
+              <a href="https://aules.edu.gva.es/fp/login/index.php">Plataforma</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Alternar búsqueda</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Alternar menú</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Alternar menú</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">Implantación de aplicaciones web (2022-2023)</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/iaw2223/">Inicio</a></li>
+          
+            <li><a href="/iaw2223/#unidad-1-introducci%C3%B3n-a-la-implantaci%C3%B3n-de-aplicaciones-web">Introducción</a></li>
+          
+            <li><a href="/iaw2223/#unidad-2-implantaci%C3%B3n-de-aplicaciones-web-php">PHP</a></li>
+          
+            <li><a href="/iaw2223/#unidad-3-seguridad-de-aplicaciones-web-con-https">HTTPS</a></li>
+          
+            <li><a href="/iaw2223/#unidad-4-implantaci%C3%B3n-de-aplicaciones-web-python">Python</a></li>
+          
+            <li><a href="/iaw2223/#unidad-5-implantaci%C3%B3n-de-aplicaciones-web-java">Java</a></li>
+          
+            <li><a href="/iaw2223/#unidad-6-docker">Docker</a></li>
+          
+            <li><a href="/iaw2223/#unidad-7-introducci%C3%B3n-a-la-integraci%C3%B3n-contin%C3%BAa-y-despliegue-continuo">IC/DC</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Módulos</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/iaw2223/">Implantación de Aplicaciones Web</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+  
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Taller 3: Integración continua de aplicación django (Test)">
+    <meta itemprop="description" content="Vamos a trabajar con el repositorio de la aplicación django_tutorial. Esta aplicación tiene definidas una serie de test, que podemos estudiar en el fichero tests.py del directorio polls.">
+    <meta itemprop="datePublished" content="February 21, 2023">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Taller 3: Integración continua de aplicación django (Test)
+</h1>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <p>Vamos a trabajar con el repositorio de la aplicación <a href="https://github.com/josedom24/django_tutorial">django_tutorial</a>. Esta aplicación tiene definidas una serie de test, que podemos estudiar en el fichero <code class="language-plaintext highlighter-rouge">tests.py</code> del directorio <code class="language-plaintext highlighter-rouge">polls</code>.</p>
+
+<p>Cada test viene definido por una función. En el fichero puedes leer los comentarios para saber que es lo que prueba cada test, o puedes ver el documento <a href="test_tutorial_django.html">Tests en la aplicación tutorial Django</a>.</p>
+
+<p>Para ejecutar los test ejecutamos:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python3 manage.py test
+</code></pre></div></div>
+
+<p>En ese momento se crea una base de datos temporal, donde se van a ir realizando las pruebas que están definidas:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python3 manage.py test
+Creating test database for alias 'default'...
+System check identified no issues (0 silenced).
+..........
+----------------------------------------------------------------------
+Ran 10 tests in 0.024s
+
+OK
+Destroying test database for alias 'default'...
+</code></pre></div></div>
+
+<p>Por ejemplo, hay dos tests definidos en la función <code class="language-plaintext highlighter-rouge">test_no_questions</code> y en la función <code class="language-plaintext highlighter-rouge">test_future_question</code> que comprueban que si no hay preguntas en la base de datos debe aparecer el mensaje <strong>“No polls are available”</strong>. Si un programador modifica la aplicación y en el fichero <code class="language-plaintext highlighter-rouge">polls/templates/polls/index.html</code> y cambia el mensaje:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...
+    &lt;p&gt;No hay encuestas disponibles.&lt;/p&gt;
+...
+</code></pre></div></div>
+
+<p>Al pasar los test, tendremos dos errores en los dos tests:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python3 manage.py test
+Creating test database for alias 'default'...
+System check identified no issues (0 silenced).
+..F.F.....
+======================================================================
+FAIL: test_future_question (polls.tests.QuestionIndexViewTests)
+Questions with a pub_date in the future aren't displayed on
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/jose/github/django_tutorial/polls/tests.py", line 143, in test_future_question
+    self.assertContains(response, "No polls are available.")
+  File "/home/jose/virtualenv/django_tutorial/lib/python3.9/site-packages/django/test/testcases.py", line 471, in assertContains
+    self.assertTrue(real_count != 0, msg_prefix + "Couldn't find %s in response" % text_repr)
+AssertionError: False is not true : Couldn't find 'No polls are available.' in response
+
+======================================================================
+FAIL: test_no_questions (polls.tests.QuestionIndexViewTests)
+If no questions exist, an appropriate message is displayed.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/jose/github/django_tutorial/polls/tests.py", line 115, in test_no_questions
+    self.assertContains(response, "No polls are available.")
+  File "/home/jose/virtualenv/django_tutorial/lib/python3.9/site-packages/django/test/testcases.py", line 471, in assertContains
+    self.assertTrue(real_count != 0, msg_prefix + "Couldn't find %s in response" % text_repr)
+AssertionError: False is not true : Couldn't find 'No polls are available.' in response
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.022s
+
+FAILED (failures=2)
+</code></pre></div></div>
+
+<p><strong>Recuerda que para hacer fallar un test, no hay que tocar el fichero <code class="language-plaintext highlighter-rouge">test.py</code>. Los test no se pasan porque al modificar el código de la aplicación se dejan de cumplir las condiciones indicadas en los test.</strong></p>
+
+<h2 id="pipeline-para-realizar-un-test-automático">Pipeline para realizar un test automático</h2>
+
+<p>Sabiendo como se ejecutan los test, es fácil hacer un pipeline que lo haga por nosotros de forma automática:</p>
+
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pipeline</span> <span class="o">{</span>
+    <span class="n">agent</span> <span class="o">{</span>
+        <span class="n">docker</span> <span class="o">{</span> <span class="n">image</span> <span class="s1">'python:3'</span>
+        <span class="n">args</span> <span class="s1">'-u root:root'</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+    <span class="n">stages</span> <span class="o">{</span>
+        <span class="n">stage</span><span class="o">(</span><span class="s1">'Clone'</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">steps</span> <span class="o">{</span>
+                <span class="n">git</span> <span class="nl">branch:</span><span class="s1">'master'</span><span class="o">,</span><span class="nl">url:</span><span class="s1">'https://github.com/josedom24/django_tutorial.git'</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="n">stage</span><span class="o">(</span><span class="s1">'Install'</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">steps</span> <span class="o">{</span>
+                <span class="n">sh</span> <span class="s1">'pip install -r requirements.txt'</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="n">stage</span><span class="o">(</span><span class="s1">'Test'</span><span class="o">)</span>
+        <span class="o">{</span>
+            <span class="n">steps</span> <span class="o">{</span>
+                <span class="n">sh</span> <span class="s1">'python3 manage.py test'</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<ol>
+  <li>Para poder instalar los paquetes con pip necesitamos ejecutar las instrucciones en el contenedor como root (<code class="language-plaintext highlighter-rouge">args '-u root:root'</code>).</li>
+  <li>Clonamos el repositorio.</li>
+  <li>Instalamos los requerimientos.</li>
+  <li>Realizamos los test.</li>
+</ol>
+
+<p>Prueba a cambiar el código para que un test falle y comprueba como el pipeline falla.</p>
+
+<div class="notice--info">
+<ol>
+  <li>Una captura de pantalla donde se vea la salida de un build que se ha ejecutado de manera correcta.</li>
+  <li>Modifica el código de la aplicación para que se produzca un fallo en el código. <em>*Recuerda que para hacer fallar un test, no hay que tocar el fichero <code class="language-plaintext highlighter-rouge">test.py</code>. Los test no se pasan porque al modificar el código de la aplicación se dejan de cumplir las condiciones indicadas en los test. Recuerda no elegir en el que hemos visto en este taller:mensaje *“No polls are available”</em> **.</li>
+  <li>Una captura de pantalla donde se vea la salida de un build que se ha ejecutado con errores de testeo.</li>
+</ol>
+
+</div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Actualizado:</strong> <time datetime="2023-02-21T21:10:39+01:00">February 21, 2023</time></p>
+        
+      </footer>
+
+      
+
+    
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Términos de búsqueda...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Términos de búsqueda..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Seguir:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 Jesus Vives Céspedes. Funciona con <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+
+
+  </body>
+</html>

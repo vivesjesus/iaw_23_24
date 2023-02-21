@@ -1,0 +1,477 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="es" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html -->
+
+<title>Práctica: Implantación de aplicaciones web PHP en docker - IES SEVERO OCHOA</title>
+<meta name="description" content="Imaginemos que el equipo de desarrollo de nuestra empresa ha desarrollado una aplicación PHP que se llama BookMedik (https://github.com/evilnapsis/bookmedik).">
+
+
+  <meta name="author" content="Jesús Vives Céspedes">
+  
+  <meta property="article:author" content="Jesús Vives Céspedes">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="IES SEVERO OCHOA">
+<meta property="og:title" content="Práctica: Implantación de aplicaciones web PHP en docker">
+<meta property="og:url" content="http://localhost:4000/iaw2223/6_docker/practica1">
+
+
+  <meta property="og:description" content="Imaginemos que el equipo de desarrollo de nuestra empresa ha desarrollado una aplicación PHP que se llama BookMedik (https://github.com/evilnapsis/bookmedik).">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2023-02-21T21:10:39+01:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/iaw2223/6_docker/practica1">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Jesus Vives Céspedes",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="IES SEVERO OCHOA Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    
+<!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+
+
+<link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+<link rel="manifest" href="/assets/icons/site.webmanifest">
+<link rel="mask-icon" href="/assets/icons/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<!-- end custom head snippets 2 -->
+
+  </head>
+
+  <body class="layout--single2 wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Saltar a navegación principal</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Saltar a contenido</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Saltar a pie</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          IES SEVERO OCHOA
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="">Inicio</a>
+            </li><li class="masthead__menu-item">
+              <a href="https://aules.edu.gva.es/fp/login/index.php">Plataforma</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Alternar búsqueda</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Alternar menú</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Alternar menú</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">Implantación de aplicaciones web (2022-2023)</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/iaw2223/">Inicio</a></li>
+          
+            <li><a href="/iaw2223/#unidad-1-introducci%C3%B3n-a-la-implantaci%C3%B3n-de-aplicaciones-web">Introducción</a></li>
+          
+            <li><a href="/iaw2223/#unidad-2-implantaci%C3%B3n-de-aplicaciones-web-php">PHP</a></li>
+          
+            <li><a href="/iaw2223/#unidad-3-seguridad-de-aplicaciones-web-con-https">HTTPS</a></li>
+          
+            <li><a href="/iaw2223/#unidad-4-implantaci%C3%B3n-de-aplicaciones-web-python">Python</a></li>
+          
+            <li><a href="/iaw2223/#unidad-5-implantaci%C3%B3n-de-aplicaciones-web-java">Java</a></li>
+          
+            <li><a href="/iaw2223/#unidad-6-docker">Docker</a></li>
+          
+            <li><a href="/iaw2223/#unidad-7-introducci%C3%B3n-a-la-integraci%C3%B3n-contin%C3%BAa-y-despliegue-continuo">IC/DC</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Módulos</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/iaw2223/">Implantación de Aplicaciones Web</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+  
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Práctica: Implantación de aplicaciones web PHP en docker">
+    <meta itemprop="description" content="Imaginemos que el equipo de desarrollo de nuestra empresa ha desarrollado una aplicación PHP que se llama BookMedik (https://github.com/evilnapsis/bookmedik).">
+    <meta itemprop="datePublished" content="February 21, 2023">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Práctica: Implantación de aplicaciones web PHP en docker
+</h1>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <p>Imaginemos que el equipo de desarrollo de nuestra empresa ha desarrollado una aplicación PHP que se llama BookMedik (<a href="https://github.com/evilnapsis/bookmedik">https://github.com/evilnapsis/bookmedik</a>).</p>
+
+<p>Queremos crear una imagen Docker para implantar dicha aplicación.</p>
+
+<p>Tenemos que tener en cuenta los siguientes aspectos:</p>
+
+<p><strong>Contenedor mariadb</strong></p>
+
+<ul>
+  <li>Es necesario que nuestra aplicación guarde su información en un contenedor docker <strong>mariadb</strong>.</li>
+  <li>El script para generar la base de datos y los registros lo encuentras en el repositorio y se llama <code class="language-plaintext highlighter-rouge">schema.sql</code>. Debes crear un usuario con su contraseña en la base de datos. La base de datos se llama <code class="language-plaintext highlighter-rouge">bookmedik</code> y se crea al ejecutar el script.</li>
+  <li>Ejecuta el contenedor <strong>mariadb</strong> y carga los datos del script <code class="language-plaintext highlighter-rouge">schema.sql</code>. Para más <a href="https://gist.github.com/spalladino/6d981f7b33f6e0afe6bb">información</a>.</li>
+  <li>El contenedor <strong>mariadb</strong> debe tener un volumen para guardar la base de datos.</li>
+</ul>
+
+<p><strong>Contenedor bookmedik</strong></p>
+
+<ul>
+  <li>Vamos a crear tres versiones de la imagen que nos permite implantar la aplicación PHP.</li>
+  <li>La imagen debe crear las variables de entorno necesarias con datos de conexión por defecto.</li>
+  <li>Al crear un contenedor a partir de estas imágenes se ejecutará un script bash que realizará las siguientes tareas:
+    <ul>
+      <li>Modifique el fichero <code class="language-plaintext highlighter-rouge">core\controller\Database.php</code> para que lea las variables de entorno. Para obtener las variables de entorno en PHP usar la función <code class="language-plaintext highlighter-rouge">getenv</code>. <a href="http://php.net/manual/es/function.getenv.php">Para más información</a>.</li>
+      <li>Inicialice la base de datos con el fichero <code class="language-plaintext highlighter-rouge">schema.sql</code>.</li>
+      <li>Ejecute el servidor web.</li>
+    </ul>
+  </li>
+  <li>El contenedor que creas debe tener un volumen para guardar los logs del servidor web.</li>
+  <li>La imagen la tienes que crear en tu entorno de desarrollo con el comando <code class="language-plaintext highlighter-rouge">docker build</code>.</li>
+</ul>
+
+<h2 id="tarea-1-creación-de-una-imagen-docker-con-una-aplicación-web-desde-una-imagen-base">Tarea 1: Creación de una imagen docker con una aplicación web desde una imagen base</h2>
+
+<ul>
+  <li>Vamos a crear una imagen que se llame <code class="language-plaintext highlighter-rouge">usuario/bookmedik:v1</code>.</li>
+  <li>Crea una imagen docker con la aplicación desde una imagen base de debian o ubuntu.</li>
+</ul>
+
+<div class="notice--info">
+<ul>
+  <li>Entrega la url del repositorio GitHub donde tengas los ficheros necesarios para hacer la construcción de la imagen.</li>
+  <li>Entrega una captura de pantalla donde se vea la imagen en el registro de tu entorno de desarrollo.</li>
+</ul>
+</div>
+
+<h2 id="tarea-2-despliegue-en-el-entorno-de-desarrollo">Tarea 2: Despliegue en el entorno de desarrollo</h2>
+
+<ul>
+  <li>Crea un script con <code class="language-plaintext highlighter-rouge">docker-compose</code> que levante el escenario con los dos contenedores.</li>
+  <li>Recuerda que para acceder a la aplicación: Usuario: <strong>admin</strong>, contraseña: <strong>admin</strong>.</li>
+</ul>
+
+<div class="notice--info">
+<ul>
+  <li>Entrega la url del repositorio GitHub donde hayas añadido el fichero <code class="language-plaintext highlighter-rouge">docker-compose.yml</code>.</li>
+  <li>Entrega la instrucción para ver los dos contenedores del escenario funcionando.</li>
+  <li>Entrega una captura de pantalla donde se vea funcionando la aplicación, una vez que te has logueado.</li>
+</ul>
+</div>
+
+<h2 id="tarea-3-creación-de-una-imagen-docker-con-una-aplicación-web-desde-una-imagen-php">Tarea 3: Creación de una imagen docker con una aplicación web desde una imagen PHP</h2>
+
+<ul>
+  <li>Vamos a crear una imagen que se llame <code class="language-plaintext highlighter-rouge">usuario/bookmedik:v2</code>.</li>
+  <li>Realiza la imagen docker de la aplicación a partir de la imagen oficial <a href="https://hub.docker.com/_/php/">PHP</a> que encuentras en docker hub. Lee la documentación de la imagen para configurar una imagen con apache2 y php, además seguramente tengas que instalar alguna extensión de php.</li>
+  <li>Modifica el fichero docker-compose.yml` para probar esta imagen.</li>
+</ul>
+
+<div class="notice--info">
+<ul>
+  <li>Entrega la url del repositorio GitHub donde tengas los ficheros necesarios para hacer la construcción de la imagen.</li>
+  <li>Entrega una captura de pantalla donde se vea la imagen en el registro de tu entorno de desarrollo.</li>
+  <li>Entrega la instrucción para ver los dos contenedores del escenario funcionando.</li>
+  <li>Entrega una captura de pantalla donde se vea funcionando la aplicación, una vez que te has logueado.</li>
+</ul>
+</div>
+
+<h2 id="tarea-4-ejecución-de-una-aplicación-php-en-docker-con-nginx-optativa">Tarea 4: Ejecución de una aplicación PHP en docker con nginx (OPTATIVA)</h2>
+
+<ul>
+  <li>Vamos a crear una imagen que se llame <code class="language-plaintext highlighter-rouge">usuario/bookmedik:v3</code>.</li>
+  <li>En este caso queremos usar un contenedor que utilice nginx para servir la aplicación PHP. Puedes crear la imagen desde una imagen base debian o ubuntu o desde la imagen oficial de nginx.</li>
+  <li>Vamos a crear otro contenedor que sirva php-fpm.</li>
+  <li>Para que funcione de forma adecuada el php-fpm tiene que tener acceso al directorio donde se encuentra la aplicación.</li>
+  <li>Y finalmente nuestro contenedor con la aplicación.</li>
+  <li>Crea un script con docker compose que levante el escenario con los tres contenedores.</li>
+</ul>
+
+<p>A lo mejor te puede ayudar el siguiente enlace: <a href="http://geekyplatypus.com/dockerise-your-php-application-with-nginx-and-php7-fpm/">Dockerise your PHP application with Nginx and PHP7-FPM</a></p>
+
+<div class="notice--info">
+<ul>
+  <li>Entrega la url del repositorio GitHub donde tengas los ficheros necesarios para hacer la construcción de la imagen.</li>
+  <li>Entrega una captura de pantalla donde se vea la imagen en el registro de tu entorno de desarrollo.</li>
+  <li>Entrega la instrucción para ver los tres contenedores del escenario funcionando.</li>
+  <li>Entrega una captura de pantalla donde se vea funcionando la aplicación, una vez que te has logueado.</li>
+</ul>
+</div>
+
+<h2 id="tarea-5-puesta-en-producción-de-nuestra-aplicación">Tarea 5: Puesta en producción de nuestra aplicación</h2>
+
+<ul>
+  <li>Elige una de las tres imágenes y súbela a Docker Hub.</li>
+  <li>En tu VPS instala Docker y utilizando el <code class="language-plaintext highlighter-rouge">docker-compose.yml</code> correspondiente, crea un contenedor en ella de la aplicación.</li>
+  <li>Configura el nginx de tu VPS para que haga de proxy inverso y nos permita acceder a la aplicación con <code class="language-plaintext highlighter-rouge">https://bookmedik.tudominio.xxx</code>.</li>
+</ul>
+
+<div class="notice--info">
+<ul>
+  <li>Entrega una captura de pantalla de Docker Hub donde se vea tu imagen subida.</li>
+  <li>Entrega la configuración de nginx.</li>
+  <li>Entrega una captura de pantalla donde se vea funcionando la aplicación, una vez que te has logueado.</li>
+</ul>
+</div>
+
+<h2 id="tarea-6-modificación-de-la-aplicación">Tarea 6: Modificación de la aplicación</h2>
+
+<ul>
+  <li>En el entorno de desarrollo vamos a hacer una modificación de la aplicación. Por ejemplo modifica el fichero <code class="language-plaintext highlighter-rouge">core/app/view/login-view.php</code> y pon tu nombre en la línea <code class="language-plaintext highlighter-rouge">&lt;h4 class="title"&gt;Acceder a BookMedik&lt;/h4&gt;</code>.</li>
+  <li>Vamos a trabajar con la primera imagen que construimos. Vuelve a crear la imagen con la etiqueta <code class="language-plaintext highlighter-rouge">v1_2</code>.</li>
+  <li>Cambia el <code class="language-plaintext highlighter-rouge">docker-compose</code> para probar el cambio.</li>
+  <li>Modifica la aplicación en producción.</li>
+</ul>
+
+<div class="notice--info">
+<ul>
+  <li>Entrega una captura de pantalla de Docker Hub donde se vea tu imagen subida.</li>
+  <li>Entrega una captura de pantalla donde se vea funcionando la aplicación, una vez que te has logueado.</li>
+</ul>
+</div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Actualizado:</strong> <time datetime="2023-02-21T21:10:39+01:00">February 21, 2023</time></p>
+        
+      </footer>
+
+      
+
+    
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Términos de búsqueda...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Términos de búsqueda..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Seguir:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 Jesus Vives Céspedes. Funciona con <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+
+
+  </body>
+</html>

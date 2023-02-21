@@ -1,0 +1,679 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="es" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html -->
+
+<title>Ejercicio de introducción a xpath - IES SEVERO OCHOA</title>
+<meta name="description" content="Para hacer estos ejercicios puedes utilizar la página: Code Beauty - XPath Tester">
+
+
+  <meta name="author" content="Jesús Vives Céspedes">
+  
+  <meta property="article:author" content="Jesús Vives Céspedes">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="IES SEVERO OCHOA">
+<meta property="og:title" content="Ejercicio de introducción a xpath">
+<meta property="og:url" content="http://localhost:4000/lmgs/u04/ejercicio_xpath.html">
+
+
+  <meta property="og:description" content="Para hacer estos ejercicios puedes utilizar la página: Code Beauty - XPath Tester">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2023-02-21T21:10:39+01:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/lmgs/u04/ejercicio_xpath.html">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Jesus Vives Céspedes",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="IES SEVERO OCHOA Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    
+<!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+
+
+<link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+<link rel="manifest" href="/assets/icons/site.webmanifest">
+<link rel="mask-icon" href="/assets/icons/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<!-- end custom head snippets 2 -->
+
+  </head>
+
+  <body class="layout--single2 wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Saltar a navegación principal</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Saltar a contenido</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Saltar a pie</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          IES SEVERO OCHOA
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="">Inicio</a>
+            </li><li class="masthead__menu-item">
+              <a href="https://aules.edu.gva.es/fp/login/index.php">Plataforma</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Alternar búsqueda</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Alternar menú</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Alternar menú</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">Lenguajes de marcas (antiguo)</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/lmgs/">Inicio</a></li>
+          
+            <li><a href="/lmgs/u01">Pseudocódigo</a></li>
+          
+            <li><a href="/lmgs/u02">Python3</a></li>
+          
+            <li><a href="/lmgs/u03">Introducción a los LM</a></li>
+          
+            <li><a href="/lmgs/u04">XML</a></li>
+          
+            <li><a href="/lmgs/u05">JSON</a></li>
+          
+            <li><a href="/lmgs/u06">HTML/CSS</a></li>
+          
+            <li><a href="/lmgs/u07">YAML</a></li>
+          
+            <li><a href="/lmgs/u08">Flask</a></li>
+          
+            <li><a href="/lmgs/u09">Servicios Web</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+  
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Ejercicio de introducción a xpath">
+    <meta itemprop="description" content="Para hacer estos ejercicios puedes utilizar la página: Code Beauty - XPath Tester">
+    <meta itemprop="datePublished" content="February 21, 2023">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Ejercicio de introducción a xpath
+</h1>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <p>Para hacer estos ejercicios puedes utilizar la página: <a href="https://codebeautify.org/Xpath-Tester">Code Beauty - XPath Tester</a></p>
+
+<h2 id="ejercicio-1">Ejercicio 1</h2>
+
+<p>Dado el siguiente documento XML, escriba las expresiones XPath que devuelvan la respuesta deseada:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;ies&gt;
+  &lt;nombre&gt;IES Gonzalo Nazareno&lt;/nombre&gt;
+  &lt;web&gt;http://www.gonzalonazareno.org&lt;/web&gt;
+  &lt;ciclos&gt;
+    &lt;ciclo id="ASIR"&gt;
+      &lt;nombre&gt;Administración de Sistemas Informáticos en Red&lt;/nombre&gt;
+      &lt;grado&gt;Superior&lt;/grado&gt;
+      &lt;decretoTitulo año="2009" /&gt;
+    &lt;/ciclo&gt;
+    &lt;ciclo id="DAW"&gt;
+      &lt;nombre&gt;Desarrollo de Aplicaciones Web&lt;/nombre&gt;
+      &lt;grado&gt;Superior&lt;/grado&gt;
+      &lt;decretoTitulo año="2010" /&gt;
+    &lt;/ciclo&gt;
+    &lt;ciclo id="SMR"&gt;
+      &lt;nombre&gt;Sistemas Microinformáticos y Redes&lt;/nombre&gt;
+      &lt;grado&gt;Medio&lt;/grado&gt;
+      &lt;decretoTitulo año="2008" /&gt;
+    &lt;/ciclo&gt;
+  &lt;/ciclos&gt;
+&lt;/ies&gt;
+</code></pre></div></div>
+
+<ol>
+  <li>
+    <p>Nombre del instituto:</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> &lt;nombre&gt;IES Gonzalo Nazareno&lt;/nombre&gt;
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Página web del Instituto:</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> http://www.gonzalonazareno.org
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Nombre de los Ciclos Formativos:</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> Administración de Sistemas Informáticos en Red
+ Desarrollo de Aplicaciones Web
+ Sistemas Microinformáticos y Redes
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Siglas por las que se conocen los Ciclos Formativos:</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> id="ASIR"
+ id="DAW"
+ id="SMR"
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Años en los que se publicaron los decretos de título de los Ciclos Formativos:</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> año="2009"
+ año="2010"
+ año="2008"
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Ciclos Formativos de Grado Medio (se trata de obtener el elemento <ciclo> completo):</ciclo></p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> &lt;ciclo id="SMR"&gt;
+   &lt;nombre&gt;Sistemas Microinformáticos y Redes&lt;/nombre&gt;
+   &lt;grado&gt;Medio&lt;/grado&gt;
+   &lt;decretoTitulo año="2008"/&gt;
+ &lt;/ciclo&gt;
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Nombre de los Ciclos Formativos de Grado Superior:</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> &lt;nombre&gt;Administración de Sistemas Informáticos en Red&lt;/nombre&gt;
+ &lt;nombre&gt;Desarrollo de Aplicaciones Web&lt;/nombre&gt;
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Nombre de los Ciclos Formativos anteriores a 2010:</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> Administración de Sistemas Informáticos en Red
+ Sistemas Microinformáticos y Redes
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Nombre de los Ciclos Formativos de 2008 o 2010:</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> Desarrollo de Aplicaciones Web
+ Sistemas Microinformáticos y Redes
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h2 id="ejercicio-2">Ejercicio 2</h2>
+
+<p>Dado el siguiente documento XML, escriba las expresiones XPath que devuelvan la respuesta deseada:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;ies&gt;
+  &lt;modulos&gt;
+    &lt;modulo id="0228"&gt;
+      &lt;nombre&gt;Aplicaciones web&lt;/nombre&gt;
+      &lt;curso&gt;2&lt;/curso&gt;
+      &lt;horasSemanales&gt;4&lt;/horasSemanales&gt;
+      &lt;ciclo&gt;SMR&lt;/ciclo&gt;
+    &lt;/modulo&gt;
+    &lt;modulo id="0372"&gt;
+      &lt;nombre&gt;Gestión de bases de datos&lt;/nombre&gt;
+      &lt;curso&gt;1&lt;/curso&gt;
+      &lt;horasSemanales&gt;5&lt;/horasSemanales&gt;
+      &lt;ciclo&gt;ASIR&lt;/ciclo&gt;
+    &lt;/modulo&gt;
+    &lt;modulo id="0373"&gt;
+      &lt;nombre&gt;Lenguajes de marcas y sistemas de gestión de información&lt;/nombre&gt;
+      &lt;curso&gt;1&lt;/curso&gt;
+      &lt;horasSemanales&gt;3&lt;/horasSemanales&gt;
+      &lt;ciclo&gt;ASIR&lt;/ciclo&gt;
+      &lt;ciclo&gt;DAW&lt;/ciclo&gt;
+    &lt;/modulo&gt;
+    &lt;modulo id="0376"&gt;
+      &lt;nombre&gt;Implantación de aplicaciones web&lt;/nombre&gt;
+      &lt;curso&gt;2&lt;/curso&gt;
+      &lt;horasSemanales&gt;5&lt;/horasSemanales&gt;
+      &lt;ciclo&gt;ASIR&lt;/ciclo&gt;
+    &lt;/modulo&gt;
+  &lt;/modulos&gt;
+&lt;/ies&gt;
+</code></pre></div></div>
+
+<ol>
+  <li>
+    <p>Nombre de los módulos que se imparten en el Instituto:</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> Aplicaciones web
+ Gestión de bases de datos
+ Lenguajes de marcas y sistemas de gestión de información
+ Implantación de aplicaciones web
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Nombre de los módulos del ciclo ASIR:</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> Gestión de bases de datos
+ Lenguajes de marcas y sistemas de gestión de información
+ Implantación de aplicaciones web
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Nombre de los módulos que se imparten en el segundo curso de cualquier ciclo:</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> Aplicaciones web
+ Implantación de aplicaciones web
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Nombre de los módulos de menos de 5 horas semanales:</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> Aplicaciones web
+ Lenguajes de marcas y sistemas de gestión de información
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Nombre de los módulos que se imparten en el primer curso de ASIR:</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> Gestión de bases de datos
+ Lenguajes de marcas y sistemas de gestión de información
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Horas semanales de los módulos de más de 3 horas semanales:</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> 4
+ 5
+ 5
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h2 id="ejercicio-3">Ejercicio 3</h2>
+
+<p>Dado el siguiente documento XML, escriba las expresiones XPath que devuelvan la respuesta deseada:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;ies&gt;
+  &lt;nombre&gt;IES Gonzalo Nzareno&lt;/nombre&gt;
+  &lt;web&gt;http://www.gonzalonzareno.org&lt;/web&gt;
+  &lt;ciclos&gt;
+    &lt;ciclo id="ASIR"&gt;
+      &lt;nombre&gt;Administración de Sistemas Informáticos en Red&lt;/nombre&gt;
+      &lt;grado&gt;Superior&lt;/grado&gt;
+      &lt;decretoTitulo año="2009" /&gt;
+    &lt;/ciclo&gt;
+    &lt;ciclo id="DAW"&gt;
+      &lt;nombre&gt;Desarrollo de Aplicaciones Web&lt;/nombre&gt;
+      &lt;grado&gt;Superior&lt;/grado&gt;
+      &lt;decretoTitulo año="2010" /&gt;
+    &lt;/ciclo&gt;
+    &lt;ciclo id="SMR"&gt;
+      &lt;nombre&gt;Sistemas Microinformáticos y Redes&lt;/nombre&gt;
+      &lt;grado&gt;Medio&lt;/grado&gt;
+      &lt;decretoTitulo año="2008" /&gt;
+    &lt;/ciclo&gt;
+  &lt;/ciclos&gt;
+  &lt;modulos&gt;
+    &lt;modulo id="0228"&gt;
+      &lt;nombre&gt;Aplicaciones web&lt;/nombre&gt;
+      &lt;curso&gt;2&lt;/curso&gt;
+      &lt;horasSemanales&gt;4&lt;/horasSemanales&gt;
+      &lt;ciclo&gt;SMR&lt;/ciclo&gt;
+    &lt;/modulo&gt;
+    &lt;modulo id="0372"&gt;
+      &lt;nombre&gt;Gestión de bases de datos&lt;/nombre&gt;
+      &lt;curso&gt;1&lt;/curso&gt;
+      &lt;horasSemanales&gt;5&lt;/horasSemanales&gt;
+      &lt;ciclo&gt;ASIR&lt;/ciclo&gt;
+    &lt;/modulo&gt;
+    &lt;modulo id="0373"&gt;
+      &lt;nombre&gt;Lenguajes de marcas y sistemas de gestión de información&lt;/nombre&gt;
+      &lt;curso&gt;1&lt;/curso&gt;
+      &lt;horasSemanales&gt;3&lt;/horasSemanales&gt;
+      &lt;ciclo&gt;ASIR&lt;/ciclo&gt;
+      &lt;ciclo&gt;DAW&lt;/ciclo&gt;
+    &lt;/modulo&gt;
+    &lt;modulo id="0376"&gt;
+      &lt;nombre&gt;Implantación de aplicaciones web&lt;/nombre&gt;
+      &lt;curso&gt;2&lt;/curso&gt;
+      &lt;horasSemanales&gt;5&lt;/horasSemanales&gt;
+      &lt;ciclo&gt;ASIR&lt;/ciclo&gt;
+    &lt;/modulo&gt;
+  &lt;/modulos&gt;
+&lt;/ies&gt;
+</code></pre></div></div>
+
+<ol>
+  <li>
+    <p>Nombre de los módulos del ciclo “Sistemas Microinformáticos y Redes” (en la expresión final no deben aparecer las siglas SMR):</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> Aplicaciones web
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Nombre de los ciclos que incluyen el módulo “Lenguajes de marcas y sistemas de gestión de información”:</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> Administración de Sistemas Informáticos en Red
+ Desarrollo de Aplicaciones Web
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Nombre de los módulos de ciclos de Grado Superior:</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> Gestión de bases de datos
+ Lenguajes de marcas y sistemas de gestión de información
+ Implantación de aplicaciones web
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Nombre de los módulos de ciclos cuyo título se aprobó en 2008:</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> Aplicaciones web
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Grado de los ciclos con módulos de primer curso:</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> Superior
+ Superior
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h2 id="ejercicio-4">Ejercicio 4</h2>
+
+<p>Vamos a trabajar con el fichero <a href="xml/universidad.xml"><code class="language-plaintext highlighter-rouge">universidad.xml</code></a>. Obten la siguiente información:</p>
+
+<ol>
+  <li>Nombre de la Universidad.</li>
+  <li>Pais de la Universidad.</li>
+  <li>Nombres de las Carreras.</li>
+  <li>Años de plan de estudio de las carreras.</li>
+  <li>Nombres de todos los alumnos.</li>
+  <li>Identificadores de todas las carreras.</li>
+  <li>Datos de la carrera cuyo id es c01.</li>
+  <li>Centro en que se estudia de la carrera cuyo id es c02.</li>
+  <li>Nombre de las carreras que tengan subdirector.</li>
+  <li>Nombre de los alumnos que estén haciendo proyecto.</li>
+  <li>Códigos de las carreras en las que hay algún alumno matriculado.</li>
+  <li>Apellidos y Nombre de los alumnos con beca.</li>
+  <li>Nombre de las asignaturas de la titulación c04.</li>
+  <li>Nombre de las asignaturas de segundo trimestre.</li>
+  <li>Nombre de las asignaturas que no tienen 4 créditos teóricos.</li>
+  <li>Código de la carrera que estudia el último alumno.</li>
+  <li>Código de las asignaturas que estudian mujeres.</li>
+  <li>Nombre de los alumnos que matriculados en la asignatura a02.</li>
+  <li>Códigos de las carreras que estudian los alumnos matriculados en alguna asignatura.</li>
+  <li>Apellidos de todos los hombres.</li>
+  <li>Nombre de la carrera que estudia Víctor Manuel.</li>
+  <li>Nombre de las asignaturas que estudia Luisa.</li>
+  <li>Primer apellido de los alumnos matriculados en Ingeniería del Software.</li>
+  <li>Nombre de las carreras que estudian los alumnos matriculados en la asignatura Tecnología de los Alimentos.</li>
+  <li>Nombre de los alumnos matriculados en carreras que no tienen subdirector.</li>
+  <li>Nombre de las alumnos matriculados en asignaturas con 0 créditos prácticos y que estudien la carrera de I.T. Informática .</li>
+  <li>Nombre de los alumnos que estudian carreras cuyos planes son anteriores a 2002.</li>
+</ol>
+
+<h4 id="soluciones">Soluciones</h4>
+
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">/universidad/nombre</code></li>
+  <li><code class="language-plaintext highlighter-rouge">/universidad/pais</code></li>
+  <li><code class="language-plaintext highlighter-rouge">//carrera/nombre</code></li>
+  <li><code class="language-plaintext highlighter-rouge">//carrera/plan</code></li>
+  <li><code class="language-plaintext highlighter-rouge">//alumno/nombre</code></li>
+  <li><code class="language-plaintext highlighter-rouge">//carrera/@id</code></li>
+  <li><code class="language-plaintext highlighter-rouge">//carrera[@id='c01']</code></li>
+  <li><code class="language-plaintext highlighter-rouge">//carrera[@id='c02']/centro</code></li>
+  <li><code class="language-plaintext highlighter-rouge">//subdirector/../nombre</code></li>
+  <li><code class="language-plaintext highlighter-rouge">//alumno//proyecto/../../nombre</code></li>
+  <li><code class="language-plaintext highlighter-rouge">//alumno//carrera/@codigo</code></li>
+  <li><code class="language-plaintext highlighter-rouge">//alumno[@beca]/nombre | //alumno[@beca]/apellido1 | //alumno[@beca]/apellido2</code></li>
+  <li><code class="language-plaintext highlighter-rouge">//asignatura[@titulacion='c04']/nombre</code></li>
+  <li><code class="language-plaintext highlighter-rouge">//asignatura[trimestre=2]/nombre</code></li>
+  <li><code class="language-plaintext highlighter-rouge">//asignatura[not(creditos_teoricos=4)]/nombre</code></li>
+  <li><code class="language-plaintext highlighter-rouge">//alumno[last()]//carrera/@codigo</code></li>
+  <li><code class="language-plaintext highlighter-rouge">//alumno[sexo='Mujer']//asignatura/@codigo</code></li>
+  <li><code class="language-plaintext highlighter-rouge">//alumno[.//asignatura/@codigo='a02']/nombre</code></li>
+  <li><code class="language-plaintext highlighter-rouge">//alumno//asignatura/../../carrera/@codigo</code></li>
+  <li><code class="language-plaintext highlighter-rouge">//alumno[sexo='Hombre']/apellido1 | //alumno[sexo='Hombre']/apellido2</code></li>
+  <li><code class="language-plaintext highlighter-rouge">//carrera[@id=//alumno[nombre='Víctor Manuel']//carrera/@codigo]/nombre</code></li>
+  <li><code class="language-plaintext highlighter-rouge">//asignatura[@id=//alumno[nombre='Luisa']//asignatura/@codigo]/nombre</code></li>
+  <li><code class="language-plaintext highlighter-rouge">//alumno[.//asignatura/@codigo=//asignatura[nombre='Ingeniería del Software']/@id]/apellido1</code></li>
+  <li><code class="language-plaintext highlighter-rouge">//carrera[@id=//alumno[.//asignatura[@codigo=//asignatura[nombre='Tecnología de los Alimentos']/@id]]//carrera/@codigo]/nombre</code></li>
+  <li><code class="language-plaintext highlighter-rouge">//alumno[not (.//carrera/@codigo=//carrera[subdirector]/@codigo)]/nombre</code></li>
+  <li><code class="language-plaintext highlighter-rouge">//alumno[.//asignatura/@codigo=//asignatura[creditos_practicos=0]/@id][.//carrera/@codigo=//carrera[nombre='I.T. Informática']/@id]/nombre</code></li>
+  <li><code class="language-plaintext highlighter-rouge">//alumno[.//carrera/@codigo=//carrera[not(plan&gt;=2002)]/@id]/nombre</code></li>
+</ol>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Actualizado:</strong> <time datetime="2023-02-21T21:10:39+01:00">February 21, 2023</time></p>
+        
+      </footer>
+
+      
+
+    
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Términos de búsqueda...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Términos de búsqueda..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Seguir:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 Jesus Vives Céspedes. Funciona con <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+
+
+  </body>
+</html>

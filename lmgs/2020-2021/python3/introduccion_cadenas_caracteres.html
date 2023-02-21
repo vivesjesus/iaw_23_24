@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/main.css">
+  </head>
+  
+
+<body style="border-left-width: 0px;border-left-style: solid;padding-left: 150px;padding-top: 20px;padding-right: 150px;padding-botton: 20px;">
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <h1 id="introducción-a-las-cadenas-de-caracteres">Introducción a las cadenas de caracteres</h1>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/h_pxXwhuSOU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<p>Las cadenas de caracteres (<code class="language-plaintext highlighter-rouge">str</code>): Me permiten guardar secuencias de caracteres.</p>
+
+<h2 id="definición-de-cadenas">Definición de cadenas</h2>
+
+<p>Podemos definir una cadena de caracteres de distintas formas:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; cad1 = "Hola"
+&gt;&gt;&gt; cad2 = '¿Qué tal?'
+&gt;&gt;&gt; cad3 = '''Hola,
+	que tal?'''
+</code></pre></div></div>
+
+<h2 id="operaciones-básicas-con-cadenas-de-caracteres">Operaciones básicas con cadenas de caracteres</h2>
+
+<p>Algunas de las operaciones que puedo realizar con las cadenas de caracteres son:</p>
+
+<ul>
+  <li>
+    <p>Concatenación: <code class="language-plaintext highlighter-rouge">+</code>:  El operador + me permite unir datos de tipos secuenciales, en este caso dos cadenas de caracteres.</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  &gt;&gt;&gt; "hola " + "que tal"
+  'hola que tal'
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Repetición: <code class="language-plaintext highlighter-rouge">*</code>:  El operador * me permite repetir un dato de un tipo secuencial, en este caso de cadenas de caracteres.</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  &gt;&gt;&gt; "abc" * 3
+  'abcabcabc'
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Indexación: Puedo obtener el dato de una secuencia indicando la posición en la secuencia. En este caso puedo obtener el carácter de la cadena indicando la posición (<strong>empezando por la posición 0</strong>).</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  &gt;&gt;&gt; cadena = "josé"
+  &gt;&gt;&gt; cadena[0]
+  'j'
+  &gt;&gt;&gt; cadena[3]
+  'é'
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Para obtener la longitud de una cadena (número de caracteres que tiene), utilizamos la función <code class="language-plaintext highlighter-rouge">len</code>:</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  &gt;&gt;&gt; cadena = "josé"
+  &gt;&gt;&gt; len(cadena)
+  4
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="comparación-de-cadenas">Comparación de cadenas</h2>
+
+<p>Las cadenas se comparan carácter a carácter, en el momento en que dos caracteres no son iguales se compara alfabéticamente (es decir, se convierte a código unicode y se comparan).</p>
+
+<p>Ejemplos</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    &gt;&gt;&gt; "a"&gt;"A"
+    True
+
+    &gt;&gt;&gt; "informatica"&gt;"informacion"
+    True
+
+    &gt;&gt;&gt; "abcde"&gt;"abcdef"
+    False
+</code></pre></div></div>
+
+      </div>
+    </main>
+
+
+
+  </body>
+
+</html>

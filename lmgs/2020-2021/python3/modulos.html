@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/main.css">
+  </head>
+  
+
+<body style="border-left-width: 0px;border-left-style: solid;padding-left: 150px;padding-top: 20px;padding-right: 150px;padding-botton: 20px;">
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <h1 id="introducción-a-los-módulos">Introducción a los módulos</h1>
+
+<ul>
+  <li>Módulo: Cada uno de los ficheros <code class="language-plaintext highlighter-rouge">.py</code> que nosotros creamos se llama módulo. Los elementos creados en un módulo (funciones, clases, …) se pueden importar para ser utilizados en otro módulo. El nombre que vamos a utilizar para importar un módulo es el nombre del fichero.</li>
+</ul>
+
+<p>Python tiene sus propios módulos, los cuales forman parte de su librería de módulos estándar, que podemos usar en nuestros programas. Para poder usarlos debemos importarlos.</p>
+
+<h2 id="importación-de-módulos">Importación de módulos</h2>
+
+<p>Podemos importar el módulo completo y posteriormente usar cualquier función definida, por ejemplo para realizar la raíz cuadrada importamos el módulo de funciones matemáticas <code class="language-plaintext highlighter-rouge">math</code>:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; import math
+&gt;&gt;&gt; math.sqrt(9)
+3.0
+</code></pre></div></div>
+
+<p>Pero si sólo quiero utilizar la función <code class="language-plaintext highlighter-rouge">sqrt</code> puedo importar sólo esa función (en este caso al utilizarla no hace falta utilizar el nombre del módulo):</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; from math import sqrt
+&gt;&gt;&gt; sqrt(9)
+3.0
+</code></pre></div></div>
+
+<p>Veamos algunos módulos que ya hemos utilizado en algunos ejercicios:</p>
+
+<h2 id="algunos-módulos-de-python">Algunos módulos de python</h2>
+
+<h3 id="módulos-matemáticos">Módulos matemáticos</h3>
+
+<ul>
+  <li>Módulo math: El módulo <a href="https://docs.python.org/3.4/library/math.html">math</a> nos proporciones distintas funciones y operaciones matemáticas.</li>
+</ul>
+
+<p>Ejemplo que hemos usado:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; math.sqrt(9)
+</code></pre></div></div>
+
+<ul>
+  <li>Módulo fractions: El módulo <a href="https://docs.python.org/3.4/library/fractions.html">fractions</a> nos permite trabajar con fracciones.</li>
+  <li>Módulo random: El módulo <a href="https://docs.python.org/3.4/library/random.html">random</a> nos permite generar datos pseudo-aleatorios.</li>
+</ul>
+
+<p>Ejemplo que hemos usado:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; random.randint(1,10)
+</code></pre></div></div>
+
+<h3 id="módulos-de-hora-y-fecha">Módulos de hora y fecha</h3>
+
+<ul>
+  <li>Módulo time: El módulo <a href="https://docs.python.org/3.6/library/time.html">time</a> nos permite trabajar con fechas y horas. 
+El tiempo es medido como un número real que representa los segundos transcurridos desde el 1 de enero de 1970.</li>
+</ul>
+
+<p>Ejemplo que hemos usado:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; time.sleep(1)
+</code></pre></div></div>
+
+<ul>
+  <li>Módulo datetime: El módulo <a href="https://docs.python.org/3.6/library/datetime.html">datetime</a> amplía las posibilidades del módulo time que provee funciones para manipular expresiones de tiempo.</li>
+</ul>
+
+<h3 id="módulo-del-sistema">Módulo del sistema</h3>
+
+<ul>
+  <li>Módulo os: El módulo <a href="https://docs.python.org/3.4/library/os.html#module-os">os</a> nos permite acceder a funcionalidades dependientes del Sistema Operativo. Sobre todo, aquellas que nos refieren información sobre el entorno del mismo y nos permiten manipular la estructura de directorios.</li>
+</ul>
+
+<p>Ejemplo:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; os.system("clear")
+</code></pre></div></div>
+
+      </div>
+    </main>
+
+
+
+  </body>
+
+</html>

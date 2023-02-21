@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/main.css">
+  </head>
+  
+
+<body style="border-left-width: 0px;border-left-style: solid;padding-left: 150px;padding-top: 20px;padding-right: 150px;padding-botton: 20px;">
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <h1 id="trabajando-con-variables">Trabajando con variables</h1>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/6lB98ceE1N0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<p>Una variables es un identificador que referencia a un valor. No hay que declarar la variable antes de usarla, el tipo de la variable será el mismo que el del valor al que hace referencia. Por lo tanto su tipo puede cambiar en cualquier momento:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; var = 5
+&gt;&gt;&gt; type(var)
+&lt;class 'int'&gt;
+&gt;&gt;&gt; var = "hola"
+&gt;&gt;&gt; type(var)
+&lt;class 'str'&gt;
+</code></pre></div></div>
+
+<h2 id="creación-borrado-y-ámbito-de-variables">Creación, borrado y ámbito de variables</h2>
+
+<p>Como hemos comentado anteriormente para crear una variable simplemente tenemos que utilizar un operador de asignación, el más utilizado <code class="language-plaintext highlighter-rouge">=</code> para que referencia un valor. Si queremos borrar la variable utilizamos la instrucción <code class="language-plaintext highlighter-rouge">del</code>. Por ejemplo:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; a = 5
+&gt;&gt;&gt; a
+5
+&gt;&gt;&gt; del a
+&gt;&gt;&gt; a
+Traceback (most recent call last):
+  File "&lt;stdin&gt;", line 1, in &lt;module&gt;
+NameError: name 'a' is not defined
+</code></pre></div></div>
+
+<p>El ámbito de una variable se refiere a la zona del programa donde se ha definido y existe esa variable. Como primera aproximación las variables creadas dentro de funciones o clases tienen un ámbito local, es decir no existen fuera de la función o clase. Concretaremos cuando estudiamos estos aspectos más profundamente.</p>
+
+<h2 id="modificación-del-valor-de-una-variable">Modificación del valor de una variable</h2>
+
+<p>En cualquier momento podemos cambiar el valor de una variable, asignándole un nuevo valor:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; a = 5
+&gt;&gt;&gt; a
+5
+&gt;&gt;&gt; a = 8
+&gt;&gt;&gt; a
+8
+</code></pre></div></div>
+
+<p>También podemos modificar el valor de una variable, por ejemplo si queremos incrementarla en uno, podríamos usar:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; a = a + 1
+</code></pre></div></div>
+
+<p>Aunque también podemos utilizar otro operador de asignación:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; a+=1
+</code></pre></div></div>
+
+<p>Otros operadores de asignación: <code class="language-plaintext highlighter-rouge">+=</code>, <code class="language-plaintext highlighter-rouge">-=</code>, <code class="language-plaintext highlighter-rouge">*=</code>, <code class="language-plaintext highlighter-rouge">/=</code>, <code class="language-plaintext highlighter-rouge">%=</code>, <code class="language-plaintext highlighter-rouge">**=</code>, <code class="language-plaintext highlighter-rouge">//=</code>.</p>
+
+
+      </div>
+    </main>
+
+
+
+  </body>
+
+</html>

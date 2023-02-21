@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/main.css">
+  </head>
+  
+
+<body style="border-left-width: 0px;border-left-style: solid;padding-left: 150px;padding-top: 20px;padding-right: 150px;padding-botton: 20px;">
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/cUIjTbk0wgg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<h1 id="tipo-de-datos-secuencia-listas">Tipo de datos secuencia: listas</h1>
+
+<p>En Python tenemos varios tipos de datos que nos permiten guardar conjuntos de informaciones. En esta unidad vamos a estudiar las <strong>Listas</strong>. Las listas (<code class="language-plaintext highlighter-rouge">list</code>) me permiten guardar un conjunto de datos que se pueden repetir y que pueden ser de distintos tipos. Además esta estructura es dinámica, en cualquier momento de la ejecución del programa puedo añadir o eliminar elementos de la lista.</p>
+
+<h2 id="construcción-de-una-lista">Construcción de una lista</h2>
+
+<p>Para crear una lista puedo usamos los caracteres <code class="language-plaintext highlighter-rouge">[</code> y <code class="language-plaintext highlighter-rouge">]</code>:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; lista1 = []
+&gt;&gt;&gt; lista2 = ["a",1,True]
+</code></pre></div></div>
+
+<h2 id="operaciones-básicas-con-listas">Operaciones básicas con listas</h2>
+
+<p>Las listas son secuencias, a las que podemos realizar las siguientes operaciones. Vamos a ver distintos ejemplos partiendo de la siguiente lista:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lista = [1,2,3,4,5,6]
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>Las listas se pueden recorrer:</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  &gt;&gt;&gt; for num in lista:
+  ...   print(num,end="")
+  123456
+</code></pre></div>    </div>
+
+    <p>Con la instrucción <code class="language-plaintext highlighter-rouge">for</code> podemos recorrer más de una listas, utilizando la función <code class="language-plaintext highlighter-rouge">zip</code>. Veamos un ejemplo:</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  &gt;&gt;&gt; lista2 = ["a","b","c","d","e"]
+  &gt;&gt;&gt; for num,letra in zip(lista,lista2):
+  ...     print(num,letra)
+  ...
+  1 a
+  2 b
+  3 c
+  4 d
+  5 e
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Operadores de pertenencia: Se puede comprobar si un elemento pertenece o no a una lista con los operadores <code class="language-plaintext highlighter-rouge">in</code> y <code class="language-plaintext highlighter-rouge">not in</code>.</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  &gt;&gt;&gt; 2 in lista
+  True
+  &gt;&gt;&gt; 8 not in lista
+  True
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Concatenación: El operador <code class="language-plaintext highlighter-rouge">+</code> me permite unir datos de tipos listas:</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  &gt;&gt;&gt; lista + [7,8,9]
+  [1, 2, 3, 4, 5, 6, 7, 8, 9]
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Repetición: El operador <code class="language-plaintext highlighter-rouge">*</code> me permite repetir un dato de una lista:</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  &gt;&gt;&gt; lista * 2
+  [1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5, 6]
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Indexación: Puedo obtener el dato de una secuencia indicando la posición en la secuencia.</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  &gt;&gt;&gt; lista[3]
+  4
+</code></pre></div>    </div>
+
+    <p>Cada elemento tiene un índice, empezamos a contar por el elemento en el índice 0. Si intento acceder a un índice que corresponda a un elemento que no existe obtenemos una excepción <code class="language-plaintext highlighter-rouge">IndexError</code>.</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  &gt;&gt;&gt; lista1[12]
+  Traceback (most recent call last):
+    File "&lt;stdin&gt;", line 1, in &lt;module
+  IndexError: list index out of range	
+</code></pre></div>    </div>
+
+    <p>Se pueden utilizar índices negativos:</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  &gt;&gt;&gt; lista[-1]
+  6
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Slice (rebanada): Puedo obtener una subsecuencia de los datos de una lista. Funciona de forma similar como en las cadenas, veamos algunos ejemplos:</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  &gt;&gt;&gt; lista[2:4]
+  [3, 4]
+  &gt;&gt;&gt; lista[1:4:2]
+  [2, 4]
+  &gt;&gt;&gt; lista[:5]
+  [1, 2, 3, 4, 5]
+  &gt;&gt;&gt; lista[5:]
+  [6, 1, 2, 3, 4, 5, 6]
+  &gt;&gt;&gt; lista[::-1]
+  [6, 5, 4, 3, 2, 1, 6, 5, 4, 3, 2, 1]
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="funciones-predefinidas-que-trabajan-con-listas">Funciones predefinidas que trabajan con listas</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; lista1 = [20,40,10,40,50]
+&gt;&gt;&gt; len(lista1)
+5
+&gt;&gt;&gt; max(lista1)
+50
+&gt;&gt;&gt; min(lista1)
+10
+&gt;&gt;&gt; sum(lista1)
+150
+&gt;&gt;&gt; sorted(lista1)
+[10, 20, 30, 40, 50]
+&gt;&gt;&gt; sorted(lista1,reverse=True)
+[50, 40, 30, 20, 10]
+</code></pre></div></div>
+
+<h2 id="listas-multidimensionales">Listas multidimensionales</h2>
+
+<p>A la hora de definir las listas hemos indicado que podemos guardar en ellas datos de cualquier tipo, y evidentemente podemos guardar listas dentro de listas.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; tabla = [[1,2,3],[4,5,6],[7,8,9]]
+&gt;&gt;&gt; tabla[1][1]
+5
+
+&gt;&gt;&gt; for fila in tabla:
+...   for elem in fila:
+...      print(elem,end="")
+...   print()
+ 
+123
+456
+789
+</code></pre></div></div>
+
+      </div>
+    </main>
+
+
+
+  </body>
+
+</html>

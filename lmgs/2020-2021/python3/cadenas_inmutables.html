@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/main.css">
+  </head>
+  
+
+<body style="border-left-width: 0px;border-left-style: solid;padding-left: 150px;padding-top: 20px;padding-right: 150px;padding-botton: 20px;">
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/pF8CApYvhFg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<h1 id="las-cadenas-de-caracteres-son-inmutables">Las cadenas de caracteres son inmutables</h1>
+
+<p>Cuando creamos una variable de tipo cadena de caracteres, estamos creando un <strong>objeto</strong> de la <strong>clase</strong> <code class="language-plaintext highlighter-rouge">str</code>. Una clase especifica lo que podemos guardar en un tipo de datos y las operaciones que pueden realizar, cada vez que creamos una variable de una determinada clase, creamos un objeto, que además de guardar información (en nuestro caso los caracteres de la cadena) puede realizar distintas operaciones que llamamos <strong>métodos</strong>.</p>
+
+<p>Nosotros ya hemos usado un método de la clase <code class="language-plaintext highlighter-rouge">str</code>. El método <code class="language-plaintext highlighter-rouge">upper()</code> nos permite convertir la cadena a mayúsculas.</p>
+
+<h2 id="qué-significa-que-las-cadenas-de-caracteres-son-inmutables">¿Qué significa que las cadenas de caracteres son inmutables?</h2>
+
+<p>No podemos cambiar los caracteres de una cadena de la siguiente forma:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; cadena = "informática"
+&gt;&gt;&gt; cadena[2]="g"
+Traceback (most recent call last):
+  File "&lt;stdin&gt;", line 1, in &lt;module&gt;
+TypeError: 'str' object does not support item assignment
+</code></pre></div></div>
+
+<p>Esto implica que al usar un método la cadena original no cambia, el método devuelve otra cadena modificada. Veamos un ejemplo:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; cadena = "informática"
+&gt;&gt;&gt; cadena.upper()
+'INFORMÁTICA'
+&gt;&gt;&gt; cadena
+'informática'
+</code></pre></div></div>
+
+<p>Si queremos cambiar la cadena debemos modificar su valor con el operador de asignación:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; cadena = cadena.upper()
+&gt;&gt;&gt; cadena
+'INFORMÁTICA'
+</code></pre></div></div>
+
+
+      </div>
+    </main>
+
+
+
+  </body>
+
+</html>

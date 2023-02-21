@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/main.css">
+  </head>
+  
+
+<body style="border-left-width: 0px;border-left-style: solid;padding-left: 150px;padding-top: 20px;padding-right: 150px;padding-botton: 20px;">
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/TOxDBgofVlU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<h1 id="tipo-de-datos-mapa-diccionario">Tipo de datos mapa: diccionario</h1>
+
+<p>Los diccionarios son tipos de datos que nos permiten guardar valores, a los que se puede acceder por medio de una clave (una cadena de caracteres o un número). Son tipos de datos mutables y los campos no tienen asignado orden.</p>
+
+<h2 id="definición-de-diccionarios">Definición de diccionarios.</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; dicccionario = {'one': 1, 'two': 2, 'three': 3}
+</code></pre></div></div>
+
+<p>Si tenemos un diccionario vacío, al ser un objeto mutable, también podemos construir el diccionario de la siguiente manera.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; dict1 = {}
+&gt;&gt;&gt; dict1["one"]=1
+&gt;&gt;&gt; dict1["two"]=2
+&gt;&gt;&gt; dict1["three"]=3
+</code></pre></div></div>
+
+<h2 id="operaciones-básicas-con-diccionarios">Operaciones básicas con diccionarios</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; a = {'one': 1, 'two': 2, 'three': 3}
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">len()</code>: Devuelve número de elementos del diccionario.</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  &gt;&gt;&gt; len(a)
+  3
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Indexación: Podemos obtener el valor de un campo o cambiarlo (si no existe el campo nos da una excepción <code class="language-plaintext highlighter-rouge">KeyError</code>):</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  &gt;&gt;&gt; a["one"]
+  1
+  &gt;&gt;&gt; a["one"]+=1
+  &gt;&gt;&gt; a
+  {'three': 3, 'one': 2, 'two': 2}
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">del()</code>:Podemos eliminar un elemento, si no existe el campo nos da una excepción <code class="language-plaintext highlighter-rouge">KeyError</code>:</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  &gt;&gt;&gt; del(a["one"])
+  &gt;&gt;&gt; a
+  {'three': 3, 'two': 2}
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Operadores de pertenencia: <code class="language-plaintext highlighter-rouge">key in d</code> y <code class="language-plaintext highlighter-rouge">key not in d</code>.</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  &gt;&gt;&gt; "two" in a
+  True
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="los-diccionarios-son-tipos-mutables">Los diccionarios son tipos mutables</h2>
+
+<p>Los diccionarios, al igual que las litas, son tipos de datos mutable. Por lo tanto podemos encontrar situaciones similares a las que explicamos en su momentos con las listas.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; a = {'one': 1, 'two': 2, 'three': 3}
+&gt;&gt;&gt; a["one"]=2
+&gt;&gt;&gt; del(a["three"])
+&gt;&gt;&gt; a
+{'one': 2, 'two': 2}	
+
+
+&gt;&gt;&gt; a = {'one': 1, 'two': 2, 'three': 3}
+&gt;&gt;&gt; b = a
+&gt;&gt;&gt; del(a["one"])
+&gt;&gt;&gt; b
+{'three': 3, 'two': 2}	
+</code></pre></div></div>
+
+<p>En este caso para copiar diccionarios vamos a usar el método <code class="language-plaintext highlighter-rouge">copy()</code>:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; a = dict(one=1, two=2, three=3)
+&gt;&gt;&gt; b = a.copy()
+&gt;&gt;&gt; a["one"]=1000
+&gt;&gt;&gt; b
+{'three': 3, 'one': 1, 'two': 2}
+</code></pre></div></div>
+
+      </div>
+    </main>
+
+
+
+  </body>
+
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/main.css">
+  </head>
+  
+
+<body style="border-left-width: 0px;border-left-style: solid;padding-left: 150px;padding-top: 20px;padding-right: 150px;padding-botton: 20px;">
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <h1 id="introducción-a-html">Introducción a HTML</h1>
+
+<p>El HTML es un lenguaje de marcado que constituye uno de los pilares de la web. Fue inventado por Tim Berners Lee en 1990 a partir de otro lenguaje denominado SGML y que servía para dotar de estructura documental a una información.</p>
+
+<p>El lenguaje de marcado es básicamente un idioma que se caracteriza por etiquetar el contenido de una página web. El HTML nos ayuda a conferir a los documentos web de <strong>contenido y estructura</strong>.</p>
+
+<p>Etiquetamos las distintas partes de un documento web para aportar información al usuario, a los motores de búsqueda y a los navegadores.</p>
+
+<h2 id="veamos-primero-el-concepto-de-etiqueta-web">Veamos primero el concepto de etiqueta web</h2>
+
+<p>Consideraciones previas sobre el HTML:</p>
+
+<ul>
+  <li>El <strong>HTML no es un lenguaje de programación</strong>.</li>
+  <li>El HTML es un lenguaje de marcado en el que describimos como serán los contenidos y la estructura de un documento web.</li>
+  <li>La base del HTML es el <strong>hipertexto</strong>. Entendemos por hipertexto la capacidad de enlazar documentos web de forma no secuencial.</li>
+  <li>Los archivos tienen la extensión <code class="language-plaintext highlighter-rouge">.html</code>.</li>
+</ul>
+
+<h2 id="concepto-de-etiqueta-web">Concepto de etiqueta web</h2>
+
+<p><img src="img/etiquetas-html.jpg" alt="html5" /></p>
+
+<p>Una etiqueta es una información técnica que es capaz de ser detectada e interpretada por un navegador web. Las etiquetas pueden contener <strong>atributos</strong> que informan a los navegadores de los matices que se deben aplicar a un determinado marcado.</p>
+
+<p>Las etiquetas generalmente tienen una instrucción de apertura y una instrucción de cierre. <code class="language-plaintext highlighter-rouge">&lt;&gt;</code> y <code class="language-plaintext highlighter-rouge">&lt;/&gt;</code>.</p>
+
+<p>Existen también etiquetas que no tienen instrucción de cierre. En este caso se recomienda indicar una contrabarra <code class="language-plaintext highlighter-rouge">/&gt;</code>.</p>
+
+<p><strong>HTML5</strong> incorpora etiquetas semánticas que además de aportar información para los navegadores también aportan informaciones para los motores de búsqueda.</p>
+
+<p>Consideraciones importantes:</p>
+
+<ul>
+  <li>No se deben poner espacios en blanco entre el nombre de la etiqueta y la contrabarra. <code class="language-plaintext highlighter-rouge">&lt;p /&gt;</code> sería incorrecto por el espacio en blanco entre p y /</li>
+  <li>El cierre de la etiqueta nunca lleva ningún atributo. Sólo los pondremos con la etiqueta de apertura, ya sea una apertura con cierre y apertura o únicamente con apertura.</li>
+</ul>
+
+<h2 id="estructura-html-básica-de-un-documento-web">Estructura HTML básica de un documento web</h2>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="cp">&lt;!DOCTYPE html&gt;</span>
+    <span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"es"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;head&gt;</span>
+            <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;title&gt;</span>Hola Mundo!<span class="nt">&lt;/title&gt;</span>
+        <span class="nt">&lt;/head&gt;</span>
+        <span class="nt">&lt;body&gt;</span>
+            <span class="nt">&lt;h1&gt;</span>Hola Mundo!<span class="nt">&lt;/h1&gt;</span>
+        <span class="nt">&lt;/body&gt;</span>
+    <span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+<p>Por ejemplo:</p>
+
+<p><img src="img/estructura-documento-web-1.jpg" alt="html5" /></p>
+
+<p>HTML como lenguaje que es tiene un vocabulario y una sintaxis básica que debemos conocer. En el caso de la imagen adjunta:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">&lt;!DOCTYPE html&gt;</code> Informa a los navegadores que a continuación van a leer HTML5. Esta línea no es una etiqueta sino una instrucción.</li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;html&gt;&lt;/html&gt;</code> Informa a los navegadores que en su interior es dónde vamos a encontrar el HTML5. Esta etiqueta debe abrirse y cerrarse una única vez por documento web. Justo a continuación de la instrucción !DOCTYPE y al finalizar el documento web.</li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;head&gt;&lt;/head&gt;</code> Es la cabecera del documento web. La cabecera del documento web contiene informaciones técnicas para los navegadores web y para los motores de búsqueda. Por ejemplo aquí dentro encontraréis la etiqueta <code class="language-plaintext highlighter-rouge">&lt;title&gt;</code> y los <code class="language-plaintext highlighter-rouge">&lt;meta&gt;</code>. Sólo debe aparecer un <code class="language-plaintext highlighter-rouge">&lt;head&gt;</code> en un documento web.</li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;title&gt;&lt;/title&gt;</code> Informa a los motores de búsqueda cual es el contenido de la página web. Sólo se debe indicar una vez por documento web. Es fundamental para el SEO.</li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;body&gt;&lt;/body&gt;</code> Es el cuerpo del documento web. Encierra las etiquetas que van a aportar estructura y contenido a nuestro documento web. También sólo se escribe una única vez por documento web.</li>
+</ul>
+
+
+      </div>
+    </main>
+
+
+
+  </body>
+
+</html>

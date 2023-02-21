@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/main.css">
+  </head>
+  
+
+<body style="border-left-width: 0px;border-left-style: solid;padding-left: 150px;padding-top: 20px;padding-right: 150px;padding-botton: 20px;">
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <h1 id="datos-numéricos">Datos numéricos</h1>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/8ygasB-FXbM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<p>Python3 trabaja con varios tipos numéricos, pero en este curso sólo vamos a utilizar dos:</p>
+
+<ul>
+  <li>Enteros (int): Representan todos los números enteros (positivos, negativos y 0), sin parte decimal.</li>
+  <li>Reales (float): Sirve para representar los números reales, tienen una parte decimal y otra  decimal.</li>
+</ul>
+
+<p><em>Ejemplos</em></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; entero = 7
+&gt;&gt;&gt; type(entero)
+&lt;class 'int'&gt;
+&gt;&gt;&gt; real = 7.2
+&gt;&gt;&gt; type (real)
+&lt;class 'float'&gt;
+</code></pre></div></div>
+
+<h2 id="operadores-aritméticos">Operadores aritméticos</h2>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">+</code>: Suma dos números</li>
+  <li><code class="language-plaintext highlighter-rouge">-</code>: Resta dos números</li>
+  <li><code class="language-plaintext highlighter-rouge">*</code>: Multiplica dos números</li>
+  <li><code class="language-plaintext highlighter-rouge">/</code>: Divide dos números, el resultado es <code class="language-plaintext highlighter-rouge">float</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">//</code>: División entera</li>
+  <li><code class="language-plaintext highlighter-rouge">%</code>: Módulo o resto de la división</li>
+  <li><code class="language-plaintext highlighter-rouge">**</code>: Potencia</li>
+  <li><code class="language-plaintext highlighter-rouge">+</code>, <code class="language-plaintext highlighter-rouge">-</code>: Operadores unarios positivo y negativo</li>
+</ul>
+
+<h2 id="funciones-predefinidas-que-trabajan-con-números">Funciones predefinidas que trabajan con números:</h2>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">abs(x)</code>: Devuelve al valor absoluto de un número.</li>
+  <li><code class="language-plaintext highlighter-rouge">divmod(x,y)</code>: Toma como parámetro dos números, y devuelve una tupla con dos valores, la división entera, y el módulo o resto de la división.</li>
+  <li><code class="language-plaintext highlighter-rouge">hex(x)</code>: Devuelve una cadena con la representación hexadecimal del número que recibe como parámetro.</li>
+  <li><code class="language-plaintext highlighter-rouge">bin(x)</code>: Devuelve una cadena con la representación binaria del número que recibe como parámetro.</li>
+  <li><code class="language-plaintext highlighter-rouge">pow(x,y): Devuelve la potencia de la base x elevado al exponente y. Es similar al operador </code>**`.</li>
+  <li><code class="language-plaintext highlighter-rouge">round(x,[y])</code>: Devuelve un número real (float) que es el redondeo del número recibido como parámetro, podemos indicar un parámetro opcional que indica el número de decimales en el redondeo.</li>
+</ul>
+
+<p><em>Ejemplos</em></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; abs(-7)
+7
+&gt;&gt;&gt; divmod(7,2)
+(3, 1)
+&gt;&gt;&gt; hex(255)
+'0xff'
+&gt;&gt;&gt; pow(2,3)
+8
+&gt;&gt;&gt; round(7.567,1)
+7.6
+</code></pre></div></div>
+
+<h2 id="conversión-de-tipos">Conversión de tipos</h2>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">int(x)</code>: Convierte el valor a entero.</li>
+  <li><code class="language-plaintext highlighter-rouge">float(x)</code>: Convierte el valor a float.</li>
+</ul>
+
+<p>Los valores que se reciben también pueden ser cadenas de caracteres (str).</p>
+
+<p><em>Ejemplos</em></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; a=int(7.2)
+&gt;&gt;&gt; a
+7
+&gt;&gt;&gt; type(a)
+&lt;class 'int'&gt;
+&gt;&gt;&gt; a=int("345")
+&gt;&gt;&gt; a
+345
+&gt;&gt;&gt; type(a)
+&lt;class 'int'&gt;
+&gt;&gt;&gt; b=float(1)
+&gt;&gt;&gt; b
+1.0
+&gt;&gt;&gt; type(b)
+&lt;class 'float'&gt;
+&gt;&gt;&gt; b=float("1.234")
+&gt;&gt;&gt; b
+1.234
+&gt;&gt;&gt; type(b)
+&lt;class 'float'&gt;
+</code></pre></div></div>
+
+<p>Por último si queremos convertir una cadena a entero, la cadena debe estar formada por caracteres numéricos, sino es así, obtenemos un error:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a=int("123.3")
+Traceback (most recent call last):
+  File "&lt;stdin&gt;", line 1, in &lt;module&gt;
+ValueError: invalid literal for int() with base 10: '123.3'
+</code></pre></div></div>
+
+<h1 id="otras-operaciones">Otras operaciones</h1>
+
+<p>Quizás eches en falta más operaciones que podemos realizar sobre los números. En el módulo <code class="language-plaintext highlighter-rouge">math</code> encontramos muchas de estas operaciones. Para utilizarlas vamos  a importar el módulo, por ejemplo para realizar una raíz cuadrada:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; import math
+&gt;&gt;&gt; math.sqrt(9)
+3.0
+</code></pre></div></div>
+
+
+      </div>
+    </main>
+
+
+
+  </body>
+
+</html>

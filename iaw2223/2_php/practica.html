@@ -1,0 +1,400 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="es" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html -->
+
+<title>Práctica: Instalación/migración de aplicaciones web PHP - IES SEVERO OCHOA</title>
+<meta name="description" content="Descripción">
+
+
+  <meta name="author" content="Jesús Vives Céspedes">
+  
+  <meta property="article:author" content="Jesús Vives Céspedes">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="IES SEVERO OCHOA">
+<meta property="og:title" content="Práctica: Instalación/migración de aplicaciones web PHP">
+<meta property="og:url" content="http://localhost:4000/iaw2223/2_php/practica">
+
+
+  <meta property="og:description" content="Descripción">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2023-02-21T21:10:39+01:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/iaw2223/2_php/practica">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Jesus Vives Céspedes",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="IES SEVERO OCHOA Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    
+<!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+
+
+<link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+<link rel="manifest" href="/assets/icons/site.webmanifest">
+<link rel="mask-icon" href="/assets/icons/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<!-- end custom head snippets 2 -->
+
+  </head>
+
+  <body class="layout--single2 wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Saltar a navegación principal</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Saltar a contenido</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Saltar a pie</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          IES SEVERO OCHOA
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="">Inicio</a>
+            </li><li class="masthead__menu-item">
+              <a href="https://aules.edu.gva.es/fp/login/index.php">Plataforma</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Alternar búsqueda</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Alternar menú</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Alternar menú</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">Implantación de aplicaciones web (2022-2023)</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/iaw2223/">Inicio</a></li>
+          
+            <li><a href="/iaw2223/#unidad-1-introducci%C3%B3n-a-la-implantaci%C3%B3n-de-aplicaciones-web">Introducción</a></li>
+          
+            <li><a href="/iaw2223/#unidad-2-implantaci%C3%B3n-de-aplicaciones-web-php">PHP</a></li>
+          
+            <li><a href="/iaw2223/#unidad-3-seguridad-de-aplicaciones-web-con-https">HTTPS</a></li>
+          
+            <li><a href="/iaw2223/#unidad-4-implantaci%C3%B3n-de-aplicaciones-web-python">Python</a></li>
+          
+            <li><a href="/iaw2223/#unidad-5-implantaci%C3%B3n-de-aplicaciones-web-java">Java</a></li>
+          
+            <li><a href="/iaw2223/#unidad-6-docker">Docker</a></li>
+          
+            <li><a href="/iaw2223/#unidad-7-introducci%C3%B3n-a-la-integraci%C3%B3n-contin%C3%BAa-y-despliegue-continuo">IC/DC</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Módulos</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/iaw2223/">Implantación de Aplicaciones Web</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+  
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Práctica: Instalación/migración de aplicaciones web PHP">
+    <meta itemprop="description" content="Descripción">
+    <meta itemprop="datePublished" content="February 21, 2023">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Práctica: Instalación/migración de aplicaciones web PHP
+</h1>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <h2 id="descripción">Descripción</h2>
+
+<h3 id="escenario">Escenario</h3>
+
+<p>Crea un escenario con vagrant o kvm con las siguiente características:</p>
+
+<ul>
+  <li>Dos máquinas virtuales que se llamen <code class="language-plaintext highlighter-rouge">servidor_web_tunombre</code> y <code class="language-plaintext highlighter-rouge">servidor_bd_tunombre</code>.</li>
+  <li>La máquina <code class="language-plaintext highlighter-rouge">servidor_web_tunombre</code> estará conectada una red pública.</li>
+  <li>Las dos máquinas están conectadas entre si por una red muy aislada.</li>
+</ul>
+
+<h2 id="tarea-1-instalación-de-un-cms-php-en-mi-servidor-local">Tarea 1: Instalación de un CMS PHP en mi servidor local</h2>
+
+<ul>
+  <li>Selecciona un CMS escrito en PHP para desplegarlo en nuestra infraestructura. No se puede elegir ni WordPress (que lo hemos visto en un vídeo, ni NextCloud que lo instalaremos a continuación).</li>
+  <li>Configura en la máquina <code class="language-plaintext highlighter-rouge">servidor_web_tunombre</code> un servidor web apache2 que ejecute PHP, con un VirtualHost, para que el CMS sea accesible desde la dirección: <code class="language-plaintext highlighter-rouge">www.nombrealumno.org</code>.</li>
+  <li>Configura en la máquina <code class="language-plaintext highlighter-rouge">servidor_bd_tunombre</code> una base de datos.  Crea un usuario con privilegios sobre la base de datos donde se van a guardar los datos del CMS. Configura la base de datos para que permita conexión desde la otra máquina.</li>
+  <li>Descarga el CMS seleccionado y realiza la instalación.</li>
+  <li>Realiza una configuración mínima de la aplicación (Cambia la plantilla, crea algún contenido, …)</li>
+  <li>Instala un módulo para añadir alguna funcionalidad al CMS.</li>
+</ul>
+
+<h2 id="tarea-2-instalación-de-un-cms-nextcloud">Tarea 2: Instalación de un CMS NextCloud</h2>
+
+<ul>
+  <li>Instala el CMS PHP NextCloud en otro host virtual con el que accedemos con el nombre <code class="language-plaintext highlighter-rouge">cloud.nombrealumno.org</code>.</li>
+</ul>
+
+<h2 id="tarea-3-migración-a-tu-vps">Tarea 3: Migración a tu VPS</h2>
+
+<ul>
+  <li>Configura en tu VPS un servidor LEMP.</li>
+  <li>Configura un registro DNS en tu servidor DNS de tipo <strong>CNAME</strong> para que el nombre <code class="language-plaintext highlighter-rouge">www</code> apunte al nombre de vuestro servidor.</li>
+  <li>Realiza la migración de tus aplicaciones web a tu VPS. La primera aplicación debe ser accesible desde la URL <code class="language-plaintext highlighter-rouge">www.tudominio.algo/portal</code>, y el NextCloud con la URL <code class="language-plaintext highlighter-rouge">www.tudominio.algo/cloud</code>. ¿Cuántos virtual hosts tendrás que configurar en el servidor web de tu VPS?</li>
+  <li>Al acceder a <code class="language-plaintext highlighter-rouge">www.tudominio.algo</code> se debe hacer una redirección a <code class="language-plaintext highlighter-rouge">www.tudominio.algo/portal</code>.</li>
+  <li>Instala en un ordenador el cliente de NextCloud y realiza la configuración adecuada para acceder a “tu nube”.</li>
+</ul>
+
+<div class="notice--info">
+<h2 id="entrega">Entrega</h2>
+
+<ol>
+  <li>De la Tarea 1, entrega la configuración del virtualhost.</li>
+  <li>De la Tarea 1, la configuración de resolución estática.</li>
+  <li>De la Tarea 1, una captura de pantalla donde se vea el acceso a la aplicación.</li>
+  <li>De la Tarea 1, indica que plugin has instalado.</li>
+  <li>De la Tarea 2, una captura de pantalla donde se vea el acceso a la aplicación.</li>
+  <li>De la Tarea 3, documenta de la forma más precisa posible cada uno de los pasos que has dado para migrar una de las dos aplicaciones.</li>
+  <li>De la Tarea 3, las URL de acceso a las aplicaciones.</li>
+  <li>Capturas de pantalla donde se demuestre que esta funcionando el cliente de NextCloud.</li>
+</ol>
+</div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Actualizado:</strong> <time datetime="2023-02-21T21:10:39+01:00">February 21, 2023</time></p>
+        
+      </footer>
+
+      
+
+    
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Términos de búsqueda...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Términos de búsqueda..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Seguir:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 Jesus Vives Céspedes. Funciona con <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+
+
+  </body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/main.css">
+  </head>
+  
+
+<body style="border-left-width: 0px;border-left-style: solid;padding-left: 150px;padding-top: 20px;padding-right: 150px;padding-botton: 20px;">
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <h1 id="tablas">Tablas</h1>
+
+<p>En HTML cada tabla está asociado a un elemento table, dentro de este elemento se indican las filas mediante el elemento tr y dentro de cada fila se indican las celdas mediante elementos td.</p>
+
+<p>En HTML 5 las etiquetas table y tr no tienen atributos, aunque hay atributos, como por ejemplo el atributo border, que reconocen los navegadores por estar presentes en versiones anteriores de HTML. Es, como siempre, el lenguaje CSS el que determina la apariencia y formato de la tabla.</p>
+
+<p>Ejemplo:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"es"</span> <span class="na">dir=</span><span class="s">"ltr"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Imágenes<span class="nt">&lt;/title&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;table&gt;</span>
+        <span class="nt">&lt;tr&gt;</span>
+            <span class="nt">&lt;td&gt;&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>Lunes<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>Martes<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>Miércoles<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>Jueves<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>Viernes<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;/tr&gt;</span>
+        <span class="nt">&lt;tr&gt;</span>
+            <span class="nt">&lt;td&gt;</span>10:30<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>Matemáticas<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>Geografía<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>Física<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>Dibujo<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>Matemáticas<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;/tr&gt;</span>
+
+        <span class="nt">&lt;tr&gt;</span>
+            <span class="nt">&lt;td&gt;</span>11:30<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>Inglés<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>Lenguaje<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>Geografía<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>Química<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;td&gt;</span>Física<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;/table&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p>Y quedaría:</p>
+
+<p><img src="img/tabla.png" alt="html5" /></p>
+
+<h2 id="etiquetas-semánticas-de-tablas">Etiquetas semánticas de tablas</h2>
+
+<p>Para que los motores de búsqueda entiendan mejor el contenido dentro de una tabla disponemos de las etiquetas</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">&lt;thead&gt;</code>: Sirve para indicar las filas que forman la cabecera de la tabla</li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;tbody&gt;</code>: Indica el cuerpo de la tabla</li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;tfooter&gt;</code>: Indica el pie de la tabla</li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;caption&gt;</code>: Indica el título de la tabla</li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;th&gt;</code>: Sirve para indicar la celda que tiene información de la cabecera</li>
+</ul>
+
+<h2 id="ejercicio-1">Ejercicio 1</h2>
+
+<p>Dado el siguiente documento html se desea conseguir el resultado de la imagen adjunta.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+	<span class="nt">&lt;title&gt;</span>Ejercicio tablas html<span class="nt">&lt;/title&gt;</span>
+	<span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">/&gt;</span>
+	<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"author"</span> <span class="na">content=</span><span class="s">"francesc ricart"</span><span class="nt">/&gt;</span>
+	<span class="nt">&lt;style&gt;</span>
+		<span class="nt">table</span><span class="p">{</span>
+			<span class="nl">border-collapse</span><span class="p">:</span><span class="nb">collapse</span><span class="p">;</span>
+			<span class="nl">caption-side</span><span class="p">:</span> <span class="nb">bottom</span><span class="p">;</span>
+		<span class="p">}</span>
+		<span class="nt">caption</span><span class="p">{</span>
+			<span class="nl">font-weight</span><span class="p">:</span><span class="nb">bold</span><span class="p">;</span>
+			<span class="nl">margin-top</span><span class="p">:</span><span class="m">16px</span><span class="p">;</span>
+		<span class="p">}</span>
+		<span class="nt">th</span><span class="o">,</span><span class="nt">td</span><span class="p">{</span><span class="nl">padding</span><span class="p">:</span><span class="m">5px</span> <span class="m">10px</span><span class="p">;}</span>
+		<span class="nt">td</span><span class="o">,</span><span class="nt">th</span><span class="p">{</span><span class="nl">border</span><span class="p">:</span><span class="m">1px</span> <span class="nb">solid</span> <span class="m">#1c1c1c</span><span class="p">;</span><span class="nl">text-align</span><span class="p">:</span><span class="nb">center</span><span class="p">;}</span>
+
+	<span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+
+<span class="c">&lt;!-- Pon aquí las etiquetas html necesarias para resolver el ejercicio --&gt;</span>
+
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p><img src="img/ejercicio-tablas.jpg" alt="html5" /></p>
+
+<p>Fijaros que el enunciado adjunto un poco de código css para que el resultado sea el de la imagen.</p>
+
+<p><a href="doc/solucion7.txt">Compruebe la solución</a></p>
+
+
+      </div>
+    </main>
+
+
+
+  </body>
+
+</html>

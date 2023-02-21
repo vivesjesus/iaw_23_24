@@ -1,0 +1,530 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="es" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html -->
+
+<title>Introducción a Tomcat 9 - IES SEVERO OCHOA</title>
+<meta name="description" content="En el siguiente documento se explicará como implantar un contenedor de servlets Tomcat versión 9 en un sistema Linux Debian.">
+
+
+  <meta name="author" content="Jesús Vives Céspedes">
+  
+  <meta property="article:author" content="Jesús Vives Céspedes">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="IES SEVERO OCHOA">
+<meta property="og:title" content="Introducción a Tomcat 9">
+<meta property="og:url" content="http://localhost:4000/iaw2223/5_java/tomcat">
+
+
+  <meta property="og:description" content="En el siguiente documento se explicará como implantar un contenedor de servlets Tomcat versión 9 en un sistema Linux Debian.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2023-02-21T21:10:39+01:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/iaw2223/5_java/tomcat">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Jesus Vives Céspedes",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="IES SEVERO OCHOA Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    
+<!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+
+
+<link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+<link rel="manifest" href="/assets/icons/site.webmanifest">
+<link rel="mask-icon" href="/assets/icons/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<!-- end custom head snippets 2 -->
+
+  </head>
+
+  <body class="layout--single2 wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Saltar a navegación principal</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Saltar a contenido</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Saltar a pie</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          IES SEVERO OCHOA
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="">Inicio</a>
+            </li><li class="masthead__menu-item">
+              <a href="https://aules.edu.gva.es/fp/login/index.php">Plataforma</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Alternar búsqueda</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Alternar menú</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Alternar menú</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">Implantación de aplicaciones web (2022-2023)</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/iaw2223/">Inicio</a></li>
+          
+            <li><a href="/iaw2223/#unidad-1-introducci%C3%B3n-a-la-implantaci%C3%B3n-de-aplicaciones-web">Introducción</a></li>
+          
+            <li><a href="/iaw2223/#unidad-2-implantaci%C3%B3n-de-aplicaciones-web-php">PHP</a></li>
+          
+            <li><a href="/iaw2223/#unidad-3-seguridad-de-aplicaciones-web-con-https">HTTPS</a></li>
+          
+            <li><a href="/iaw2223/#unidad-4-implantaci%C3%B3n-de-aplicaciones-web-python">Python</a></li>
+          
+            <li><a href="/iaw2223/#unidad-5-implantaci%C3%B3n-de-aplicaciones-web-java">Java</a></li>
+          
+            <li><a href="/iaw2223/#unidad-6-docker">Docker</a></li>
+          
+            <li><a href="/iaw2223/#unidad-7-introducci%C3%B3n-a-la-integraci%C3%B3n-contin%C3%BAa-y-despliegue-continuo">IC/DC</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Módulos</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/iaw2223/">Implantación de Aplicaciones Web</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+  
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Introducción a Tomcat 9">
+    <meta itemprop="description" content="En el siguiente documento se explicará como implantar un contenedor de servlets Tomcat versión 9 en un sistema Linux Debian.">
+    <meta itemprop="datePublished" content="February 21, 2023">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Introducción a Tomcat 9
+</h1>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <p>En el siguiente documento se explicará como implantar un contenedor de servlets Tomcat versión 9 en un sistema Linux Debian.</p>
+
+<h2 id="instalación">Instalación</h2>
+
+<p>Para instalar tomcat9 desde repositorios:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apt install tomcat9
+</code></pre></div></div>
+
+<p>Por dependencia va a instalar el paquete <code class="language-plaintext highlighter-rouge">openjdk-11-jre-headless</code>, que corresponde a una implementación de la JVM mínima para poder ejecutar nuestros programas java.</p>
+
+<p>Desde este momento tendremos Tomcat ejecutándose y sirviendo en el puerto 8080.</p>
+
+<p><img src="img/tomcat1.png" alt="tomcat" /></p>
+
+<p>Para gestionar el servicio tomcat:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>systemctl stop|start|restart|status tomcat9
+</code></pre></div></div>
+
+<h2 id="opciones-del-servicio-tomcat">Opciones del servicio tomcat</h2>
+
+<p>Para modificar las opciones del servicio tomcat (que se guardan en la variable <code class="language-plaintext highlighter-rouge">JAVA_OPTS</code>) tenemos que indicarlas en el fichero <code class="language-plaintext highlighter-rouge">/etc/default/tomcat9</code>. Por defectos las opciones que tenemos configuradas son:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>JAVA_OPTS="-Djava.awt.headless=true"
+</code></pre></div></div>
+
+<p>Para implantar algunas aplicaciones que necesitan mucha memoria RAM tenemos que añadir una opción indicando la cantidad de memoria que puede usar el servicio, por ejemplo para indicar 1Gb de memoria sería:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>JAVA_OPTS="-Djava.awt.headless=true -Xmx1024m"
+</code></pre></div></div>
+
+<h2 id="despliegue-de-aplicaciones-mediante-la-terminal">Despliegue de aplicaciones mediante la terminal</h2>
+
+<p>Implantar una aplicación desde la terminal, tampoco es tan difícil, ya que por defecto cualquier fichero <code class="language-plaintext highlighter-rouge">.war</code> que se copie o mueva dentro de l directorio <code class="language-plaintext highlighter-rouge">/var/lib/tomcat9/webapps/</code> se desplegaría automáticamente y dependiendo de nuestra configuración se lanzaría o no.</p>
+
+<p class="notice--warning">En mucha documentación sobre tomcat se refiere a la variable de entorno <code class="language-plaintext highlighter-rouge">$CATALINA_HOME</code>, en un debian donde hemos instalado tomcat con apt, el valor de esta variable será <code class="language-plaintext highlighter-rouge">/var/lib/tomcat9</code>.</p>
+
+<h2 id="administración">Administración</h2>
+
+<p>Esta sección la iniciaremos utilizando una herramienta que nos proporciona la fundación Apache y que nos facilita el despliegue de aplicaciones y manejo del servidor, Tomcat-Manager. Para instalarlo:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># apt install tomcat9-admin
+</code></pre></div></div>
+
+<p>Una vez instalado debemos crear un usuario con el rol manager para acceder a él. Añadimos una línea similar a la siguiente al fichero <code class="language-plaintext highlighter-rouge">/etc/tomcat9/tomcat-users.xml</code>:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;role rolename="manager-gui"/&gt;
+&lt;user username="tomcat" password="s3cret" roles="manager-gui"/&gt;
+</code></pre></div></div>
+
+<p>Para acceder a la zona de administración:</p>
+
+<p><img src="img/tomcat2.png" alt="tomcat" /></p>
+
+<h2 id="despliegue-de-aplicaciones-mediante-la-interfaz-web">Despliegue de aplicaciones mediante la interfaz web</h2>
+
+<p>Utilizaremos la herramienta anterior para explicar cómo desplegar una aplicación, por ejemplo .war. Simplemente bajamos con el scroll hasta encontrar una sección llamada “WAR file to deploy”. Seleccionamos el fichero .war y le damos al botón “Deploy”.</p>
+
+<p>Puedes bajarte el fichero war desde el siguiente <a href="war/RequestDispatcher.war">enlace</a>.</p>
+
+<p><img src="img/tomcat3.png" alt="tomcat" /></p>
+
+<p>Automáticamente se creará un nuevo elemento en la sección aplicaciones utilizando el mismo
+nombre que el fichero .war subido.</p>
+
+<p><img src="img/tomcat4.png" alt="tomcat" /></p>
+
+<p>Desde aquí podremos controlar la aplicación (Arrancarla, pararla, eliminarla,…)</p>
+
+<h2 id="administración-desde-la-terminal">Administración desde la terminal</h2>
+
+<p>Es hora de hablar de los ficheros de configuración.</p>
+
+<h3 id="serverxml">server.xml</h3>
+
+<p>El más importante es <code class="language-plaintext highlighter-rouge">/etc/tomcat9/server.xml</code>, cuyo contenido define cómo está formado nuestro servidor. Las secciones más importante de este fichero son:</p>
+
+<ul>
+  <li>
+    <p>Componente <strong>Server</strong>: es el elemento principal del archivo <code class="language-plaintext highlighter-rouge">server.xml</code> y todas las demás secciones deben encontrarse entre estos nodos:</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  &lt;Server port="-1" shutdown="SHUTDOWN"&gt; ... &lt;/Server&gt;
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Componente <strong>Service</strong>: Un servicio es un grupo de conectores.</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  &lt;Service name="Catalina"&gt; ... &lt;/Service&gt;
+</code></pre></div>    </div>
+
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">name</code>: Nombre utilizado en los ficheros de log, administración y gestión, debe ser distínto para cada service.</li>
+    </ul>
+  </li>
+  <li>
+    <p>Subelemento <strong>Connector</strong>: El elemento <code class="language-plaintext highlighter-rouge">Connector</code> representa las conexiones (Puertos TCP) que serán abiertas por Tomcat al arranque, se definen diversos atributos los cuales dan más detalles acerca de la conexión.</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  &lt;Connector port="8080" protocol="HTTP/1.1" 
+         connectionTimeout="20000" 
+         redirectPort="8443" /&gt; 
+</code></pre></div>    </div>
+
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">port</code>: Puerto en el que recibe las peticiones.</li>
+      <li><code class="language-plaintext highlighter-rouge">protocol</code>: ‘HTTP/1.1’ ó ‘AJP/1.3’.</li>
+      <li><code class="language-plaintext highlighter-rouge">redirectPort</code>: Si la petición se hace por medio de SSL, se reenvíara a este puerto.</li>
+    </ul>
+
+    <p>Como vemos en el fichero el único conector que está descomentado es el conector para HTTP, también podemos encontrar en el fichero el conector para HTTPS:</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  &lt;!--
+  &lt;Connector port="8443" protocol="org.apache.coyote.http11.Http11NioProtocol"
+         maxThreads="150" SSLEnabled="true"&gt;
+  &lt;SSLHostConfig&gt;
+      &lt;Certificate certificateKeystoreFile="conf/localhost-rsa.jks"
+                   type="RSA" /&gt;
+  &lt;/SSLHostConfig&gt;
+  &lt;/Connector&gt;
+
+  --&gt;
+</code></pre></div>    </div>
+
+    <p>Y el conector para el protocolo <a href="https://es.wikipedia.org/wiki/Apache_JServ_Protocol">AJP (Apache JServ Protocol)</a>, que es un protocolo binario que permite enviar solicitudes desde un servidor web a tomcat que se encuentra detrás del servidor web. Por ejemplo en el servidor web apache2 podemos usar el módulo <code class="language-plaintext highlighter-rouge">proxy_ajp</code> para comunicar apache2 con tomat.</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  &lt;!--
+  	&lt;Connector protocol="AJP/1.3"
+         address="::1"
+         port="8009"
+         redirectPort="8443" /&gt;
+  	--&gt;
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Subelemento <strong>Engine</strong>: Todas las peticiones que lleguen a los puertos y usando los protocolos definidos en los elementos conectores, se procesaran por los elementos definidos aquí:</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  &lt;Engine name="Catalina" defaultHost="localhost"&gt; 
+</code></pre></div>    </div>
+
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">name</code>: Nombre utilizado para la administración y ficheros de log.</li>
+      <li><code class="language-plaintext highlighter-rouge">defaultHost</code>: Host por defecto que resuelve las peticiones si no se indica otro Host concreto.</li>
+    </ul>
+
+    <p>Dentro de este elemento podemos encontrar varios elementos <code class="language-plaintext highlighter-rouge">Host</code> que nos permiten definir virtual hosts para tomcat:</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  &lt;Host name="localhost"  appBase="webapps"
+      unpackWARs="true" autoDeploy="true"&gt;
+  ...
+</code></pre></div>    </div>
+
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">name</code>: Nombre del host virtual.</li>
+      <li><code class="language-plaintext highlighter-rouge">appBase</code>: Ruta relativa desde <code class="language-plaintext highlighter-rouge">&lt;TOMCAT_HOME&gt;</code> donde se despliegan las aplicaciones.</li>
+      <li><code class="language-plaintext highlighter-rouge">unpackWARs</code>: Indica si se deben desempaquetar o no los .war depositados en appBase.</li>
+      <li><code class="language-plaintext highlighter-rouge">autoDeploy</code>: Indica si se desplegarán las aplicaciones automáticamente o no.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="contextxml">context.xml</h3>
+
+<p>Fichero de configuración específico de cada aplicación. Si alguna aplicación se despliega sin fichero <code class="language-plaintext highlighter-rouge">context.xml</code>, se aplicará la configuración del situado en <code class="language-plaintext highlighter-rouge">/etc/tomcat9/context.xml</code>.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	&lt;Context&gt;
+	    &lt;WatchedResource&gt;WEB-INF/web.xml&lt;/WatchedResource&gt;
+	    &lt;WatchedResource&gt;WEB-INF/tomcat-web.xml&lt;/WatchedResource&gt;
+	    &lt;WatchedResource&gt;${catalina.base}/conf/web.xml&lt;/WatchedResource&gt;
+	&lt;/Context&gt;
+</code></pre></div></div>
+
+<p>Su utilización es similar a la del fichero <code class="language-plaintext highlighter-rouge">.htaccess</code> de Apache.</p>
+
+<h3 id="webxml">web.xml</h3>
+
+<p>Su ruta real es <code class="language-plaintext highlighter-rouge">aplicacion/web-inf/web.xml</code>, se trata de un descriptor de despliegue. Al igual que con el fichero <code class="language-plaintext highlighter-rouge">context.xml</code>, Tomcat posee un <code class="language-plaintext highlighter-rouge">web.xml</code>alojado en <code class="language-plaintext highlighter-rouge">/etc/tomcat9/web.xml</code> que se ejecuta antes del propio de cada aplicación. Con él se pueden activar y desactivar características como el compilador de JSP.</p>
+
+<div class="notice--info">
+<p><strong>Ejercicio</strong></p>
+
+<p>Instala apache tomcat en un equipo y despliega la aplicación: <a href="war/EjemploPruebaCarga.war">EjemploPruebaCarga.war</a> desde la línea de comandos.</p>
+
+</div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Actualizado:</strong> <time datetime="2023-02-21T21:10:39+01:00">February 21, 2023</time></p>
+        
+      </footer>
+
+      
+
+    
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Términos de búsqueda...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Términos de búsqueda..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Seguir:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 Jesus Vives Céspedes. Funciona con <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+
+
+  </body>
+</html>

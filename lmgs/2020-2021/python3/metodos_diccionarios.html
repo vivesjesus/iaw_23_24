@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/main.css">
+  </head>
+  
+
+<body style="border-left-width: 0px;border-left-style: solid;padding-left: 150px;padding-top: 20px;padding-right: 150px;padding-botton: 20px;">
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/HOlsYGTFUeE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<h1 id="métodos-principales-de-diccionarios">Métodos principales de diccionarios</h1>
+
+<h2 id="métodos-de-eliminación">Métodos de eliminación</h2>
+
+<p><code class="language-plaintext highlighter-rouge">clear()</code>: Elimina los elementos de un diccionario.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; dict1 = {'one': 1, 'two': 2, 'three': 3}
+&gt;&gt;&gt; dict1.clear()
+&gt;&gt;&gt; dict1
+{}
+</code></pre></div></div>
+
+<h2 id="métodos-de-agregado-y-creación">Métodos de agregado y creación</h2>
+
+<p><code class="language-plaintext highlighter-rouge">copy()</code>: Como hemos explicado anteriormente nos permite copiar diccionarios.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; dict1 = {'one': 1, 'two': 2, 'three': 3}
+&gt;&gt;&gt; dict2 = dict1.copy()
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">update()</code>: Nos permite añadir elementos a un diccionario a partir de los elementos de otro diccionario.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; dict1 = {'one': 1, 'two': 2, 'three': 3}
+&gt;&gt;&gt; dict2 = {'four':4,'five':5}
+&gt;&gt;&gt; dict1.update(dict2)
+&gt;&gt;&gt; dict1
+{'one': 1, 'two': 2, 'three': 3, 'four': 4, 'five': 5}
+</code></pre></div></div>
+
+<h2 id="métodos-de-retorno">Métodos de retorno</h2>
+
+<p><code class="language-plaintext highlighter-rouge">get()</code>: Nos devuelve el valor de un elemento de un diccionario indicando la clave. Además podemos indicar el valor devuelto si no existe el elemento.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; dict1 = {'one': 1, 'two': 2, 'three': 3}
+&gt;&gt;&gt; dict1.get("one")
+1
+&gt;&gt;&gt; dict1.get("four")
+&gt;&gt;&gt; dict1.get("four","no existe")
+'no existe'
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">pop()</code>: Nos devuelve el valor de un elemento de un diccionario a partir de la cale y elimina dicho elemento. También podemos indicar el valor devuelto si no existe el elemento buscado.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; dict1.pop("one")
+1
+&gt;&gt;&gt; dict1
+{'two': 2, 'three': 3}
+&gt;&gt;&gt; dict1.pop("four")
+Traceback (most recent call last):
+  File "&lt;stdin&gt;", line 1, in &lt;module&gt;
+KeyError: 'four'
+&gt;&gt;&gt; dict1.pop("four","no existe")
+'no existe'
+</code></pre></div></div>
+
+<h2 id="recorrido-de-diccionarios">Recorrido de diccionarios</h2>
+
+<p>El método <code class="language-plaintext highlighter-rouge">keys()</code> nos devuelve las claves de un diccionario, por lo tanto podemos recorrer las claves de la siguiente manera:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; for clave in dict1.keys():
+...    print(clave)
+one
+two
+three
+</code></pre></div></div>
+
+<p>El método <code class="language-plaintext highlighter-rouge">values()</code> nos devuelve los valores de un diccionario, por lo tanto podemos recorrer los valores de la siguiente manera:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; for valor in dict1.values():
+...    print(valor) 
+1
+2
+3
+</code></pre></div></div>
+
+<p>Finalmente el método <code class="language-plaintext highlighter-rouge">items()</code> nos devuelve la clave y el valor correspondiente de los elemento de un diccionario, por lo tanto podemos recorrer ambos:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; for clave,valor in dict1.items():
+...   print(clave,"-&gt;",valor)
+one -&gt; 1
+two -&gt; 2
+three -&gt; 3
+</code></pre></div></div>
+
+      </div>
+    </main>
+
+
+
+  </body>
+
+</html>

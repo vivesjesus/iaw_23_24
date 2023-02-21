@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/main.css">
+  </head>
+  
+
+<body style="border-left-width: 0px;border-left-style: solid;padding-left: 150px;padding-top: 20px;padding-right: 150px;padding-botton: 20px;">
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <h1 id="listas">Listas</h1>
+
+<h2 id="listas-ordenadas-y-no-ordenadas">Listas ordenadas y no ordenadas</h2>
+
+<p>Las <strong>listas</strong> nos permiten colocar texto en líneas separadas. Pueden ser listas ordenadas o no ordenadas. Para las primeras usamos las etiquetas:</p>
+
+<p><code class="language-plaintext highlighter-rouge">&lt;ol&gt;&lt;/ol&gt;</code></p>
+
+<p>mientras que para las segundas:</p>
+
+<p><code class="language-plaintext highlighter-rouge">&lt;ul&gt;&lt;/ul&gt;</code></p>
+
+<p>Los elementos colocados dentro de la lista, ordenadas o sin ordenar, se sitúan con la etiqueta:</p>
+
+<p><code class="language-plaintext highlighter-rouge">&lt;li&gt;Elemento de la lista&lt;/li&gt;</code></p>
+
+<p>Esta etiqueta debe estar siempre dentro de alguna de las anteriores. Todos las etiquetas usadas para describir listas son <strong>etiquetas de bloques</strong>.</p>
+
+<p>Ejemplo de uso de listas ordenadas y no ordenadas</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"es"</span> <span class="na">dir=</span><span class="s">"ltr"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Listas<span class="nt">&lt;/title&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;h2&gt;</span>Lista ordenada. Pasos:<span class="nt">&lt;/h2&gt;</span>
+    <span class="nt">&lt;ol&gt;</span>
+      <span class="nt">&lt;li&gt;</span>Conectarse al servidor<span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;</span>Solicitar documento<span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;</span>Esperar respuesta<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;/ol&gt;</span>
+    <span class="nt">&lt;h2&gt;</span>Lista no ordenada. Comprar:<span class="nt">&lt;/h2&gt;</span>
+    <span class="nt">&lt;ul&gt;</span>
+      <span class="nt">&lt;li&gt;</span>Leche<span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;</span>Café<span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;</span>Pan<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p>Queda renderizado de la siguiente manera:</p>
+
+<p><img src="img/html-05.png" alt="html5" /></p>
+
+<h2 id="listas-de-definiciones">Listas de definiciones</h2>
+
+<p>Usamos las etiquetas <code class="language-plaintext highlighter-rouge">&lt;dl&gt;, &lt;dt&gt;, &lt;dd&gt;</code>:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">&lt;dl&gt;</code> se emplea para declarar la lista.</li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;dt&gt;</code> se emplea para definir el término que definiremos.</li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;dd&gt;</code> se emplea para expresar la definición de un término.</li>
+</ul>
+
+<p>Ejemplo:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"es"</span> <span class="na">dir=</span><span class="s">"ltr"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Listas<span class="nt">&lt;/title&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;h2&gt;</span>Lista de definiciones<span class="nt">&lt;/h2&gt;</span>
+    <span class="nt">&lt;dl&gt;</span>
+        <span class="nt">&lt;dt&gt;</span>HTML<span class="nt">&lt;/dt&gt;&lt;dd&gt;</span>Lenguaje de marcado web<span class="nt">&lt;/dd&gt;</span>
+        <span class="nt">&lt;dt&gt;</span>CSS<span class="nt">&lt;/dt&gt;&lt;dd&gt;</span>Hojas de estilo en cascada<span class="nt">&lt;/dd&gt;</span>
+        <span class="nt">&lt;dt&gt;</span>JS<span class="nt">&lt;/dt&gt;&lt;dd&gt;</span>Lenguaje de scripts: JavaScripts<span class="nt">&lt;/dd&gt;</span>
+    <span class="nt">&lt;/dl&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p>Queda renderizado de la siguiente manera:</p>
+
+<p><img src="img/lista_definiciones.png" alt="html5" /></p>
+
+<h2 id="ejercicio-1">Ejercicio 1</h2>
+
+<p>Anida correctamente la lista no ordenada que se muestra en la imagen.</p>
+
+<p><img src="img/ejemplo-listas-anidadas.jpg" alt="html5" /></p>
+
+<p><a href="doc/solucion5.txt">Compruebe la solución</a></p>
+
+      </div>
+    </main>
+
+
+
+  </body>
+
+</html>

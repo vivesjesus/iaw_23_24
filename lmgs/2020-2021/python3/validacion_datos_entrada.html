@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/main.css">
+  </head>
+  
+
+<body style="border-left-width: 0px;border-left-style: solid;padding-left: 150px;padding-top: 20px;padding-right: 150px;padding-botton: 20px;">
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <h1 id="validación-de-datos-de-entrada">Validación de datos de entrada</h1>
+
+<p>El objetivo de la validación de los datos de entrada es comprobar y asegurarnos que el dato que estamos leyendo cumple una condición que nos asegura que es válido.</p>
+
+<p>A la lectura de un dato, le vamos a añadir un bucle while que nos asegura que el dato va a ser válido. En lenguaje natural sería algo parecido a esto:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Leer Dato
+Mientras Dato se incorrecto:
+	Escribir "Error en el dato"
+	Leer Dato
+</code></pre></div></div>
+
+<p>Por ejemplo, leer un número positivo, sería:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>num = int(input("Dime un número:"))
+while num&lt;=0:
+	print("El número debe ser positivo.")
+	num = int(input("Dime un número:"))
+</code></pre></div></div>
+
+<p>Cuando salimos del bucle, podemos estar seguro de que el número es positivo.</p>
+
+<p>Otro ejemplo, leer dos números y aseguraRnos que el primero es menor o igual que el segundo:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>num1 = int(input("Dime el número 1:"))
+num2 = int(input("Dime el número 2:"))
+while num1&gt;num2:
+	print("El número 1 debe ser menor o igual que el número 2.")
+	num1 = int(input("Dime el número 1:"))
+	num2 = int(input("Dime el número 2:"))
+</code></pre></div></div>
+
+
+      </div>
+    </main>
+
+
+
+  </body>
+
+</html>

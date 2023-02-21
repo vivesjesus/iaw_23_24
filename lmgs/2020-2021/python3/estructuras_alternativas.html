@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/main.css">
+  </head>
+  
+
+<body style="border-left-width: 0px;border-left-style: solid;padding-left: 150px;padding-top: 20px;padding-right: 150px;padding-botton: 20px;">
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <h1 id="estructura-de-control-alternativas">Estructura de control: Alternativas</h1>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Soh5VqukYOs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<h2 id="alternativa-simple">Alternativa simple</h2>
+
+<p>Al ejecutarse la instrucción <code class="language-plaintext highlighter-rouge">if</code> se evalúa la condición lógica. Si la condición lógica es <code class="language-plaintext highlighter-rouge">True</code> se ejecutan de manera secuencial el bloque de instrucciones . Si la condición es <code class="language-plaintext highlighter-rouge">False</code> no se ejecuta el bloque de instrucciones. Una vez ejecutado el <code class="language-plaintext highlighter-rouge">if</code> (opción verdadera o falsa) se continúa la ejecución de forma secuencial por la siguiente instrucción (bloque de instrucción no identado).</p>
+
+<h3 id="ejemplo">Ejemplo</h3>
+
+<p>Programa que pida la edad y diga si es mayor de edad.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>edad = int(input("Dime tu edad:"))
+if edad&gt;=18:
+	print("Eres mayor de edad")
+print("Programa terminado")
+</code></pre></div></div>
+
+<h2 id="alternativa-doble">Alternativa doble</h2>
+
+<p>Al ejecutarse la instrucción <code class="language-plaintext highlighter-rouge">if</code> se evalúa la condición lógica. Si la condición lógica es <strong>True</strong> se ejecutan de manera secuencial el primer bloque de instrucciones. Si la condición es <code class="language-plaintext highlighter-rouge">False</code> se ejecuta el segundo bloque de instrucción.  Una vez ejecutado el <code class="language-plaintext highlighter-rouge">if</code> (opción verdadera o falsa) se continúa la ejecución de forma secuencial por la siguiente instrucción (bloque de instrucción no identado).</p>
+
+<h3 id="ejemplo-1">Ejemplo</h3>
+
+<p>Programa que pida la edad y diga si es mayor de edad o menor de edad.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>edad = int(input("Dime tu edad:"))
+if edad&gt;=18:
+	print("Eres mayor de edad")
+else:
+    print("Eres menor de edad")
+print("Programa terminado")
+</code></pre></div></div>
+
+<h2 id="alternativa-múltiple">Alternativa múltiple</h2>
+
+<p>En este caso tenemos varias opciones. Vamos preguntando por cada una de las opciones y <em>según</em> el valor de la expresión ejecutamos un bloque o otro.</p>
+
+<h3 id="ejemplo-2">Ejemplo</h3>
+
+<p>Programa que pide una nota de un examen por teclado y muestra la nota como “Sobresaliente”, “Notable”, “Bien”, “Suficiente”, “Suspendido”.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>nota = int(input("Dime tu nota:"))
+if nota &gt;=1 and nota &lt;= 4:
+    print("Suspenso")
+elif nota == 5:
+    print("Suficiente")
+elif nota == 6 or nota == 7:
+	print("Bien")
+elif nota == 8:
+	print("Notable")
+elif nota ==9 or nota == 10:
+	print("Sobresaliente")
+else:
+	print("Nota incorrecta")
+print("Programa terminado")
+</code></pre></div></div>
+
+
+      </div>
+    </main>
+
+
+
+  </body>
+
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/main.css">
+  </head>
+  
+
+<body style="border-left-width: 0px;border-left-style: solid;padding-left: 150px;padding-top: 20px;padding-right: 150px;padding-botton: 20px;">
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/Xl_lR01wEtc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<h1 id="tipo-de-datos-secuencia-tuplas">Tipo de datos secuencia: Tuplas</h1>
+
+<p>Las tuplas (<code class="language-plaintext highlighter-rouge">tuple</code>): Sirven para los mismo que las listas (me permiten guardar un conjunto de datos que se pueden repetir y que pueden ser de distintos tipos), pero en este caso es un tipo inmutable.</p>
+
+<h2 id="construcción-de-una-tupla">Construcción de una tupla</h2>
+
+<p>Para crear una lista puedo usar los caracteres ( y ):</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; tupla1 = ()
+&gt;&gt;&gt; tupla2 = ("a",1,True)
+</code></pre></div></div>
+
+<h2 id="operaciones-básicas-con-tuplas">Operaciones básicas con tuplas</h2>
+
+<p>En las tuplas se pueden realizar las siguientes operaciones:</p>
+
+<ul>
+  <li>Las tuplas se pueden recorrer.</li>
+  <li>Operadores de pertenencia: <code class="language-plaintext highlighter-rouge">in</code> y <code class="language-plaintext highlighter-rouge">not in</code>.</li>
+  <li>Concatenación: <code class="language-plaintext highlighter-rouge">+</code></li>
+  <li>Repetición: <code class="language-plaintext highlighter-rouge">*</code></li>
+  <li>Indexación</li>
+  <li>Slice</li>
+</ul>
+
+<p>Entre las funciones definidas podemos usar: <code class="language-plaintext highlighter-rouge">len</code>, <code class="language-plaintext highlighter-rouge">max</code>, <code class="language-plaintext highlighter-rouge">min</code>, <code class="language-plaintext highlighter-rouge">sum</code>, <code class="language-plaintext highlighter-rouge">sorted</code>.</p>
+
+<h2 id="las-tuplas-son-inmutables">Las tuplas son inmutables</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; tupla = (1,2,3)
+&gt;&gt;&gt; tupla[1]=5
+Traceback (most recent call last):
+  File "&lt;stdin&gt;", line 1, in &lt;module&gt;
+TypeError: 'tuple' object does not support item assignment
+</code></pre></div></div>
+
+<h2 id="métodos-principales">Métodos principales</h2>
+
+<p>Métodos de búsqueda: <code class="language-plaintext highlighter-rouge">count</code>, <code class="language-plaintext highlighter-rouge">index</code></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; tupla = (1,2,3,4,1,2,3)
+&gt;&gt;&gt; tupla.count(1)
+2
+
+&gt;&gt;&gt; tupla.index(2)
+1
+&gt;&gt;&gt; tupla.index(2,2)
+5
+</code></pre></div></div>
+
+
+      </div>
+    </main>
+
+
+
+  </body>
+
+</html>

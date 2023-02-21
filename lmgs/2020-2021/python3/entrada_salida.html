@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/main.css">
+  </head>
+  
+
+<body style="border-left-width: 0px;border-left-style: solid;padding-left: 150px;padding-top: 20px;padding-right: 150px;padding-botton: 20px;">
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <h1 id="entrada-y-salida-estándar">Entrada y salida estándar</h1>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/UcvPj1TEdns" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<h2 id="función-input">Función input</h2>
+
+<p>Nos permite leer por teclado información. Devuelve una cadena de caracteres y puede tener como argumento una cadena que se muestra en pantalla.</p>
+
+<p><em>Ejemplos</em></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; nombre=input("Nombre:")
+Nombre:jose
+&gt;&gt;&gt; nombre
+'jose'
+&gt;&gt;&gt; edad=int(input("Edad:"))
+Edad:23
+&gt;&gt;&gt; edad
+23
+</code></pre></div></div>
+
+<h2 id="función-print">Función print</h2>
+
+<p>Nos permite escribir en la salida estándar. Podemos indicar varios datos a imprimir, que por defecto serán separado por un espacio. Podemos también imprimir varias cadenas de texto utilizando la concatenación.</p>
+
+<p><em>Ejemplos</em></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; print(1,2,3)
+1 2 3
+
+&gt;&gt;&gt; print("Hola son las",6,"de la tarde")
+Hola son las 6 de la tarde
+
+&gt;&gt;&gt; print("Hola son las "+str(6)+" de la tarde")
+Hola son las 6 de la tarde
+</code></pre></div></div>
+
+<h2 id="formateando-cadenas-de-caracteres">Formateando cadenas de caracteres</h2>
+
+<p>Con la función <code class="language-plaintext highlighter-rouge">print</code> Podemos indicar el formato con el que se va a mostrar los datos, por ejemplo:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; print("%d %f %s" % (2.5,2.5,2.5))
+2 2.500000 2.5
+
+&gt;&gt;&gt; print("El producto %s cantidad=%d precio=%.2f"%("cesta",23,13.456))
+El producto cesta cantidad=23 precio=13.46	
+</code></pre></div></div>
+
+
+      </div>
+    </main>
+
+
+
+  </body>
+
+</html>

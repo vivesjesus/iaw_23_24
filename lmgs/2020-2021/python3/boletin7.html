@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/main.css">
+  </head>
+  
+
+<body style="border-left-width: 0px;border-left-style: solid;padding-left: 150px;padding-top: 20px;padding-right: 150px;padding-botton: 20px;">
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <h1 id="ejercicios-de-funciones">Ejercicios de funciones</h1>
+
+<h3 id="ejercicio-1">Ejercicio 1</h3>
+
+<p>Crea un función <code class="language-plaintext highlighter-rouge">EscribirCentrado</code>, que reciba como parámetro un texto y lo escriba centrado en pantalla (suponiendo una anchura de 80 columnas; pista: deberás escribir 40 - longitud/2 espacios antes del texto). Además subraya el mensaje utilizando el carácter <code class="language-plaintext highlighter-rouge">=</code>.</p>
+
+<h3 id="ejercicio-2">Ejercicio 2</h3>
+
+<p>Crea un programa que pida dos número enteros al usuario y diga si alguno de ellos es múltiplo del otro. Crea una función EsMultiplo que reciba los dos números, y devuelve si el primero es múltiplo del segundo.</p>
+
+<h3 id="ejercicio-3">Ejercicio 3</h3>
+
+<p>Crear una función que calcule la temperatura media de un día a partir de la temperatura máxima y mínima. Crear un programa principal, que utilizando la función anterior, vaya pidiendo la temperatura máxima y mínima de cada día y vaya mostrando la media. El programa pedirá el número de días que se van a introducir.</p>
+
+<h3 id="ejercicio-4">Ejercicio 4</h3>
+
+<p>Crea un función “ConvertirEspaciado”, que reciba como parámetro un texto y devuelve una cadena con un espacio adicional tras cada letra. Por ejemplo, “Hola, tú” devolverá “H o l a , t ú “. Crea un programa principal donde se use dicha función.</p>
+
+<h3 id="ejercicio-5">Ejercicio 5</h3>
+
+<p>Crea una función “calcularMaxMin” que recibe una lista con valores numéricos y devuelve el valor máximo y el mínimo. Crea un programa que pida números por teclado y muestre el máximo y el mínimo, utilizando la función anterior.</p>
+
+<h3 id="ejercicio-6">Ejercicio 6</h3>
+
+<p>Diseñar una función que calcule el área y el perímetro de una circunferencia. Utiliza dicha función en un programa principal que lea el radio de una circunferencia y muestre su área y perímetro.</p>
+
+<h3 id="ejercicio-7">Ejercicio 7</h3>
+
+<p>Crear una subrutina llamada “Login”, que recibe un nombre de usuario y una contraseña y te devuelve Verdadero si el nombre de usuario es “usuario1” y la contraseña es “asdasd”. Además recibe el número de intentos que se ha intentado hacer login y si no se ha podido hacer login incremente este valor.</p>
+
+<p>Crear un programa principal donde se pida un nombre de usuario y una contraseña y se intente hacer login, solamente tenemos tres oportunidades para intentarlo.</p>
+
+<h3 id="ejercicio-8">Ejercicio 8</h3>
+
+<p>Crear una función recursiva que permita calcular el factorial de un número. Realiza un programa principal donde se lea un entero y se muestre el resultado del factorial.</p>
+
+<h3 id="ejercicio-9">Ejercicio 9</h3>
+
+<p>Crear una función que calcule el MCD de dos número por el método de Euclides. El método de Euclides es el siguiente:</p>
+
+<ul>
+  <li>Se divide el número mayor entre el menor.</li>
+  <li>Si la división es exacta, el divisor es el MCD.</li>
+  <li>Si la división no es exacta, dividimos el divisor entre el resto obtenido y se continúa de esta forma hasta obtener una división exacta, siendo el último divisor el MCD.</li>
+</ul>
+
+<p>Crea un programa principal que lea dos números enteros y muestre el MCD.</p>
+
+<h3 id="ejercicio-10">Ejercicio 10</h3>
+
+<p>Escribir dos funciones que permitan calcular:</p>
+
+<ul>
+  <li>La cantidad de segundos en un tiempo dado en horas, minutos y segundos.</li>
+  <li>La cantidad de horas, minutos y segundos de un tiempo dado en segundos.</li>
+</ul>
+
+<p>Escribe un programa principal con un menú donde se pueda elegir la opción de convertir a segundos, convertir a horas,minutos y segundos o salir del programa.</p>
+
+<h3 id="ejercicio-11">Ejercicio 11</h3>
+
+<p>El día juliano correspondiente a una fecha es un número entero que indica los días que han transcurrido desde el 1 de enero del año indicado. Queremos crear un programa principal que al introducir una fecha nos diga el día juliano que corresponde. Para ello podemos hacer las siguientes subrutinas:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">LeerFecha</code>: Nos permite leer por teclado una fecha (día, mes y año).</li>
+  <li><code class="language-plaintext highlighter-rouge">DiasDelMes</code>: Recibe un mes y un año y nos dice los días de ese mes en ese año.</li>
+  <li><code class="language-plaintext highlighter-rouge">EsBisiesto</code>: Recibe un año y nos dice si es bisiesto.</li>
+  <li><code class="language-plaintext highlighter-rouge">Calcular_Dia_Juliano</code>: recibe una fecha y nos devuelve el día juliano.</li>
+</ul>
+
+<h3 id="ejercicio-12">Ejercicio 12</h3>
+
+<p>Vamos a mejorar el ejercicio anterior haciendo una función para validar la fecha. De tal forma que al leer una fecha se asegura que es válida.</p>
+
+<h3 id="ejercicio-13">Ejercicio 13</h3>
+
+<p>Queremos crear un programa que trabaje con fracciones a/b. Para representar una fracción vamos a utilizar dos enteros: <code class="language-plaintext highlighter-rouge">numerador</code> y <code class="language-plaintext highlighter-rouge">denominador</code>.</p>
+
+<p>Vamos a crear las siguientes funciones para trabajar con funciones:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Leer_fracción</code>: La tarea de esta función es leer por teclado el numerador y el denominador. Cuando leas una fracción debes simplificarla.</li>
+  <li><code class="language-plaintext highlighter-rouge">Escribir_fracción</code>: Esta función escribe en pantalla la fracción. Si el dominador es 1, se muestra sólo el numerador.</li>
+  <li><code class="language-plaintext highlighter-rouge">Calcular_mcd</code>:  Esta función recibe dos número y devuelve el máximo común divisor.</li>
+  <li><code class="language-plaintext highlighter-rouge">Simplificar_fracción</code>: Esta función simplifica la fracción, para ello hay que dividir numerador y dominador por el MCD del numerador y denominador.</li>
+  <li><code class="language-plaintext highlighter-rouge">Sumar_fracciones</code>: Función que recibe dos funciones n1/d1 y n2/d2, y calcula la suma de las dos fracciones. La suma de dos fracciones es otra fracción cuyo <code class="language-plaintext highlighter-rouge">numerador=n1*d2+d1*n2</code> y <code class="language-plaintext highlighter-rouge">denominador=d1*d2</code>. Se debe simplificar la fracción resultado.</li>
+  <li><code class="language-plaintext highlighter-rouge">Restar_fracciones</code>: Función que resta dos fracciones:  <code class="language-plaintext highlighter-rouge">numerador=n1*d2-d1*n2</code> y <code class="language-plaintext highlighter-rouge">denominador=d1*d2</code>. Se debe simplificar la fracción resultado.</li>
+  <li><code class="language-plaintext highlighter-rouge">Multiplicar_fracciones</code>: Función que recibe dos fracciones y calcula el producto, para ello <code class="language-plaintext highlighter-rouge">numerador=n1*n2</code> y <code class="language-plaintext highlighter-rouge">denominador=d1*d2</code>. Se debe simplificar la fracción resultado.</li>
+  <li><code class="language-plaintext highlighter-rouge">Dividir_fracciones</code>: Función que recibe dos fracciones y calcula el cociente, para ello <code class="language-plaintext highlighter-rouge">numerador=n1*d2</code> y <code class="language-plaintext highlighter-rouge">denominador=d1*n2</code>. Se debe simplificar la fracción resultado.</li>
+</ul>
+
+<p>Crear un programa que utilizando las funciones anteriores muestre el siguiente menú:</p>
+
+<ol>
+  <li>Sumar dos fracciones: En esta opción se piden dos fracciones y se muestra el resultado.</li>
+  <li>Restar dos fracciones: En esta opción se piden dos fracciones y se muestra la resta.</li>
+  <li>Multiplicar dos fracciones: En esta opción se piden dos fracciones y se muestra la producto.</li>
+  <li>Dividir dos fracciones: En esta opción se piden dos fracciones y se muestra la cociente.</li>
+  <li>Salir</li>
+</ol>
+
+<h3 id="ejercicio-14">Ejercicio 14</h3>
+
+<p>Vamos a crear un programa para trabajar con una pila. Una pila es una estructura de datos que nos permite guardar un conjunto de variables. La característica fundamental es que el último elemento que se añade al conjunto es el primero que se puede sacar.</p>
+
+<p>Para representar una pila vamos a utilizar una lista de cadenas de caracteres.</p>
+
+<p>Vamos a crear varias funciones para trabajar con la pila:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">LongitudPila</code>: Función que recibe una pila y devuelve el número de elementos que tiene.</li>
+  <li><code class="language-plaintext highlighter-rouge">EstaVaciaPila</code>: Función que recibe una pila y que devuelve si la pila está vacía, no tiene elementos.</li>
+  <li><code class="language-plaintext highlighter-rouge">EstaLlenaPila</code>: Función que recibe una pila y que devuelve si la pila está llena.</li>
+  <li><code class="language-plaintext highlighter-rouge">AddPila</code>: función que recibe una cadena de caracteres y una pila, y añade la cadena a la pila, si no está llena. si esta llena muestra un mensaje de error.</li>
+  <li><code class="language-plaintext highlighter-rouge">SacarDeLaPila</code>: Función que recibe una pila y devuelve el último elemento añadido y lo borra de la pila. Si la pila está vacía muestra un mensaje de error.</li>
+  <li><code class="language-plaintext highlighter-rouge">EscribirPila</code>: Función que recibe una pila y muestra en pantalla los elementos de la pila.</li>
+</ul>
+
+<p>Realiza un programa principal que nos permita usar las funciones anterior, que nos muestre un menú, con las siguientes opciones:</p>
+
+<ol>
+  <li>Añadir elemento a la pila</li>
+  <li>Sacar elemento de la pila</li>
+  <li>Longitud de la pila</li>
+  <li>Mostrar pila</li>
+  <li>Salir</li>
+</ol>
+
+<h3 id="ejercicio-15">Ejercicio 15</h3>
+
+<p>Vamos a realizar un programa similar al anterior para trabajar con una cola. Una cola es una estructura de datos que nos permite guardar un conjunto de variables. La característica fundamental es que el primer elemento que se añade al conjunto es el primero que se puede sacar.</p>
+
+<p>En realizada nos sirven todas las funciones del ejercicio anterior menos la función <code class="language-plaintext highlighter-rouge">SacarDeLaCola</code> que es la que tienes que modificar.</p>
+
+
+      </div>
+    </main>
+
+
+
+  </body>
+
+</html>

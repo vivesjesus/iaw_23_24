@@ -1,0 +1,442 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="es" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html -->
+
+<title>Creación, testeo y publicación de imágenes docker desde Jenkins - IES SEVERO OCHOA</title>
+<meta name="description" content="El plugin Docker que instalamos en un ejemplo anterior, además de posibilitar correr nuestros pipelines en contenedores docker, nos ofrece la posibilidad de trabajar con docker: crear imágenes, probarlas, publicarlas en un registro,…">
+
+
+  <meta name="author" content="Jesús Vives Céspedes">
+  
+  <meta property="article:author" content="Jesús Vives Céspedes">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="IES SEVERO OCHOA">
+<meta property="og:title" content="Creación, testeo y publicación de imágenes docker desde Jenkins">
+<meta property="og:url" content="http://localhost:4000/iaw2223/7_ic/jenkins/gendocker">
+
+
+  <meta property="og:description" content="El plugin Docker que instalamos en un ejemplo anterior, además de posibilitar correr nuestros pipelines en contenedores docker, nos ofrece la posibilidad de trabajar con docker: crear imágenes, probarlas, publicarlas en un registro,…">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2023-02-21T21:10:39+01:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/iaw2223/7_ic/jenkins/gendocker">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Jesus Vives Céspedes",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="IES SEVERO OCHOA Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    
+<!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+
+
+<link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+<link rel="manifest" href="/assets/icons/site.webmanifest">
+<link rel="mask-icon" href="/assets/icons/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<!-- end custom head snippets 2 -->
+
+  </head>
+
+  <body class="layout--single2 wide">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Saltar a navegación principal</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Saltar a contenido</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Saltar a pie</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          IES SEVERO OCHOA
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="">Inicio</a>
+            </li><li class="masthead__menu-item">
+              <a href="https://aules.edu.gva.es/fp/login/index.php">Plataforma</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Alternar búsqueda</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Alternar menú</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Alternar menú</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">Implantación de aplicaciones web (2022-2023)</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/iaw2223/">Inicio</a></li>
+          
+            <li><a href="/iaw2223/#unidad-1-introducci%C3%B3n-a-la-implantaci%C3%B3n-de-aplicaciones-web">Introducción</a></li>
+          
+            <li><a href="/iaw2223/#unidad-2-implantaci%C3%B3n-de-aplicaciones-web-php">PHP</a></li>
+          
+            <li><a href="/iaw2223/#unidad-3-seguridad-de-aplicaciones-web-con-https">HTTPS</a></li>
+          
+            <li><a href="/iaw2223/#unidad-4-implantaci%C3%B3n-de-aplicaciones-web-python">Python</a></li>
+          
+            <li><a href="/iaw2223/#unidad-5-implantaci%C3%B3n-de-aplicaciones-web-java">Java</a></li>
+          
+            <li><a href="/iaw2223/#unidad-6-docker">Docker</a></li>
+          
+            <li><a href="/iaw2223/#unidad-7-introducci%C3%B3n-a-la-integraci%C3%B3n-contin%C3%BAa-y-despliegue-continuo">IC/DC</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Módulos</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/iaw2223/">Implantación de Aplicaciones Web</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+  
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Creación, testeo y publicación de imágenes docker desde Jenkins">
+    <meta itemprop="description" content="El plugin Docker que instalamos en un ejemplo anterior, además de posibilitar correr nuestros pipelines en contenedores docker, nos ofrece la posibilidad de trabajar con docker: crear imágenes, probarlas, publicarlas en un registro,…">
+    <meta itemprop="datePublished" content="February 21, 2023">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Creación, testeo y publicación de imágenes docker desde Jenkins
+</h1>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <p>El plugin <code class="language-plaintext highlighter-rouge">Docker</code> que instalamos en un ejemplo anterior, además de posibilitar correr nuestros pipelines en contenedores docker, nos ofrece la posibilidad de trabajar con docker: crear imágenes, probarlas, publicarlas en un registro,…</p>
+
+<p>En este apartado vamos a crear un pipeline, que va a realizar la siguientes tareas:</p>
+
+<ul>
+  <li>Va a clonar un repositorio donde tenemos un <code class="language-plaintext highlighter-rouge">Dockerfile</code>.</li>
+  <li>Va a construir la imagen.</li>
+  <li>Va a hacer un pequeño test: va a crear un contenedor y va a comprobar que tiene apache2 instalado.</li>
+  <li>Va a subir la imagen a DockerHub.</li>
+  <li>Y finalmente, va a borrar la imagen generada.</li>
+</ul>
+
+<p>El repositorio donde se encuentra el <code class="language-plaintext highlighter-rouge">Dockerfile</code> y el <code class="language-plaintext highlighter-rouge">Jenkinsfile</code> es <a href="https://github.com/josedom24/jenkins_docker">https://github.com/josedom24/jenkins_docker</a>.</p>
+
+<h2 id="credenciales-para-subir-la-imagen-a-dockerhub">Credenciales para subir la imagen a DockerHub</h2>
+
+<p>Hemos creado unas credenciales del tipo usuario - contraseña:</p>
+
+<p><img src="img/gendocker1.png" alt="credenciales" /></p>
+
+<h2 id="pipeline">Pipeline</h2>
+
+<p>Una cosa al indicar que lea el pipeline de un Jenkinsfile es que por defecto lo va buscar en la rama <strong>master</strong>. En los nuevos repositorios hay que cambiarla por <strong>main</strong>:</p>
+
+<p><img src="img/gendocker2.png" alt="credenciales" /></p>
+
+<p>El fichero <code class="language-plaintext highlighter-rouge">Jenkinsfile</code> tiene el siguiente contenido:</p>
+
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pipeline</span> <span class="o">{</span>
+    <span class="n">environment</span> <span class="o">{</span>
+        <span class="n">IMAGEN</span> <span class="o">=</span> <span class="s2">"josedom24/myapp"</span>
+        <span class="n">USUARIO</span> <span class="o">=</span> <span class="s1">'USER_DOCKERHUB'</span>
+    <span class="o">}</span>
+    <span class="n">agent</span> <span class="n">any</span>
+    <span class="n">stages</span> <span class="o">{</span>
+        <span class="n">stage</span><span class="o">(</span><span class="s1">'Clone'</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">steps</span> <span class="o">{</span>
+                <span class="n">git</span> <span class="nl">branch:</span> <span class="s2">"main"</span><span class="o">,</span> <span class="nl">url:</span> <span class="s1">'https://github.com/josedom24/jenkins_docker.git'</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="n">stage</span><span class="o">(</span><span class="s1">'Build'</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">steps</span> <span class="o">{</span>
+                <span class="n">script</span> <span class="o">{</span>
+                    <span class="n">newApp</span> <span class="o">=</span> <span class="n">docker</span><span class="o">.</span><span class="na">build</span> <span class="s2">"$IMAGEN:$BUILD_NUMBER"</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+
+        <span class="n">stage</span><span class="o">(</span><span class="s1">'Test'</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">steps</span> <span class="o">{</span>
+                <span class="n">script</span> <span class="o">{</span>
+                    <span class="n">docker</span><span class="o">.</span><span class="na">image</span><span class="o">(</span><span class="s2">"$IMAGEN:$BUILD_NUMBER"</span><span class="o">).</span><span class="na">inside</span><span class="o">(</span><span class="s1">'-u root'</span><span class="o">)</span> <span class="o">{</span>
+                           <span class="n">sh</span> <span class="s1">'apache2ctl -v'</span>
+                        <span class="o">}</span>
+                    <span class="o">}</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        
+        <span class="n">stage</span><span class="o">(</span><span class="s1">'Deploy'</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">steps</span> <span class="o">{</span>
+                <span class="n">script</span> <span class="o">{</span>
+                    <span class="n">docker</span><span class="o">.</span><span class="na">withRegistry</span><span class="o">(</span> <span class="s1">''</span><span class="o">,</span> <span class="n">USUARIO</span> <span class="o">)</span> <span class="o">{</span>
+                        <span class="n">newApp</span><span class="o">.</span><span class="na">push</span><span class="o">()</span>
+                    <span class="o">}</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="n">stage</span><span class="o">(</span><span class="s1">'Clean Up'</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">steps</span> <span class="o">{</span>
+                <span class="n">sh</span> <span class="s2">"docker rmi $IMAGEN:$BUILD_NUMBER"</span>
+                <span class="o">}</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Algunas cosas a tener en cuenta:</p>
+
+<ol>
+  <li>Al clonar el repositorio hemos indicado la rama.</li>
+  <li><code class="language-plaintext highlighter-rouge">agent any</code>: Este pipeline se ejecuta en el nodo principal.</li>
+  <li><code class="language-plaintext highlighter-rouge">USUARIO = 'USER_DOCKERHUB'</code>, las credenciales del tipo username/pasword se leen de esta forma.</li>
+</ol>
+
+<hr />
+
+<h2 id="índice">Índice</h2>
+
+<ul>
+  <li><a href="instalacion_docker.html">Instalación de Jenkins en docker</a></li>
+  <li><a href="pipelines.html">Introducción a los Pipelines de Jenkins</a></li>
+  <li><a href="runner_docker.html">Instalación de docker como runner de Jenkins</a></li>
+  <li>Creación, testeo y publicación de imágenes docker desde Jenkins</li>
+  <li><a href="runner.html">Ejecución de un pipeline en varios runner</a></li>
+</ul>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Actualizado:</strong> <time datetime="2023-02-21T21:10:39+01:00">February 21, 2023</time></p>
+        
+      </footer>
+
+      
+
+    
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Términos de búsqueda...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Términos de búsqueda..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Seguir:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 Jesus Vives Céspedes. Funciona con <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+
+
+  </body>
+</html>

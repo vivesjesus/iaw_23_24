@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/main.css">
+  </head>
+  
+
+<body style="border-left-width: 0px;border-left-style: solid;padding-left: 150px;padding-top: 20px;padding-right: 150px;padding-botton: 20px;">
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <h1 id="funciones-que-reciben-listas-o-diccionarios">Funciones que reciben listas o diccionarios</h1>
+
+<p>Tantos las listas como los diccionarios son tipos de datos mutables, por lo tanto cuando la pasamos como parámetros a una función al cambiar el parámetro formal podemos estar cambiando el parámetro real.</p>
+
+<p>Por tanto al trabajar con listas o diccionarios como parámetro de funciones, podemos hacer dos versiones de estas funciones:</p>
+
+<ol>
+  <li>Una función que modifica la lista o el diccionario. Estas funciones no tienen <code class="language-plaintext highlighter-rouge">return</code>, por lo que no devuelve nada (<code class="language-plaintext highlighter-rouge">None</code>).</li>
+  <li>Una función que no modifica la lista o diccionario original, y que devuelven una nueva lista o diccionario modificado. Estas funciones si tienen que tener <code class="language-plaintext highlighter-rouge">return</code> para devolver la lista o diccionario modificado.</li>
+</ol>
+
+<h2 id="ejemplo-1-función-que-recibe-una-lista-y-la-modifica">Ejemplo 1: Función que recibe una lista y la modifica</h2>
+
+<p>Vamos a hacer una función que elimine todas las apariciones de una lista, modificando la lista original:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def eliminar_elemento_lista(lista,elem):
+    while elem in lista:
+        lista.remove(elem)
+</code></pre></div></div>
+
+<p>En el programa principal creamos una lista, y vemos que cuando usamos la función la lista se modifica:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>milista = [2,4,5,2,3]
+eliminar_elemento_lista(milista,2)
+print(milista)
+</code></pre></div></div>
+
+<p>El resultado de este programa será:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[4,5,3]
+</code></pre></div></div>
+
+<p>La lista <code class="language-plaintext highlighter-rouge">milista</code> se ha modificado.</p>
+
+<h2 id="ejemplo-2-función-que-recibe-una-lista-y-devuelve-otra-lista-modificada">Ejemplo 2: Función que recibe una lista y devuelve otra lista modificada</h2>
+
+<p>Vamos a hacer una función que elimine todas las apariciones de una lista, pero no modifica la lista original, devuelve otra lista con los elementos eliminados:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def eliminar_elemento_lista(lista,elem):
+    aux=lista.copy()
+    while elem in aux:
+        aux.remove(elem)
+    return aux
+</code></pre></div></div>
+
+<p>En el programa principal creamos una lista, y vemos que cuando usamos la función la lista original no se modifica, y necesitamos otra variable para guardar la lista modificada.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>milista = [2,4,5,2,3]
+otralista=eliminar_elemento_lista(milista,2)
+print(otralista)
+print(milista)
+</code></pre></div></div>
+
+<p>El resultado de este programa será:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[4,5,3]
+[2,4,5,2,3]
+</code></pre></div></div>
+
+<p>La lista <code class="language-plaintext highlighter-rouge">milista</code> no se ha modificado, en la lista <code class="language-plaintext highlighter-rouge">otralista</code> tenemos el resultado de eliminar el elemento en la lista orginal.</p>
+
+
+      </div>
+    </main>
+
+
+
+  </body>
+
+</html>

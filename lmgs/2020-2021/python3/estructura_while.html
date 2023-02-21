@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/main.css">
+  </head>
+  
+
+<body style="border-left-width: 0px;border-left-style: solid;padding-left: 150px;padding-top: 20px;padding-right: 150px;padding-botton: 20px;">
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <h1 id="estructuras-de-control-repetitivas-while">Estructuras de control repetitivas: while</h1>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/oO_IdSoYfQU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<p>La instrucción <code class="language-plaintext highlighter-rouge">while</code> ejecuta una secuencia de instrucciones mientras una condición sea verdadera.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>while &lt;condición&gt;:
+    &lt;instrucciones&gt;
+</code></pre></div></div>
+
+<ul>
+  <li>Al ejecutarse esta instrucción, la condición es evaluada. Si la condición resulta verdadera, se ejecuta una vez la secuencia de instrucciones que forman el cuerpo del ciclo. Al finalizar la ejecución del cuerpo del ciclo se vuelve a evaluar la condición y, si es verdadera, la ejecución se repite. Estos pasos se repiten mientras la condición sea verdadera.</li>
+  <li>Se puede dar la circunstancia que las instrucciones del bucle no se ejecuten nunca, si al evaluar por primera vez la condición resulta ser falsa.</li>
+  <li>Si la condición siempre es verdadera, al ejecutar esta instrucción se produce un ciclo infinito. A fin de evitarlo, las instrucciones del cuerpo del ciclo deben contener alguna instrucción que modifique la o las variables involucradas en la condición, de modo que ésta sea falsificada en algún momento y así finalice la ejecución del ciclo.</li>
+</ul>
+
+<h2 id="ejemplo">Ejemplo</h2>
+
+<p>Crea un programa que pida al usuario una contraseña, de forma repetitiva mientras que no introduzca “asdasd”. Cuando finalmente escriba la contraseña correcta, se le dirá “Bienvenido” y terminará el programa.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>secreto = "asdasd"
+clave = input("Dime la clave:")
+while clave != secreto:
+    print("Clave incorrecta!!!")
+    clave = input("Dime la clave:")
+print("Bienvenido!!!")
+print("Programa terminado")
+</code></pre></div></div>
+
+<h2 id="instrucciones-break-y-continue">Instrucciones break y continue</h2>
+
+<h3 id="break">break</h3>
+
+<p>Termina la ejecución del bucle, además no ejecuta el bloque de instrucciones.</p>
+
+<p>Veamos un programa similar al anterior pero que tiene otra condición de salida:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>secreto = "asdasd"
+clave = input("Dime la clave:")
+while clave != secreto:
+    print("Clave incorrecta!!!")
+    otra = input("¿Quieres introducir otra clave (S/N)?:")
+    if otra.upper()=="N":
+        break;
+    clave = input("Dime la clave:")
+if clave == secreto:
+    print("Bienvenido!!!")
+print("Programa terminado")
+</code></pre></div></div>
+
+<h3 id="continue">continue</h3>
+
+<p>Deja de ejecutar las restantes instrucciones del bucle y vuelve a iterar.</p>
+
+<p>Aunque podemos de hacerlo de varias formas, vamos a usar la instrucción <code class="language-plaintext highlighter-rouge">continue</code> para mostrar los número pares del 1 al 10:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cont = 0
+while cont&lt;10:
+    cont = cont + 1
+    if cont % 2 != 0:
+        continue
+    print(cont)
+</code></pre></div></div>
+
+
+      </div>
+    </main>
+
+
+
+  </body>
+
+</html>
